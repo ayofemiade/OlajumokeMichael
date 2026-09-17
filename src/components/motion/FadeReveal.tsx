@@ -4,6 +4,8 @@ import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { cn } from "@/lib/utils";
 
+const elegantEase: [number, number, number, number] = [0.21, 0.47, 0.32, 0.98];
+
 interface FadeRevealProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   delay?: number;
@@ -48,7 +50,7 @@ export function FadeReveal({
       x: 0,
       transition: {
         duration: 0.8,
-        ease: [0.21, 0.47, 0.32, 0.98], // Custom elegant easing
+        ease: elegantEase, // Custom elegant easing
         delay,
         when: "beforeChildren",
         staggerChildren: stagger ? staggerChildren : 0,
@@ -63,7 +65,7 @@ export function FadeReveal({
       y: 0,
       transition: {
         duration: 0.8,
-        ease: [0.21, 0.47, 0.32, 0.98],
+        ease: elegantEase,
       },
     },
   };
