@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme inline {
+  /* Editorial Color Palette */
+  --color-paper: #FAF8F4;
+  --color-ink: #24252B;
+  --color-slate: #4A4D55;
+  --color-plum: #503847;
+  --color-soft-stone: #F2EEE8;
+  --color-line: #D8D2CA;
+  --color-clay: #9E5E53;
+
+  /* Typography System */
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-newsreader), ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+
+  /* Text Size mapping for Tailwind v4 */
+  --text-xs: var(--font-size-xs);
+  --text-sm: var(--font-size-sm);
+  --text-base: var(--font-size-base);
+  --text-lg: var(--font-size-lg);
+  --text-xl: var(--font-size-xl);
+  --text-2xl: var(--font-size-2xl);
+  --text-3xl: var(--font-size-3xl);
+  --text-display: var(--font-size-display);
+}
+
+@layer base {
+  :root {
+    /* Fluid Typography System */
+    --font-size-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+    --font-size-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+    --font-size-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+    --font-size-lg: clamp(1.125rem, 1.05rem + 0.75vw, 1.5rem);
+    --font-size-xl: clamp(1.5rem, 1.4rem + 1.25vw, 2.5rem);
+    --font-size-2xl: clamp(2.5rem, 2rem + 2.5vw, 4rem);
+    --font-size-3xl: clamp(3.5rem, 2.5rem + 5vw, 6rem);
+    --font-size-display: clamp(4rem, 6vw, 9rem);
+
+    /* Structural Variables */
+    --grid-opacity: 0;
+    --grid-color: var(--color-line);
+    --blueprint-gap: 24px;
+    --blueprint-columns: 12;
+  }
+
+  body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    /* High-end rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    /* Transition for background color changes (State 5) */
+    transition: background-color 1s ease-in-out;
+  }
+
+  /* Lenis smooth scrolling support */
+  html.lenis, html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+  .lenis.lenis-smooth [data-scroll-container] {
+    will-change: transform;
+  }
+}
+
