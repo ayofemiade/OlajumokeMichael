@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, HTMLMotionProps } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 const elegantEase: [number, number, number, number] = [0.21, 0.47, 0.32, 0.98];
 
-interface FadeRevealProps extends React.HTMLAttributes<HTMLDivElement> {
+interface FadeRevealProps extends HTMLMotionProps<"div"> {
   children: React.ReactNode;
   delay?: number;
   stagger?: boolean;
