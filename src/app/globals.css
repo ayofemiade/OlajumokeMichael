@@ -52,8 +52,6 @@
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
-    /* Transition for background color changes (State 5) */
-    transition: background-color 1s ease-in-out;
   }
 
   /* Lenis smooth scrolling support */
@@ -68,3 +66,55 @@
   }
 }
 
+@layer components {
+  /* ─── Navigation link underline grow effect ─────────────────────── */
+  .nav-link {
+    position: relative;
+  }
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background-color: var(--color-plum);
+    transition: width 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .nav-link:hover::after,
+  .nav-link[data-active="true"]::after {
+    width: 100%;
+  }
+
+  /* ─── Role ledger row hover — left bookmark accent ──────────────── */
+  .role-row {
+    position: relative;
+    border-left: 2px solid transparent;
+    padding-left: 0;
+    transition: border-color 200ms ease, padding-left 200ms ease;
+  }
+  .role-row:hover {
+    border-left-color: var(--color-plum);
+    padding-left: 8px;
+  }
+
+  /* ─── Image hover — subtle scale ───────────────────────────────── */
+  .image-hover {
+    transition: transform 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .image-hover:hover {
+    transform: scale(1.02);
+  }
+
+  /* ─── Structural line grow-in animation ─────────────────────────── */
+  @keyframes line-grow {
+    from { width: 0; }
+    to   { width: 100%; }
+  }
+
+  /* ─── Quiet section — deliberately slowed pulse ─────────────────── */
+  @keyframes breath {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.85; }
+  }
+}
