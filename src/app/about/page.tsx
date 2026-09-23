@@ -20,17 +20,27 @@ export default function AboutPage() {
       </section>
 
       {/* 2. Experience Context */}
-      <section className="relative px-6 md:px-12 lg:px-24 pb-24 md:pb-32 bg-paper">
-        <FadeReveal direction="up" delay={0.2} className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
-          <div className="md:col-span-8 md:col-start-5 xl:col-start-6 xl:col-span-6">
-            <Body className="text-lg text-slate leading-relaxed mb-6 font-serif">
-              An idea needs more than a compelling case for why it matters. It needs a structure people can deliver, a way to understand what is happening, and room to learn when reality differs from the plan.
-            </Body>
-            <Body className="text-lg text-slate leading-relaxed font-serif">
+      <section className="relative px-6 md:px-12 lg:px-24 pb-24 md:pb-32 bg-paper border-t border-line/40 pt-16 md:pt-24">
+        <FadeReveal direction="up" delay={0.2} className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+          
+          {/* Left Column: Core Philosophy Pullquote */}
+          <div className="lg:col-span-5 flex flex-col">
+            <Meta className="text-plum mb-6">Perspective &amp; Approach</Meta>
+            <blockquote className="border-l-2 border-plum pl-6 py-1">
+              <p className="font-serif text-xl md:text-2xl text-ink leading-relaxed italic font-medium">
+                &ldquo;An idea needs more than a compelling case for why it matters. It needs a structure people can deliver, a way to understand what is happening, and room to learn when reality differs from the plan.&rdquo;
+              </p>
+            </blockquote>
+          </div>
+
+          {/* Right Column: Experience Context Narrative & CTAs */}
+          <div className="lg:col-span-7 flex flex-col pt-2 lg:pt-0">
+            <Meta className="text-slate mb-6">Background &amp; Scope</Meta>
+            <Body className="text-lg text-slate leading-relaxed font-serif mb-10">
               My experience spans entrepreneurship support, economic and community development, higher education, and international-development work in Nigeria. Across those settings, I have led programs, coordinated people and partners, built operating approaches, and used evidence from implementation to inform what comes next. The contexts have differed; the recurring work has been connecting direction with delivery.
             </Body>
             
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 sm:gap-5">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-5">
               <Link
                 href="/experience"
                 className="inline-flex items-center justify-center bg-ink text-paper px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold hover:bg-plum transition-colors duration-300"
@@ -45,6 +55,7 @@ export default function AboutPage() {
               </Link>
             </div>
           </div>
+
         </FadeReveal>
       </section>
 
