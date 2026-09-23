@@ -30,14 +30,18 @@ export default function AboutPage() {
               My experience spans entrepreneurship support, economic and community development, higher education, and international-development work in Nigeria. Across those settings, I have led programs, coordinated people and partners, built operating approaches, and used evidence from implementation to inform what comes next. The contexts have differed; the recurring work has been connecting direction with delivery.
             </Body>
             
-            <div className="mt-10 flex flex-col sm:flex-row gap-6">
-              <Link href="/experience" className="group flex items-center gap-3 w-fit">
-                <span className="text-sm font-medium tracking-wide uppercase text-plum">Explore my experience</span>
-                <span className="w-10 h-[1px] bg-plum group-hover:w-16 transition-all duration-500 ease-out"></span>
+            <div className="mt-10 flex flex-col sm:flex-row gap-4 sm:gap-5">
+              <Link
+                href="/experience"
+                className="inline-flex items-center justify-center bg-ink text-paper px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold hover:bg-plum transition-colors duration-300"
+              >
+                Explore my experience
               </Link>
-              <Link href="/selected-work" className="group flex items-center gap-3 w-fit">
-                <span className="text-sm font-medium tracking-wide uppercase text-slate group-hover:text-plum transition-colors">View selected work</span>
-                <span className="w-10 h-[1px] bg-slate/30 group-hover:bg-plum group-hover:w-16 transition-all duration-500 ease-out"></span>
+              <Link
+                href="/selected-work"
+                className="inline-flex items-center justify-center bg-transparent border border-line text-ink px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold hover:border-ink transition-colors duration-300"
+              >
+                View selected work
               </Link>
             </div>
           </div>
@@ -90,14 +94,20 @@ export default function AboutPage() {
             <Body className="text-slate mb-10 max-w-2xl mx-auto">
               Through it, I have designed and delivered founder-facing work, including the Venture Readiness Lab. That pilot is the first detailed case in my Selected Work: it shows the program I built and led, what the evidence established, and what remained unresolved.
             </Body>
-            <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
-              <Link href="/selected-work/venture-readiness-lab" className="group flex items-center gap-3 w-fit">
-                <span className="text-sm font-medium tracking-wide text-plum uppercase">Read the Venture Readiness Lab case</span>
-                <span className="w-10 h-[1px] bg-plum group-hover:w-16 transition-all duration-500 ease-out"></span>
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center items-center">
+              <Link
+                href="/selected-work/venture-readiness-lab"
+                className="inline-flex items-center justify-center bg-transparent border border-plum text-plum px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold hover:bg-plum hover:text-paper transition-colors duration-300"
+              >
+                Read the Venture Readiness Lab case
               </Link>
-              <a href="https://ethnoirconsulting.com" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 w-fit">
-                <span className="text-sm font-medium tracking-wide text-slate group-hover:text-plum uppercase transition-colors">Visit Ethnoir</span>
-                <span className="w-10 h-[1px] bg-slate/30 group-hover:bg-plum group-hover:w-16 transition-all duration-500 ease-out"></span>
+              <a
+                href="https://ethnoirconsulting.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-transparent border border-line text-ink px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold hover:border-ink transition-colors duration-300"
+              >
+                Visit Ethnoir
               </a>
             </div>
           </div>
@@ -129,9 +139,13 @@ export default function AboutPage() {
             <Body className="text-lg text-slate leading-relaxed mb-10 font-serif">
               Faith, culture, motherhood, creativity and reflection also shape how I think about work, responsibility and becoming. I explore some of that wider landscape through The Quiet Fire, a separate reflective publication.
             </Body>
-            <a href="https://thequietfire.olajumokemichael.com" target="_blank" rel="noopener noreferrer" className="group flex items-center gap-3 w-fit">
-              <span className="text-sm font-medium tracking-wide uppercase text-plum">Visit The Quiet Fire</span>
-              <span className="w-10 h-[1px] bg-plum group-hover:w-16 transition-all duration-500 ease-out"></span>
+            <a
+              href="https://thequietfire.olajumokemichael.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center bg-transparent border border-plum text-plum px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold hover:bg-plum hover:text-paper transition-colors duration-300"
+            >
+              Visit The Quiet Fire
             </a>
           </div>
 
