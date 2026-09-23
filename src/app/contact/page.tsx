@@ -38,7 +38,7 @@ export default function ContactPage() {
             
             {/* Left Column: Context & Rules */}
             <div className="lg:col-span-5 flex flex-col gap-12">
-              <Body className="text-xl md:text-2xl text-ink leading-relaxed font-serif">
+              <Body className="text-base md:text-lg text-ink font-semibold leading-relaxed font-serif">
                 If you’re considering me for a role, exploring a program or service challenge, or interested in collaborating, I would be glad to hear from you.
               </Body>
               

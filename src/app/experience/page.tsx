@@ -2,7 +2,7 @@ import { Display } from "@/components/typography/Display";
 import { Headline } from "@/components/typography/Headline";
 import { Body } from "@/components/typography/Body";
 import { Meta } from "@/components/typography/Meta";
-import { FadeReveal } from "@/components/motion/FadeReveal";
+import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import Link from "next/link";
 
 export default function ExperiencePage() {
@@ -10,19 +10,35 @@ export default function ExperiencePage() {
     <div className="flex flex-col w-full bg-paper min-h-screen">
       
       {/* 1. Opening Orientation */}
-      <section className="relative px-6 md:px-12 lg:px-24 pt-32 pb-24 md:pb-32">
-        <FadeReveal stagger direction="up" className="max-w-[1400px] w-full mx-auto">
-          <Display italic className="text-ink leading-[1.1] tracking-tight mb-8">
-            Experience
-          </Display>
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
-            <div className="md:col-span-8 md:col-start-5 xl:col-start-6 xl:col-span-6">
-              <Body className="text-xl md:text-2xl text-slate leading-relaxed font-serif">
+      <section className="relative px-6 md:px-12 lg:px-24 pt-32 pb-20 md:pb-28 border-b border-line/30">
+        <div className="max-w-[1400px] w-full mx-auto">
+          <ScrollReveal personality="strong" className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+            <div className="lg:col-span-5 flex flex-col">
+              <Meta className="text-plum mb-4">Professional Progression</Meta>
+              <Display italic className="text-ink leading-[1.1] tracking-tight">
+                Experience
+              </Display>
+            </div>
+            
+            <div className="lg:col-span-7 flex flex-col pt-2 lg:pt-8">
+              <Body className="text-base md:text-lg text-ink font-semibold leading-relaxed font-serif mb-8">
                 My work has taken place in different organizations and sectors, with different responsibilities in each. This page offers a selective account of that progression: from managing grants and operations to leading programs, coordinating delivery and learning from implementation.
               </Body>
+              
+              <a
+                href="/Olajumoke Michael Resume -  Website.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-ink text-paper px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold hover:bg-plum transition-colors duration-300 w-fit group"
+              >
+                <span>Download résumé</span>
+                <svg className="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </a>
             </div>
-          </div>
-        </FadeReveal>
+          </ScrollReveal>
+        </div>
       </section>
 
       {/* 2. The Chronology */}
@@ -30,92 +46,94 @@ export default function ExperiencePage() {
         <div className="max-w-[1400px] mx-auto border-t border-line">
           
           {/* Ethnoir */}
-          <FadeReveal direction="up" className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 py-16 md:py-24 border-b border-line">
+          <ScrollReveal personality="structural" className="group grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 py-16 md:py-20 border-b border-line border-l-2 border-l-transparent hover:border-l-plum hover:pl-4 transition-all duration-300">
             <div className="lg:col-span-4 flex flex-col gap-2">
-              <Meta className="text-plum mb-4">2025–present · Winston-Salem, North Carolina</Meta>
-              <Headline size="lg" className="text-ink">Ethnoir</Headline>
-              <Meta className="text-slate uppercase tracking-wider">Founder</Meta>
+              <Meta className="text-plum mb-2">2025–present · Winston-Salem, North Carolina</Meta>
+              <Headline size="lg" className="text-ink font-sans group-hover:text-plum transition-colors duration-300">Ethnoir</Headline>
+              <Meta className="text-slate uppercase tracking-wider font-semibold text-xs">Founder</Meta>
             </div>
-            <div className="lg:col-span-7 lg:col-start-6 flex flex-col">
-              <Body className="text-lg text-slate leading-relaxed font-serif mb-8">
-                I started Ethnoir to help founders build better businesses. I designed and ran our first six-week pilot program, ensuring that every session, activity, and piece of advice was practical and tied directly to real-world results. You can read the full case study in Selected Work, which breaks down what I did, what the founders created, and what we actually learned.
+            <div className="lg:col-span-7 lg:col-start-6 flex flex-col pt-1">
+              <Body className="text-base md:text-lg text-slate leading-relaxed font-serif mb-8">
+                I founded Ethnoir to work on questions of venture development. I designed and delivered its founder-facing Venture Readiness Lab pilot, connecting the program’s purpose with a six-week structure, participant activities, delivery operations and evidence collection. The pilot is documented in Selected Work, including what I personally led, what participants created and what the evidence does—and does not—show.
               </Body>
-              <Link href="/selected-work/venture-readiness-lab" className="group flex items-center gap-3 w-fit">
-                <span className="text-sm font-medium tracking-wide uppercase text-plum">Read the Venture Readiness Lab case</span>
-                <span className="w-10 h-[1px] bg-plum group-hover:w-16 transition-all duration-500 ease-out"></span>
+              <Link
+                href="/selected-work/venture-readiness-lab"
+                className="inline-flex items-center justify-center bg-transparent border border-plum text-plum px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold hover:bg-plum hover:text-paper transition-colors duration-300 w-fit"
+              >
+                Read the Venture Readiness Lab case
               </Link>
             </div>
-          </FadeReveal>
+          </ScrollReveal>
 
           {/* Bpeace */}
-          <FadeReveal direction="up" className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 py-16 md:py-24 border-b border-line">
+          <ScrollReveal personality="structural" delay={0.08} className="group grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 py-16 md:py-20 border-b border-line border-l-2 border-l-transparent hover:border-l-plum hover:pl-4 transition-all duration-300">
             <div className="lg:col-span-4 flex flex-col gap-2">
-              <Meta className="text-plum mb-4">2025–2026 · Remote / NC & GA</Meta>
-              <Headline size="lg" className="text-ink">Bpeace</Headline>
-              <Meta className="text-slate uppercase tracking-wider">U.S. Program Manager (Contract)</Meta>
+              <Meta className="text-plum mb-2">2025–2026 · Remote / NC &amp; GA</Meta>
+              <Headline size="lg" className="text-ink font-sans group-hover:text-plum transition-colors duration-300">Bpeace</Headline>
+              <Meta className="text-slate uppercase tracking-wider font-semibold text-xs">U.S. Program Manager (Contract)</Meta>
             </div>
-            <div className="lg:col-span-7 lg:col-start-6 flex flex-col">
-              <Body className="text-lg text-slate leading-relaxed font-serif">
+            <div className="lg:col-span-7 lg:col-start-6 flex flex-col pt-1">
+              <Body className="text-base md:text-lg text-slate leading-relaxed font-serif">
                 For Bpeace’s Breaking the $1M Barrier program, I managed implementation and coordinated delivery across a multi-state founder-support initiative. The role brought together participant engagement, learning and coaching activities, communications, stakeholder coordination and reporting. The work required keeping contributors, activities and moving parts aligned throughout implementation while responding to the realities of delivery.
               </Body>
             </div>
-          </FadeReveal>
+          </ScrollReveal>
 
           {/* Winston-Salem WBC */}
-          <FadeReveal direction="up" className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 py-16 md:py-24 border-b border-line">
+          <ScrollReveal personality="structural" delay={0.16} className="group grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 py-16 md:py-20 border-b border-line border-l-2 border-l-transparent hover:border-l-plum hover:pl-4 transition-all duration-300">
             <div className="lg:col-span-4 flex flex-col gap-2">
-              <Meta className="text-plum mb-4">2023–2025 · Winston-Salem, North Carolina</Meta>
-              <Headline size="lg" className="text-ink">Winston-Salem Women’s Business Center</Headline>
-              <Meta className="text-slate uppercase tracking-wider">Program Director</Meta>
+              <Meta className="text-plum mb-2">2023–2025 · Winston-Salem, North Carolina</Meta>
+              <Headline size="lg" className="text-ink font-sans group-hover:text-plum transition-colors duration-300">Winston-Salem Women’s Business Center</Headline>
+              <Meta className="text-slate uppercase tracking-wider font-semibold text-xs">Program Director</Meta>
             </div>
-            <div className="lg:col-span-7 lg:col-start-6 flex flex-col">
-              <Body className="text-lg text-slate leading-relaxed font-serif">
+            <div className="lg:col-span-7 lg:col-start-6 flex flex-col pt-1">
+              <Body className="text-base md:text-lg text-slate leading-relaxed font-serif">
                 I led regional entrepreneurship-support programming and the operations behind it. My responsibilities included program planning and delivery, partnerships, staff and contributor coordination, grant requirements, and reporting. This role deepened my experience in connecting what entrepreneurs needed with the resources, relationships and operating structures available to support them.
               </Body>
             </div>
-          </FadeReveal>
+          </ScrollReveal>
 
           {/* Guilford College */}
-          <FadeReveal direction="up" className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 py-16 md:py-24 border-b border-line">
+          <ScrollReveal personality="structural" delay={0.1} className="group grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 py-16 md:py-20 border-b border-line border-l-2 border-l-transparent hover:border-l-plum hover:pl-4 transition-all duration-300">
             <div className="lg:col-span-4 flex flex-col gap-2">
-              <Meta className="text-plum mb-4">2021–2023 · Greensboro, North Carolina</Meta>
-              <Headline size="lg" className="text-ink">Guilford College</Headline>
-              <Meta className="text-slate uppercase tracking-wider">Assistant Director, Advancement Operations</Meta>
+              <Meta className="text-plum mb-2">2021–2023 · Greensboro, North Carolina</Meta>
+              <Headline size="lg" className="text-ink font-sans group-hover:text-plum transition-colors duration-300">Guilford College</Headline>
+              <Meta className="text-slate uppercase tracking-wider font-semibold text-xs">Assistant Director, Advancement Operations</Meta>
             </div>
-            <div className="lg:col-span-7 lg:col-start-6 flex flex-col">
-              <Body className="text-lg text-slate leading-relaxed font-serif">
+            <div className="lg:col-span-7 lg:col-start-6 flex flex-col pt-1">
+              <Body className="text-base md:text-lg text-slate leading-relaxed font-serif">
                 I worked in advancement operations, strengthening the processes behind gift administration, stewardship, data quality and reporting. The work involved coordinating across colleagues and functions, resolving operational issues and making information more reliable for the people responsible for using it.
               </Body>
             </div>
-          </FadeReveal>
+          </ScrollReveal>
 
           {/* SuccorAfrica */}
-          <FadeReveal direction="up" className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 py-16 md:py-24 border-b border-line">
+          <ScrollReveal personality="structural" delay={0.1} className="group grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 py-16 md:py-20 border-b border-line border-l-2 border-l-transparent hover:border-l-plum hover:pl-4 transition-all duration-300">
             <div className="lg:col-span-4 flex flex-col gap-2">
-              <Meta className="text-plum mb-4">2019–2021 · Remote</Meta>
-              <Headline size="lg" className="text-ink">SuccorAfrica Communications Ltd</Headline>
-              <Meta className="text-slate uppercase tracking-wider">Project Consultant</Meta>
+              <Meta className="text-plum mb-2">2019–2021 · Remote</Meta>
+              <Headline size="lg" className="text-ink font-sans group-hover:text-plum transition-colors duration-300">SuccorAfrica Communications Ltd</Headline>
+              <Meta className="text-slate uppercase tracking-wider font-semibold text-xs">Project Consultant</Meta>
             </div>
-            <div className="lg:col-span-7 lg:col-start-6 flex flex-col">
-              <Body className="text-lg text-slate leading-relaxed font-serif">
+            <div className="lg:col-span-7 lg:col-start-6 flex flex-col pt-1">
+              <Body className="text-base md:text-lg text-slate leading-relaxed font-serif">
                 I worked on project planning and implementation support, including operating processes, monitoring and review. This role drew on my earlier program-management experience while extending my work with organizations seeking to carry out and learn from their initiatives.
               </Body>
             </div>
-          </FadeReveal>
+          </ScrollReveal>
 
           {/* British High Commission */}
-          <FadeReveal direction="up" className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 py-16 md:py-24">
+          <ScrollReveal personality="structural" delay={0.1} className="group grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 py-16 md:py-20 border-l-2 border-l-transparent hover:border-l-plum hover:pl-4 transition-all duration-300">
             <div className="lg:col-span-4 flex flex-col gap-2">
-              <Meta className="text-plum mb-4">2014–2019 · Abuja, Nigeria</Meta>
-              <Headline size="lg" className="text-ink">British High Commission</Headline>
-              <Meta className="text-slate uppercase tracking-wider">Grants & Program Manager</Meta>
+              <Meta className="text-plum mb-2">2014–2019 · Abuja, Nigeria</Meta>
+              <Headline size="lg" className="text-ink font-sans group-hover:text-plum transition-colors duration-300">British High Commission</Headline>
+              <Meta className="text-slate uppercase tracking-wider font-semibold text-xs">Grants &amp; Program Manager</Meta>
             </div>
-            <div className="lg:col-span-7 lg:col-start-6 flex flex-col">
-              <Body className="text-lg text-slate leading-relaxed font-serif">
+            <div className="lg:col-span-7 lg:col-start-6 flex flex-col pt-1">
+              <Body className="text-base md:text-lg text-slate leading-relaxed font-serif">
                 I managed grants and program work within the British High Commission in Nigeria. The portfolio covered justice, economic development and security-related initiatives. My responsibilities included partner coordination, grant administration, monitoring, compliance, reporting and analysis for program decisions. The work involved government, civil-society and international stakeholders; it was not work performed in the United Kingdom.
               </Body>
             </div>
-          </FadeReveal>
+          </ScrollReveal>
 
         </div>
       </section>
@@ -123,27 +141,37 @@ export default function ExperiencePage() {
       {/* 3. The Thread (Synthesis) */}
       <section className="relative bg-soft-stone py-24 md:py-32 px-6 md:px-12 lg:px-24">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          <div className="lg:col-span-8 lg:col-start-3 text-center flex flex-col items-center">
+          <ScrollReveal personality="standard" className="lg:col-span-8 lg:col-start-3 text-center flex flex-col items-center">
             <Headline size="xl" italic className="text-ink leading-tight mb-8">
               The thread across the roles
             </Headline>
-            <Body className="text-lg text-slate leading-relaxed mb-10 max-w-3xl mx-auto font-serif">
+            <Body className="text-base md:text-lg text-slate leading-relaxed mb-10 max-w-3xl mx-auto font-serif">
               These positions did not involve identical work. Together, they show a progression in responsibility for turning intentions into organized delivery, coordinating people and processes, and using information from practice to inform decisions. My Selected Work examines one project in greater depth.
             </Body>
             
-            <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
-              <Link href="/selected-work" className="group flex items-center gap-3 w-fit">
-                <span className="text-sm font-medium tracking-wide text-plum uppercase">View selected work</span>
-                <span className="w-10 h-[1px] bg-plum group-hover:w-16 transition-all duration-500 ease-out"></span>
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center items-center">
+              <Link
+                href="/selected-work"
+                className="inline-flex items-center justify-center bg-transparent border border-plum text-plum px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold hover:bg-plum hover:text-paper transition-colors duration-300"
+              >
+                View selected work
               </Link>
+              <a
+                href="/Olajumoke Michael Resume -  Website.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center bg-transparent border border-line text-ink px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold hover:border-ink transition-colors duration-300"
+              >
+                Download résumé (PDF)
+              </a>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
       {/* 4. Contact Invitation */}
-      <section className="relative bg-ink py-24 md:py-32 px-6 md:px-12 lg:px-24">
-        <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row md:items-end justify-between gap-12 border-t border-slate/30 pt-16">
+      <section className="relative bg-ink text-paper py-24 md:py-32 px-6 md:px-12 lg:px-24">
+        <ScrollReveal personality="strong" className="max-w-[1400px] mx-auto flex flex-col md:flex-row md:items-end justify-between gap-12 border-t border-slate/30 pt-16">
           <div className="max-w-2xl">
             <Meta className="text-soft-stone/70 mb-6">A conversation</Meta>
             <Headline as="h2" size="lg" className="text-paper leading-tight mb-6">
@@ -152,11 +180,11 @@ export default function ExperiencePage() {
           </div>
           <Link 
             href="/contact" 
-            className="inline-flex items-center justify-center px-10 py-5 bg-plum text-white hover:bg-white hover:text-ink transition-colors duration-300 text-sm font-medium tracking-wide uppercase shrink-0"
+            className="inline-flex items-center justify-center px-10 py-5 bg-plum text-white hover:bg-paper hover:text-ink transition-colors duration-300 text-sm font-medium tracking-wide uppercase shrink-0"
           >
             Contact me
           </Link>
-        </div>
+        </ScrollReveal>
       </section>
 
     </div>
