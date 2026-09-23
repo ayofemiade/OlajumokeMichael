@@ -62,8 +62,8 @@ export function HeroSection() {
       <div className="max-w-[1400px] w-full mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
 
-          {/* The Typography — Left Column */}
-          <div className="lg:col-span-7 flex flex-col z-20">
+          {/* The Typography — Left Column on desktop, Second on mobile */}
+          <div className="lg:col-span-7 flex flex-col z-20 order-2 lg:order-1">
             <motion.h1
               variants={headlineVariants}
               initial="hidden"
@@ -98,8 +98,8 @@ export function HeroSection() {
             </motion.div>
           </div>
 
-          {/* The Portrait — Right Column */}
-          <div className="lg:col-span-5 relative z-10 w-full flex justify-center lg:justify-end">
+          {/* The Portrait — Right Column on desktop, First on mobile */}
+          <div className="lg:col-span-5 relative z-10 w-full flex justify-center lg:justify-end order-1 lg:order-2">
             <motion.div
               variants={imageVariants}
               initial="hidden"
