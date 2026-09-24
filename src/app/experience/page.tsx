@@ -5,6 +5,15 @@ import { Meta } from "@/components/typography/Meta";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Experience",
+  description:
+    "Professional progression, leadership roles, and downloadable résumé of Olajumoke Michael.",
+  alternates: {
+    canonical: "/experience",
+  },
+};
+
 export default function ExperiencePage() {
   return (
     <div className="flex flex-col w-full bg-paper min-h-screen">
@@ -21,21 +30,27 @@ export default function ExperiencePage() {
             </div>
             
             <div className="lg:col-span-7 flex flex-col pt-2 lg:pt-8">
-              <Body className="text-base md:text-lg text-ink font-semibold leading-relaxed font-serif mb-8">
+              <Body className="text-base md:text-lg text-ink font-serif leading-relaxed mb-8 max-w-2xl">
                 My work has taken place in different organizations and sectors, with different responsibilities in each. This page offers a selective account of that progression: from managing grants and operations to leading programs, coordinating delivery and learning from implementation.
               </Body>
               
-              <a
-                href="/Olajumoke Michael Resume -  Website.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-ink text-paper px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold hover:bg-plum transition-colors duration-300 w-fit group"
-              >
-                <span>Download résumé</span>
-                <svg className="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                </svg>
-              </a>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 border-t border-line/50 pt-6">
+                <a
+                  href="/api/resume"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-3 bg-ink text-paper px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold hover:bg-plum transition-colors duration-300 w-full sm:w-auto group shadow-sm"
+                >
+                  <span>Download résumé (PDF)</span>
+                  <svg className="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform duration-300 text-paper/80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </a>
+                
+                <span className="font-sans text-xs text-slate uppercase tracking-wider font-medium hidden sm:inline-block">
+                  Official PDF · Updated 2026
+                </span>
+              </div>
             </div>
           </ScrollReveal>
         </div>
@@ -157,7 +172,7 @@ export default function ExperiencePage() {
                 View selected work
               </Link>
               <a
-                href="/Olajumoke Michael Resume -  Website.pdf"
+                href="/api/resume"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-transparent border border-line text-ink px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold hover:border-ink transition-colors duration-300"

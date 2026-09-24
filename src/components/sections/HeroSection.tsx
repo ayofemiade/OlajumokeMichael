@@ -9,11 +9,11 @@ import { useReducedMotion } from "@/hooks/useReducedMotion";
  * Hero section with a deliberate, sequenced entrance.
  *
  * Order of arrival:
- * 1. Headline (primary proposition — arrives first, 0.1s delay)
- * 2. Portrait (the human face — arrives at 0.3s, gentle scale)
- * 3. CTAs (require context before appearing — arrives at 0.55s)
+ * 1. Headline & Supporting proposition (arrives first, 0.1s delay)
+ * 2. Portrait (arrives at 0.3s, gentle scale)
+ * 3. CTAs (arrives at 0.55s)
  *
- * When reduced motion is preferred, all elements appear instantly.
+ * Mobile layout: Proposition/Headline comes FIRST (order-1), Portrait SECOND (order-2).
  */
 export function HeroSection() {
   const reduced = useReducedMotion();
@@ -27,6 +27,19 @@ export function HeroSection() {
         duration: reduced ? 0 : duration.slow,
         ease: elegantEase,
         delay: reduced ? 0 : 0.1,
+      },
+    },
+  };
+
+  const supportVariants = {
+    hidden: { opacity: 0, y: reduced ? 0 : 20 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: reduced ? 0 : duration.medium,
+        ease: elegantEase,
+        delay: reduced ? 0 : 0.25,
       },
     },
   };
@@ -62,8 +75,8 @@ export function HeroSection() {
       <div className="max-w-[1400px] w-full mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
 
-          {/* The Typography — Left Column on desktop, Second on mobile */}
-          <div className="lg:col-span-7 flex flex-col z-20 order-2 lg:order-1">
+          {/* The Typography — Left Column on desktop, FIRST on mobile (order-1) */}
+          <div className="lg:col-span-7 flex flex-col z-20 order-1 lg:order-1">
             <motion.h1
               variants={headlineVariants}
               initial="hidden"
@@ -74,6 +87,15 @@ export function HeroSection() {
               <span className="italic">structures</span> that can be implemented,
               evaluated and improved.
             </motion.h1>
+
+            <motion.p
+              variants={supportVariants}
+              initial="hidden"
+              animate="visible"
+              className="mt-6 font-serif text-base md:text-lg text-slate leading-relaxed max-w-xl"
+            >
+              I work across program strategy, program and service design, implementation, operations and evaluation—connecting the thinking behind an initiative with the structures, delivery and evidence needed to move it forward.
+            </motion.p>
 
             <motion.div
               variants={ctaVariants}
@@ -98,8 +120,8 @@ export function HeroSection() {
             </motion.div>
           </div>
 
-          {/* The Portrait — Right Column on desktop, First on mobile */}
-          <div className="lg:col-span-5 relative z-10 w-full flex justify-center lg:justify-end order-1 lg:order-2">
+          {/* The Portrait — Right Column on desktop, SECOND on mobile (order-2) */}
+          <div className="lg:col-span-5 relative z-10 w-full flex justify-center lg:justify-end order-2 lg:order-2">
             <motion.div
               variants={imageVariants}
               initial="hidden"
@@ -108,7 +130,7 @@ export function HeroSection() {
             >
               <div className="relative w-full h-full rounded-sm overflow-hidden">
                 <Image
-                  src="/images/PXL_20250323_163744469.PORTRAIT Copy.JPG"
+                  src="/images/Olajumoke-Michael-Professional-Headshot.jpg"
                   alt="Olajumoke Michael"
                   fill
                   className="object-cover"

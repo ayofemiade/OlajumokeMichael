@@ -5,6 +5,12 @@ import { Meta } from "@/components/typography/Meta";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Venture Readiness Lab Case Study | Olajumoke Michael",
+  description:
+    "Designing a Founder Support Pilot—and Learning from Its Limits. A professional portfolio case study by Olajumoke Michael.",
+};
+
 export default function VRLCasePage() {
   return (
     <div className="flex flex-col w-full bg-paper min-h-screen">
@@ -14,7 +20,7 @@ export default function VRLCasePage() {
         <ScrollReveal personality="strong" className="max-w-[1400px] mx-auto">
           <Meta className="text-plum mb-4 uppercase tracking-widest">Case Study</Meta>
           <Headline as="h1" size="xl" className="text-ink leading-tight mb-6 max-w-5xl font-sans">
-            Designing a Founder Support Pilot and Learning from Its Limits
+            Designing a Founder Support Pilot—and Learning from Its Limits
           </Headline>
           <Body className="text-base md:text-lg text-slate leading-relaxed font-serif max-w-3xl">
             How I translated a venture-readiness proposition into a six-week program, led delivery, built an evidence system and used the pilot’s limits to sharpen the next design.
@@ -80,13 +86,36 @@ export default function VRLCasePage() {
 
             <div className="pt-6 border-t border-line">
               <Meta as="h3" className="text-plum mb-4 block font-semibold">Capabilities demonstrated</Meta>
-              <ul className="flex flex-col gap-3 font-sans text-sm text-ink font-medium list-disc pl-4">
-                <li>Program and service architecture</li>
-                <li>Implementation leadership</li>
-                <li>Operational systems design</li>
-                <li>Measurement and evaluative judgment</li>
-                <li>Evidence-informed adaptation</li>
-              </ul>
+              <div className="flex flex-col gap-4 font-sans text-xs text-ink font-medium">
+                <div>
+                  <strong className="block text-ink font-semibold">Program &amp; service architecture</strong>
+                  <span className="text-slate font-serif text-xs leading-normal">Translated an initial proposition into a coherent six-week participant journey connecting assessment, learning, implementation and evidence collection.</span>
+                </div>
+                <div>
+                  <strong className="block text-ink font-semibold">Implementation leadership</strong>
+                  <span className="text-slate font-serif text-xs leading-normal">Led cohort delivery, participant support and adaptation while moving the intervention from design into practice.</span>
+                </div>
+                <div>
+                  <strong className="block text-ink font-semibold">Operational systems design</strong>
+                  <span className="text-slate font-serif text-xs leading-normal">Designed the participant workflow and operating requirements across intake, communication, resources, tracking and reporting.</span>
+                </div>
+                <div>
+                  <strong className="block text-ink font-semibold">Measurement &amp; evaluative judgment</strong>
+                  <span className="text-slate font-serif text-xs leading-normal">Structured evidence capture, personally reviewed participant outputs and distinguished implementation evidence from unsupported outcome claims.</span>
+                </div>
+                <div>
+                  <strong className="block text-ink font-semibold">Evidence-informed adaptation</strong>
+                  <span className="text-slate font-serif text-xs leading-normal">Used participant experience, missed targets and measurement gaps to determine what to retain, modify, test or defer.</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Grant Acknowledgment */}
+            <div className="pt-6 border-t border-line bg-paper/60 p-4 rounded-sm">
+              <Meta className="text-plum mb-2 text-xs">Project Context &amp; Acknowledgment</Meta>
+              <p className="font-serif text-xs text-slate leading-relaxed">
+                Venture Readiness Lab was designed and delivered through Ethnoir. This activity received support from NC IDEA Foundation through NC IDEA ENGAGE.
+              </p>
             </div>
 
           </div>
@@ -98,7 +127,7 @@ export default function VRLCasePage() {
             <ScrollReveal personality="standard" className="flex flex-col gap-6">
               <Headline as="h2" size="lg" className="text-ink font-sans">The challenge</Headline>
               <Body className="text-base md:text-lg text-slate font-serif leading-relaxed">
-                I designed the Venture Readiness Lab to solve a common problem. Founders often know they are struggling with things like unpredictable revenue, messy processes, limited financial visibility, or doing too much themselves. But they usually don&apos;t know the root cause or how to fix it.
+                I designed the Venture Readiness Lab around a recurring implementation problem: founders may be able to name a visible business concern—uneven revenue, an informal process, limited financial visibility or excessive dependence on the founder—without yet knowing what is producing it or what response would be useful.
               </Body>
               <Body className="text-base md:text-lg text-slate font-serif leading-relaxed">
                 The original proposition was that a structured, diagnostic-led intervention could help early-stage founders strengthen operational, revenue and financial foundations before capital- or growth-oriented support. That proposition contained assumptions to test: that a common readiness sequence could orient participants; that assessment information could help identify a useful focus; that six weeks could support a meaningful structural deliverable; and that the proposed measures could capture change.
@@ -149,7 +178,7 @@ export default function VRLCasePage() {
             <ScrollReveal personality="standard" className="flex flex-col gap-6 border-t border-line pt-12">
               <Headline as="h2" size="lg" className="text-ink font-sans">What the evidence showed</Headline>
               <Body className="text-base md:text-lg text-slate font-serif leading-relaxed">
-                The pilot ran for six weeks. Six founders formed the active cohort, all six reached the final session, and the attendance record documents 32 of 36 possible participant-session attendances (88.9 percent). Five active participants had structural business deliverables that I personally reviewed and confirmed. A sixth participant reported completing a contractor-selection process, but the artifact was not received for review at the time of reporting.
+                The pilot ran for six weeks. Six founders formed the active cohort, all six reached the final session, and the attendance record documents 32 of 36 possible participant-session attendances—88.9 percent. Five active participants had structural business deliverables that I personally reviewed and confirmed. A sixth participant reported completing a contractor-selection process, but the artifact was not received for review at the time of reporting.
               </Body>
               
               <Meta className="text-plum mt-6 mb-2">Closing Ratings (5-point scale, self-reported)</Meta>
@@ -185,9 +214,9 @@ export default function VRLCasePage() {
               </Body>
             </ScrollReveal>
 
-            {/* What didn't work—and what I learned */}
+            {/* What didn’t work—and what I learned */}
             <ScrollReveal personality="standard" className="flex flex-col gap-6 border-t border-line pt-12">
-              <Headline as="h2" size="lg" className="text-ink font-sans">What didn’t work and what I learned</Headline>
+              <Headline as="h2" size="lg" className="text-ink font-sans">What didn’t work—and what I learned</Headline>
               <Body className="text-base md:text-lg text-slate font-serif leading-relaxed">
                 The proposal targeted 10–12 participants. The reconciled funnel showed 13 diagnostic completions, eight application submissions from seven unique applicants, seven founders entering participant tracking and six becoming active participants. The target was not achieved. The effective recruitment runway was compressed while the program infrastructure was still being developed, but the record does not establish comparative channel performance or prove that limited demand caused the shortfall.
               </Body>
@@ -206,10 +235,10 @@ export default function VRLCasePage() {
             <ScrollReveal personality="standard" className="flex flex-col gap-6 border-t border-line pt-12">
               <Headline as="h2" size="lg" className="text-ink font-sans">How my thinking changed</Headline>
               <Body className="text-base md:text-lg text-slate font-serif leading-relaxed">
-                The Lab strengthened a more disciplined distinction between assessment and interpretation. Assessment information can organize inquiry, but movement from a visible concern to a plausible structural constraint requires context. Even then, the result is just a working theory, not a definitive diagnosis or root-cause identification.
+                The Lab strengthened a more disciplined distinction between assessment and interpretation. Assessment information can organize inquiry, but movement from a visible concern to a plausible structural constraint requires context. Even then, the result is a working interpretation—not diagnosis or definitive root-cause identification.
               </Body>
               <Body className="text-base md:text-lg text-slate font-serif leading-relaxed">
-                It also separated identifying a focus from creating and using a response. A founder may understand an issue and create a useful asset yet still need time, information, practice, specialist input or support to implement it.
+                It also separated identifying a focus from creating and using a response. A founder may understand an issue and create a useful asset yet still need time, information, practice, specialist input or support to implement it. The evidence sequence became:
               </Body>
               <div className="bg-soft-stone p-6 md:p-8 my-4 border-l-4 border-plum rounded-r-sm">
                 <Meta className="text-plum mb-3">The evidence sequence became:</Meta>
@@ -233,6 +262,38 @@ export default function VRLCasePage() {
               </Body>
               <Body className="text-base md:text-lg text-slate font-serif leading-relaxed">
                 I would simplify navigation and technology where possible, protect more session time for application, and specify how implementation support is accessed rather than assume optional office hours will be used. I would treat financial visibility as a distinct design and specialist-support question. I would also begin with clearer evaluative questions, select measures matched to the implementation horizon, and establish a defined follow-up window before promising evidence of change.
+              </Body>
+            </ScrollReveal>
+
+            {/* Capabilities Demonstrated Full Section */}
+            <ScrollReveal personality="standard" className="flex flex-col gap-6 border-t border-line pt-12">
+              <Headline as="h2" size="lg" className="text-ink font-sans">Capabilities demonstrated</Headline>
+              
+              <div className="flex flex-col gap-6 pl-4 border-l-2 border-plum">
+                <div>
+                  <h3 className="text-ink font-sans font-semibold text-lg mb-1">Program &amp; service architecture</h3>
+                  <Body className="text-base text-slate font-serif">Translated an initial proposition into a coherent six-week participant journey connecting assessment, learning, implementation and evidence collection.</Body>
+                </div>
+                <div>
+                  <h3 className="text-ink font-sans font-semibold text-lg mb-1">Implementation leadership</h3>
+                  <Body className="text-base text-slate font-serif">Led cohort delivery, participant support and adaptation while moving the intervention from design into practice.</Body>
+                </div>
+                <div>
+                  <h3 className="text-ink font-sans font-semibold text-lg mb-1">Operational systems design</h3>
+                  <Body className="text-base text-slate font-serif">Designed the participant workflow and operating requirements across intake, communication, resources, tracking and reporting.</Body>
+                </div>
+                <div>
+                  <h3 className="text-ink font-sans font-semibold text-lg mb-1">Measurement &amp; evaluative judgment</h3>
+                  <Body className="text-base text-slate font-serif">Structured evidence capture, personally reviewed participant outputs and distinguished implementation evidence from unsupported outcome claims.</Body>
+                </div>
+                <div>
+                  <h3 className="text-ink font-sans font-semibold text-lg mb-1">Evidence-informed adaptation</h3>
+                  <Body className="text-base text-slate font-serif">Used participant experience, missed targets and measurement gaps to determine what to retain, modify, test or defer.</Body>
+                </div>
+              </div>
+
+              <Body className="text-base md:text-lg text-ink font-serif italic leading-relaxed pt-4">
+                Across the project, I moved repeatedly between strategy and execution: from proposition to program architecture, from architecture to delivery, and from implementation evidence to the next design decision.
               </Body>
             </ScrollReveal>
 

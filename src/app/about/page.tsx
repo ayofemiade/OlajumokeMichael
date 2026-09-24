@@ -7,6 +7,15 @@ import { ParallaxImage } from "@/components/motion/ParallaxImage";
 import Image from "next/image";
 import Link from "next/link";
 
+export const metadata = {
+  title: "About",
+  description:
+    "Learn about Olajumoke Michael's background, program design approach, leadership principles, and core focus.",
+  alternates: {
+    canonical: "/about",
+  },
+};
+
 export default function AboutPage() {
   return (
     <div className="flex flex-col w-full">

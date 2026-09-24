@@ -120,10 +120,7 @@ export default function Home() {
               </Headline>
               <div className="prose prose-lg prose-slate font-serif text-lg leading-relaxed text-ink">
                 <p>
-                  For the Venture Readiness Lab, I translated an initial proposition into a six-week founder-support pilot through Ethnoir. I designed the program architecture and operating approach, led delivery and participant support, and examined the evidence the pilot produced.
-                </p>
-                <p>
-                  The case examines what I built, what the pilot revealed and how its evidence and limitations shaped what I would retain, modify, test or defer.
+                  I translated a venture-readiness proposition into a six-week founder-support pilot, designed its program and operating structure, led delivery, and examined what the evidence could—and could not—show. All six active founders reached the final session. Five participants created structural business deliverables that I personally reviewed and confirmed. The case shows how implementation, missed targets and measurement gaps shaped the next design questions.
                 </p>
               </div>
               <div className="mt-4">
@@ -232,7 +229,7 @@ export default function Home() {
 
                 <div className="role-row py-8 border-b border-line flex flex-col gap-3">
                   <div>
-                    <Meta className="text-slate">Program Manager</Meta>
+                    <Meta className="text-slate">U.S. Program Manager (Contract)</Meta>
                     <div className="font-sans font-medium text-ink mt-1">Bpeace</div>
                   </div>
                   <Body className="text-slate">I managed implementation and coordinated delivery for a multi-state program supporting growth-stage founders.</Body>
@@ -320,7 +317,7 @@ export default function Home() {
               </Body>
               <div className="mt-auto">
                 <a
-                  href="https://tally.so/r/XxEDD4"
+                  href="https://ethnoirconsulting.com/venture-readiness-check-in"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center bg-transparent border border-plum text-plum px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold hover:bg-plum hover:text-paper transition-colors duration-300"
@@ -348,8 +345,8 @@ export default function Home() {
             className="lg:col-span-5 relative w-full aspect-[3/4] md:aspect-square lg:aspect-[4/5] rounded-sm overflow-hidden"
           >
             <Image
-              src="/images/PXL_20250323_163744469.PORTRAIT Copy.JPG"
-              alt="Portrait of Olajumoke Michael"
+              src="/images/Olajumoke-Michael-Contextual-Working-Desk.jpg"
+              alt="Olajumoke Michael working in a Winston-Salem setting"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 40vw"

@@ -19,9 +19,47 @@ const newsreader = Newsreader({
   display: "swap",
 });
 
+const baseUrl = "https://olajumokemichael.com";
+
 export const metadata: Metadata = {
-  title: "Olajumoke Michael | Strategist",
-  description: "Turning abstract concepts into concrete structures.",
+  metadataBase: new URL(baseUrl),
+  title: {
+    default: "Olajumoke Michael | Strategist & Program Architect",
+    template: "%s | Olajumoke Michael",
+  },
+  description:
+    "Connecting program strategy with implementation, operations and evidence to move complex initiatives forward.",
+  alternates: {
+    canonical: "./",
+  },
+  openGraph: {
+    title: "Olajumoke Michael | Strategist & Program Architect",
+    description:
+      "Connecting program strategy with implementation, operations and evidence to move complex initiatives forward.",
+    url: baseUrl,
+    siteName: "Olajumoke Michael",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "/images/Olajumoke-Michael-Professional-Headshot.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Olajumoke Michael",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Olajumoke Michael | Strategist & Program Architect",
+    description:
+      "Connecting program strategy with implementation, operations and evidence to move complex initiatives forward.",
+    images: ["/images/Olajumoke-Michael-Professional-Headshot.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -32,9 +70,16 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${newsreader.variable} antialiased`}>
       <body className="min-h-full flex flex-col font-sans bg-paper text-ink selection:bg-plum/20">
+        {/* Skip to Content Link for Keyboard Accessibility */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-6 focus:py-3 focus:bg-plum focus:text-white focus:font-sans focus:text-sm focus:font-semibold focus:shadow-xl focus:outline-none"
+        >
+          Skip to main content
+        </a>
         <BlueprintGrid />
         <Header />
-        <main className="flex-grow flex flex-col relative z-10">
+        <main id="main-content" className="flex-grow flex flex-col relative z-10">
           <SmoothScroll>
             {children}
           </SmoothScroll>

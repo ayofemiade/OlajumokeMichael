@@ -5,6 +5,12 @@ import { Meta } from "@/components/typography/Meta";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import Link from "next/link";
 
+export const metadata = {
+  title: "Selected Work | Olajumoke Michael",
+  description:
+    "Case studies in program architecture, implementation leadership, and evidence interpretation by Olajumoke Michael.",
+};
+
 export default function SelectedWorkPage() {
   return (
     <div className="flex flex-col w-full bg-paper min-h-screen">
@@ -29,58 +35,66 @@ export default function SelectedWorkPage() {
         </div>
       </section>
 
-      {/* 2. The Case Card (Abstract Block) */}
-      <section className="relative px-6 md:px-12 lg:px-24 py-20 md:py-32">
-        <div className="max-w-[1400px] mx-auto">
+      {/* 2. Case Studies List */}
+      <section className="relative px-6 md:px-12 lg:px-24 py-16 md:py-24">
+        <div className="max-w-[1400px] mx-auto flex flex-col gap-16 md:gap-24">
+          
+          {/* Primary Case 1: Venture Readiness Lab */}
           <ScrollReveal personality="structural">
             <Link href="/selected-work/venture-readiness-lab" className="block group">
-              <div className="border border-line bg-soft-stone/30 hover:bg-soft-stone/80 transition-colors duration-500 p-8 md:p-16 lg:p-24 relative overflow-hidden rounded-sm">
+              <div className="border border-line bg-soft-stone/30 hover:bg-soft-stone/80 transition-colors duration-500 p-6 md:p-12 lg:p-14 relative overflow-hidden rounded-sm">
                 
-                <div className="absolute top-0 right-0 p-8 md:p-12 opacity-0 group-hover:opacity-100 transition-all duration-500 transform group-hover:-translate-y-1 group-hover:translate-x-1 hidden md:block">
-                  <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-plum">
-                    <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+                <div className="flex flex-row items-center justify-between gap-4 mb-8 border-b border-line/40 pb-4 w-full">
+                  <Meta className="text-plum">Case 01 · Venture Development Pilot</Meta>
+                  
+                  <div className="flex items-center gap-3 shrink-0">
+                    <Meta className="text-slate font-sans">2026 · Ethnoir</Meta>
+                    <svg className="w-5 h-5 text-plum transform group-hover:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </div>
                 </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
-                  <div className="lg:col-span-10">
-                    <Headline as="h2" size="xl" className="text-ink leading-tight mb-12 font-sans group-hover:text-plum transition-colors duration-300">
-                      Designing a Founder Support Pilot and Learning from Its Limits
-                    </Headline>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-12 border-t border-line/50 pt-12">
-                      <div>
-                        <Meta className="text-plum mb-3">Context</Meta>
-                        <Body className="text-slate font-sans leading-relaxed">
-                          Venture Readiness Lab<br/>
-                          Founder-facing pilot delivered through Ethnoir
-                        </Body>
-                      </div>
-                      <div>
-                        <Meta className="text-plum mb-3">Role</Meta>
-                        <Body className="text-slate font-sans leading-relaxed">
-                          Program architect, lead facilitator, primary implementer and evidence lead
-                        </Body>
-                      </div>
-                    </div>
+                <Headline as="h2" size="xl" className="text-ink leading-tight mb-8 font-sans font-medium max-w-4xl group-hover:text-plum transition-colors duration-300">
+                  Designing a Founder Support Pilot—and Learning from Its Limits
+                </Headline>
+                
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 border-t border-line/40 pt-8 mb-8">
+                  <div className="md:col-span-5">
+                    <Meta className="text-plum mb-2">Context</Meta>
+                    <Body className="text-slate font-sans text-sm leading-relaxed">
+                      Venture Readiness Lab<br/>
+                      Founder-facing pilot delivered through Ethnoir
+                    </Body>
+                  </div>
+                  <div className="md:col-span-7">
+                    <Meta className="text-plum mb-2">Role</Meta>
+                    <Body className="text-slate font-sans text-sm leading-relaxed">
+                      Program architect, lead facilitator, primary implementer and evidence lead
+                    </Body>
+                  </div>
+                </div>
 
-                    <div className="mt-12 border-t border-line/50 pt-12">
-                      <Meta className="text-plum mb-4">Abstract</Meta>
-                      <Body className="text-base md:text-lg text-slate leading-relaxed font-serif mb-10 max-w-4xl">
-                        I turned a startup support idea into a real six-week pilot program. I designed how it would work, ran the sessions, and carefully measured the results. All six founders completed the program, and five of them walked away with practical business tools that I personally reviewed to ensure they were ready to use. The case shows how real-world challenges shaped the next steps.
-                      </Body>
-                      <div className="flex justify-center items-center pt-4">
-                        <span className="inline-flex items-center justify-center bg-transparent border border-plum text-plum px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold group-hover:bg-plum group-hover:text-paper transition-colors duration-300">
-                          Read the case study
-                        </span>
-                      </div>
-                    </div>
+                <div className="border-t border-line/40 pt-8">
+                  <Meta className="text-plum mb-3">Abstract</Meta>
+                  <Body className="text-base md:text-lg text-slate leading-relaxed font-serif mb-10 max-w-4xl">
+                    I translated a venture-readiness proposition into a six-week founder-support pilot, designed its program and operating structure, led delivery, and examined what the evidence could—and could not—show. All six active founders reached the final session. Five participants created structural business deliverables that I personally reviewed and confirmed. The case shows how implementation, missed targets and measurement gaps shaped the next design questions.
+                  </Body>
+                  
+                  <div className="flex justify-center items-center pt-2">
+                    <span className="inline-flex items-center gap-3 bg-transparent border border-plum text-plum px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold group-hover:bg-plum group-hover:text-paper transition-colors duration-300">
+                      <span>Read the case study</span>
+                      <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </span>
                   </div>
                 </div>
 
               </div>
             </Link>
           </ScrollReveal>
+
         </div>
       </section>
 

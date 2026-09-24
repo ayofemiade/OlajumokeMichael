@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Display } from "@/components/typography/Display";
+import { Headline } from "@/components/typography/Headline";
 import { Body } from "@/components/typography/Body";
 import { Meta } from "@/components/typography/Meta";
 import { FadeReveal } from "@/components/motion/FadeReveal";
@@ -13,16 +14,46 @@ import { elegantEase } from "@/lib/motion";
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate network request
-    setTimeout(() => {
+    setErrorMessage(null);
+
+    const formData = new FormData(e.currentTarget);
+    const payload = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      organization: formData.get("organization") as string,
+      message: formData.get("message") as string,
+      website: formData.get("website") as string, // Honeypot
+    };
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await response.json();
+
+      if (response.ok && data.success) {
+        setIsSubmitted(true);
+      } else {
+        setErrorMessage(
+          data.error ||
+            "Unable to send message. Please try again or email omichael@ethnoirconsulting.com directly."
+        );
+      }
+    } catch (err) {
+      setErrorMessage(
+        "Network error sending message. Please try again or email omichael@ethnoirconsulting.com directly."
+      );
+    } finally {
       setIsSubmitting(false);
-      setIsSubmitted(true);
-    }, 1500);
+    }
   };
 
   return (
@@ -49,6 +80,13 @@ export default function ContactPage() {
                     For inquiries specifically related to Ethnoir’s work or resources, please use <a href="https://ethnoirconsulting.com" target="_blank" rel="noopener noreferrer" className="text-plum hover:text-ink transition-colors duration-300 underline underline-offset-4">Ethnoir’s contact route</a>.
                   </Body>
                 </div>
+
+                <div>
+                  <Meta className="text-plum mb-2">Direct Contact</Meta>
+                  <Body className="text-base text-ink font-sans">
+                    Email: <a href="mailto:omichael@ethnoirconsulting.com" className="underline underline-offset-4 hover:text-plum transition-colors duration-200">omichael@ethnoirconsulting.com</a>
+                  </Body>
+                </div>
                 
                 <div className="bg-soft-stone/50 p-6 border-l-2 border-plum">
                   <Meta className="text-plum mb-2">Note</Meta>
@@ -72,8 +110,26 @@ export default function ContactPage() {
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.6, ease: elegantEase }}
                       onSubmit={handleSubmit}
-                      className="flex flex-col gap-12 w-full"
+                      className="flex flex-col gap-10 w-full"
                     >
+                      {/* Anti-spam honeypot field (hidden from real users) */}
+                      <div className="hidden" aria-hidden="true">
+                        <label htmlFor="website">Website</label>
+                        <input
+                          type="text"
+                          id="website"
+                          name="website"
+                          tabIndex={-1}
+                          autoComplete="off"
+                        />
+                      </div>
+
+                      {errorMessage && (
+                        <div className="p-4 bg-red-50 border border-red-200 text-red-800 text-sm font-sans rounded-none" role="alert">
+                          {errorMessage}
+                        </div>
+                      )}
+
                       <div className="flex flex-col gap-4 group">
                         <label htmlFor="name" className="font-sans font-medium text-xs tracking-widest uppercase text-slate group-focus-within:text-plum transition-colors duration-300">Name (required)</label>
                         <input 
@@ -134,13 +190,18 @@ export default function ContactPage() {
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.8, ease: elegantEase, delay: 0.2 }}
-                      className="flex flex-col items-center justify-center text-center h-full gap-6 py-24 bg-soft-stone/30 border border-line"
+                      className="flex flex-col items-center justify-center text-center h-full gap-6 py-20 px-8 bg-soft-stone/30 border border-line"
                     >
-                      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="text-plum">
-                        <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round"/>
-                      </svg>
-                      <Body className="text-xl text-ink font-serif">
+                      <div className="w-12 h-12 rounded-full bg-plum/10 flex items-center justify-center text-plum">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <path d="M20 6L9 17l-5-5" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                      </div>
+                      <Headline size="lg" className="text-ink font-serif">
                         Thank you. Your message has been sent.
+                      </Headline>
+                      <Body className="text-sm text-slate font-sans max-w-md">
+                        Your message has been transmitted directly to <strong className="text-ink font-semibold">omichael@ethnoirconsulting.com</strong>. I will be in touch soon.
                       </Body>
                     </motion.div>
                   )}
