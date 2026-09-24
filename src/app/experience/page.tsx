@@ -36,7 +36,8 @@ export default function ExperiencePage() {
               
               <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 border-t border-line/50 pt-6">
                 <a
-                  href="/api/resume"
+                  href="/Olajumoke-Michael-Resume.pdf"
+                  download="Olajumoke-Michael-Resume.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-3 bg-ink text-paper px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold hover:bg-plum transition-colors duration-300 w-full sm:w-auto group shadow-sm"
