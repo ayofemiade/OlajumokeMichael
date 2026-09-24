@@ -81,7 +81,7 @@ export function HeroSection() {
               variants={headlineVariants}
               initial="hidden"
               animate="visible"
-              className="font-serif text-[length:var(--font-size-lg)] md:text-[length:var(--font-size-xl)] lg:text-5xl text-ink leading-tight md:leading-[1.1] tracking-tight max-w-[95%] lg:max-w-4xl relative z-10"
+              className="font-serif text-xl sm:text-2xl md:text-4xl lg:text-5xl text-ink font-medium leading-snug md:leading-[1.1] tracking-tight max-w-full lg:max-w-4xl relative z-10"
             >
               I turn <span className="italic">complex program ideas</span> into{" "}
               <span className="italic">structures</span> that can be implemented,
