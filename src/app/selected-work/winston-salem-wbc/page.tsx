@@ -16,10 +16,10 @@ export default function WBCCasePage() {
     <div className="flex flex-col w-full bg-paper min-h-screen">
       
       {/* 1. Header (Dossier Title) */}
-      <section className="relative px-6 md:px-12 lg:px-24 pt-32 pb-16 md:pb-24 border-b border-line">
+      <section className="relative px-5 sm:px-8 md:px-12 lg:px-24 pt-28 sm:pt-32 pb-12 sm:pb-16 md:pb-24 border-b border-line">
         <ScrollReveal personality="strong" className="max-w-[1400px] mx-auto">
-          <Meta className="text-plum mb-4 uppercase tracking-widest">Case Study 02 · Institutional Leadership</Meta>
-          <Headline as="h1" size="xl" className="text-ink leading-tight mb-6 max-w-5xl font-sans">
+          <Meta className="text-plum mb-4 uppercase tracking-widest text-xs sm:text-sm">Case Study 02 · Institutional Leadership</Meta>
+          <Headline as="h1" size="xl" className="text-ink leading-tight mb-6 max-w-5xl font-sans text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
             Strengthening the Operating Infrastructure of a Regional Women’s Business Center
           </Headline>
           <Body className="text-base md:text-lg text-slate leading-relaxed font-serif max-w-3xl">
@@ -29,11 +29,11 @@ export default function WBCCasePage() {
       </section>
 
       {/* 2. Dossier Content Split */}
-      <section className="relative px-6 md:px-12 lg:px-24 py-16 md:py-24">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
+      <section className="relative px-5 sm:px-8 md:px-12 lg:px-24 py-12 sm:py-16 md:py-24">
+        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-24 items-start">
           
           {/* Sticky Sidebar (Left Column) */}
-          <div className="lg:col-span-4 lg:sticky lg:top-32 flex flex-col gap-8 bg-soft-stone/40 p-8 rounded-sm border border-line">
+          <div className="lg:col-span-4 lg:sticky lg:top-32 flex flex-col gap-8 bg-soft-stone/40 p-5 sm:p-8 rounded-sm border border-line">
             
             <div>
               <Meta as="h2" className="text-plum mb-6 pb-3 border-b border-line block font-semibold">At a glance</Meta>

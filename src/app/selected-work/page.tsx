@@ -42,9 +42,9 @@ export default function SelectedWorkPage() {
           {/* Primary Case 1: Venture Readiness Lab */}
           <ScrollReveal personality="structural">
             <Link href="/selected-work/venture-readiness-lab" className="block group">
-              <div className="border border-line bg-soft-stone/30 hover:bg-soft-stone/80 transition-colors duration-500 p-6 md:p-12 lg:p-14 relative overflow-hidden rounded-sm">
+              <div className="border border-line bg-soft-stone/30 hover:bg-soft-stone/80 transition-colors duration-500 p-5 sm:p-8 md:p-12 lg:p-14 relative overflow-hidden rounded-sm">
                 
-                <div className="flex flex-row items-center justify-between gap-4 mb-8 border-b border-line/40 pb-4 w-full">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-8 border-b border-line/40 pb-4 w-full">
                   <Meta className="text-plum">Case 01 · Venture Development Pilot</Meta>
                   
                   <div className="flex items-center gap-3 shrink-0">
@@ -55,7 +55,7 @@ export default function SelectedWorkPage() {
                   </div>
                 </div>
 
-                <Headline as="h2" size="xl" className="text-ink leading-tight mb-8 font-sans font-medium max-w-4xl group-hover:text-plum transition-colors duration-300">
+                <Headline as="h2" size="xl" className="text-ink leading-tight mb-8 font-sans font-medium max-w-4xl group-hover:text-plum transition-colors duration-300 text-xl sm:text-2xl md:text-3xl">
                   Designing a Founder Support Pilot—and Learning from Its Limits
                 </Headline>
                 
@@ -82,7 +82,7 @@ export default function SelectedWorkPage() {
                   </Body>
                   
                   <div className="flex justify-center items-center pt-2">
-                    <span className="inline-flex items-center gap-3 bg-transparent border border-plum text-plum px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold group-hover:bg-plum group-hover:text-paper transition-colors duration-300">
+                    <span className="inline-flex items-center justify-center gap-3 bg-transparent border border-plum text-plum px-6 sm:px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold group-hover:bg-plum group-hover:text-paper transition-colors duration-300 w-full sm:w-auto text-center">
                       <span>Read the case study</span>
                       <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -95,12 +95,12 @@ export default function SelectedWorkPage() {
             </Link>
           </ScrollReveal>
 
-            {/* Primary Case 2: Winston-Salem Women's Business Center */}
+          {/* Primary Case 2: Winston-Salem Women's Business Center */}
           <ScrollReveal personality="structural">
             <Link href="/selected-work/winston-salem-wbc" className="block group">
-              <div className="border border-line bg-soft-stone/30 hover:bg-soft-stone/80 transition-colors duration-500 p-6 md:p-12 lg:p-14 relative overflow-hidden rounded-sm">
+              <div className="border border-line bg-soft-stone/30 hover:bg-soft-stone/80 transition-colors duration-500 p-5 sm:p-8 md:p-12 lg:p-14 relative overflow-hidden rounded-sm">
                 
-                <div className="flex flex-row items-center justify-between gap-4 mb-8 border-b border-line/40 pb-4 w-full">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-8 border-b border-line/40 pb-4 w-full">
                   <Meta className="text-plum">Case 02 · Regional Institutional Leadership</Meta>
                   
                   <div className="flex items-center gap-3 shrink-0">
@@ -111,7 +111,7 @@ export default function SelectedWorkPage() {
                   </div>
                 </div>
 
-                <Headline as="h2" size="xl" className="text-ink leading-tight mb-8 font-sans font-medium max-w-4xl group-hover:text-plum transition-colors duration-300">
+                <Headline as="h2" size="xl" className="text-ink leading-tight mb-8 font-sans font-medium max-w-4xl group-hover:text-plum transition-colors duration-300 text-xl sm:text-2xl md:text-3xl">
                   Strengthening the Operating Infrastructure of a Regional Women’s Business Center
                 </Headline>
                 
@@ -155,7 +155,7 @@ export default function SelectedWorkPage() {
                   </div>
                   
                   <div className="flex justify-center items-center pt-2">
-                    <span className="inline-flex items-center gap-3 bg-transparent border border-plum text-plum px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold group-hover:bg-plum group-hover:text-paper transition-colors duration-300">
+                    <span className="inline-flex items-center justify-center gap-3 bg-transparent border border-plum text-plum px-6 sm:px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold group-hover:bg-plum group-hover:text-paper transition-colors duration-300 w-full sm:w-auto text-center">
                       <span>Read the case study</span>
                       <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
