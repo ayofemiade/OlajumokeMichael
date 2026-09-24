@@ -125,7 +125,7 @@ export default function ContactPage() {
                       </div>
 
                       {errorMessage && (
-                        <div className="p-4 bg-red-50 border border-red-200 text-red-800 text-sm font-sans rounded-none" role="alert">
+                        <div id="contact-error" className="p-4 bg-red-50 border border-red-200 text-red-800 text-sm font-sans rounded-none" role="alert">
                           {errorMessage}
                         </div>
                       )}
@@ -136,7 +136,9 @@ export default function ContactPage() {
                           type="text" 
                           id="name" 
                           name="name" 
+                          autoComplete="name"
                           required 
+                          aria-required="true"
                           disabled={isSubmitting}
                           className="w-full bg-transparent border-b border-line pb-3 text-lg font-serif text-ink focus:outline-none focus:border-plum transition-colors duration-300 disabled:opacity-50" 
                         />
@@ -148,7 +150,9 @@ export default function ContactPage() {
                           type="email" 
                           id="email" 
                           name="email" 
+                          autoComplete="email"
                           required 
+                          aria-required="true"
                           disabled={isSubmitting}
                           className="w-full bg-transparent border-b border-line pb-3 text-lg font-serif text-ink focus:outline-none focus:border-plum transition-colors duration-300 disabled:opacity-50" 
                         />
@@ -160,6 +164,7 @@ export default function ContactPage() {
                           type="text" 
                           id="organization" 
                           name="organization" 
+                          autoComplete="organization"
                           disabled={isSubmitting}
                           className="w-full bg-transparent border-b border-line pb-3 text-lg font-serif text-ink focus:outline-none focus:border-plum transition-colors duration-300 disabled:opacity-50" 
                         />
@@ -172,6 +177,7 @@ export default function ContactPage() {
                           name="message" 
                           rows={4} 
                           required 
+                          aria-required="true"
                           disabled={isSubmitting}
                           placeholder="What would you like to discuss?" 
                           className="w-full bg-transparent border-b border-line pb-3 text-lg font-serif text-ink focus:outline-none focus:border-plum transition-colors duration-300 resize-none disabled:opacity-50 placeholder:text-slate/40" 

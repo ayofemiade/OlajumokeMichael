@@ -6,7 +6,7 @@ import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Venture Readiness Lab Case Study | Olajumoke Michael",
+  title: "Venture Readiness Lab Case Study",
   description:
     "Designing a Founder Support Pilot—and Learning from Its Limits. A professional portfolio case study by Olajumoke Michael.",
 };

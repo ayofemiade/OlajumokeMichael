@@ -57,8 +57,8 @@ export const metadata: Metadata = {
     images: ["/images/Olajumoke-Michael-Professional-Headshot.jpg"],
   },
   robots: {
-    index: true,
-    follow: true,
+    index: process.env.VERCEL_ENV !== "preview" && process.env.NEXT_PUBLIC_VERCEL_ENV !== "preview",
+    follow: process.env.VERCEL_ENV !== "preview" && process.env.NEXT_PUBLIC_VERCEL_ENV !== "preview",
   },
 };
 

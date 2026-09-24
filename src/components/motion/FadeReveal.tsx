@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import { motion, useInView, HTMLMotionProps } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { elegantEase } from "@/lib/motion";
+import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 interface FadeRevealProps extends HTMLMotionProps<"div"> {
   children: React.ReactNode;
@@ -24,6 +25,15 @@ export function FadeReveal({
 }: FadeRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-10% 0px" });
+  const reduced = useReducedMotion();
+
+  if (direction === "none" || reduced) {
+    return (
+      <div ref={ref} className={className}>
+        {children}
+      </div>
+    );
+  }
 
   const getInitialY = () => {
     if (direction === "up") return 40;
