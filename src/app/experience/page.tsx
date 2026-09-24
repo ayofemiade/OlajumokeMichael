@@ -172,7 +172,8 @@ export default function ExperiencePage() {
                 View selected work
               </Link>
               <a
-                href="/api/resume"
+                href="/Olajumoke-Michael-Resume.pdf"
+                download="Olajumoke-Michael-Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center bg-transparent border border-line text-ink px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold hover:border-ink transition-colors duration-300"
