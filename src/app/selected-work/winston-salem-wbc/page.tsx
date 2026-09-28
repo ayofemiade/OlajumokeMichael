@@ -15,7 +15,7 @@ export default function WBCCasePage() {
   return (
     <div className="flex flex-col w-full bg-paper min-h-screen">
       
-      {/* 1. Header (Dossier Title) */}
+      {/* 1. Header (Dossier Title & Opening Summary) */}
       <section className="relative px-5 sm:px-8 md:px-12 lg:px-24 pt-28 sm:pt-32 pb-12 sm:pb-16 md:pb-24 border-b border-line">
         <ScrollReveal personality="strong" className="max-w-[1400px] mx-auto">
           <Meta className="text-plum mb-4 uppercase tracking-widest text-xs sm:text-sm">Case Study 02 · Institutional Leadership</Meta>
@@ -23,7 +23,7 @@ export default function WBCCasePage() {
             Strengthening the Operating Infrastructure of a Regional Women’s Business Center
           </Headline>
           <Body className="text-base md:text-lg text-slate leading-relaxed font-serif max-w-3xl">
-            At the Winston-Salem Women’s Business Center, I led a growing regional portfolio while strengthening the systems behind delivery—from program planning and client intake to CRM, reporting, partnerships and grant-supported operations.
+            At the Winston-Salem Women’s Business Center, I led a growing regional portfolio while strengthening the systems behind delivery—from program planning and client intake to CRM, reporting, partnerships and grant-supported operations. This case shows how I worked across an established institution to connect multiple programs, contributors and evidence requirements within a more coherent operating environment.
           </Body>
         </ScrollReveal>
       </section>
@@ -47,7 +47,7 @@ export default function WBCCasePage() {
                 </div>
                 
                 <div className="flex flex-col gap-1.5 border-b border-line/40 pb-4">
-                  <Meta as="div" className="text-plum text-xs font-semibold uppercase tracking-wider">Role</Meta>
+                  <Meta as="div" className="text-plum text-xs font-semibold uppercase tracking-wider">Role Tenure</Meta>
                   <p className="font-sans text-ink text-sm font-medium leading-relaxed">
                     Program Director, April 2023–February 2025
                   </p>
@@ -63,19 +63,20 @@ export default function WBCCasePage() {
                 <div className="flex flex-col gap-1.5 border-b border-line/40 pb-4">
                   <Meta as="div" className="text-plum text-xs font-semibold uppercase tracking-wider">Scope</Meta>
                   <p className="font-sans text-ink text-sm font-medium leading-relaxed">
-                    Regional portfolio management, intake workflows, CRM infrastructure, grant-funded program alignment, partner ecosystem coordination, and evidence/reporting standards.
+                    Regional portfolio management, intake workflows, CRM infrastructure, grant-supported program alignment, partner ecosystem coordination, and evidence/reporting standards.
                   </p>
                 </div>
 
               </div>
             </div>
 
+            {/* Capabilities Demonstrated Sidebar */}
             <div className="pt-6 border-t border-line">
               <Meta as="h3" className="text-plum mb-4 block font-semibold">Capabilities demonstrated</Meta>
               <div className="flex flex-col gap-4 font-sans text-xs text-ink font-medium">
                 <div>
                   <strong className="block text-ink font-semibold">Institutional Program Leadership</strong>
-                  <span className="text-slate font-serif text-xs leading-normal">Led a regional portfolio of entrepreneurship and business growth initiatives across multiple stakeholder groups.</span>
+                  <span className="text-slate font-serif text-xs leading-normal">Led a regional portfolio of entrepreneurship and business growth initiatives across multiple stakeholder groups and funding streams.</span>
                 </div>
                 <div>
                   <strong className="block text-ink font-semibold">Portfolio Operations</strong>
@@ -96,7 +97,7 @@ export default function WBCCasePage() {
               </div>
             </div>
 
-            {/* Navigation back */}
+            {/* Navigation Back */}
             <div className="pt-6 border-t border-line">
               <Link 
                 href="/selected-work" 
@@ -111,77 +112,159 @@ export default function WBCCasePage() {
 
           </div>
 
-          {/* Core Narrative (Right Column) */}
-          <div className="lg:col-span-8 flex flex-col gap-20">
+          {/* Core Narrative (Right Column — 8 Approved Sections) */}
+          <div className="lg:col-span-8 flex flex-col gap-16 md:gap-20">
             
-            {/* The Operating Context */}
+            {/* SECTION 1: Opening Summary */}
             <ScrollReveal personality="standard" className="flex flex-col gap-6">
-              <Headline as="h2" size="lg" className="text-ink font-sans">The operating context</Headline>
+              <Meta className="text-plum uppercase tracking-widest text-xs">Section 01</Meta>
+              <Headline as="h2" size="lg" className="text-ink font-sans">Opening summary</Headline>
               <Body className="text-base md:text-lg text-slate font-serif leading-relaxed">
-                At the Winston-Salem Women’s Business Center, I led a growing regional portfolio while strengthening the operational foundation required to support high-volume client delivery. Operating within an established institution requires connecting multiple active programs, diverse service contributors, and rigorous funder and compliance expectations into a clear, cohesive environment.
+                Operating within an established regional institution requires connecting multiple active programs, diverse service contributors, and rigorous funder and compliance expectations into a clear, cohesive environment. At the Winston-Salem Women’s Business Center, I led a growing regional portfolio while strengthening the operational systems behind delivery.
               </Body>
               <Body className="text-base md:text-lg text-slate font-serif leading-relaxed">
-                During the case period of April 2023 to March 2024, my focus centered on transitioning from fragmented, ad-hoc program activities into structured, repeatable operational systems. This work spanned program design, client intake workflows, CRM optimization, inter-departmental collaboration, and transparent evidence reporting.
+                This case examines how implementation, intake workflows, CRM infrastructure, and partner alignment were structured during the bounded case period of April 2023 to March 2024 to support institutional clarity and evidence generation.
               </Body>
             </ScrollReveal>
 
-            {/* Core Leadership & Systems Intervention */}
+            {/* SECTION 2: The Challenge */}
             <ScrollReveal personality="standard" className="flex flex-col gap-6 border-t border-line pt-12">
-              <Headline as="h2" size="lg" className="text-ink font-sans">Core leadership &amp; systems intervention</Headline>
+              <Meta className="text-plum uppercase tracking-widest text-xs">Section 02</Meta>
+              <Headline as="h2" size="lg" className="text-ink font-sans">The challenge</Headline>
               <Body className="text-base md:text-lg text-slate font-serif leading-relaxed">
-                To build a resilient operating environment, I addressed several core areas of institutional delivery:
+                As program offerings expanded, the primary operating challenge was avoiding delivery fragmentation. Individual cohort offerings, specialized workshops, one-on-one counseling streams, and partner-led sessions were operating with separate scheduling habits and varying data collection procedures.
+              </Body>
+              <Body className="text-base md:text-lg text-slate font-serif leading-relaxed">
+                Without a unified intake pipeline and standardized client tracking system, administrative overhead increased, client progression was difficult to monitor across advisors, and reporting required manual data reconciliation at the close of grant cycles.
+              </Body>
+            </ScrollReveal>
+
+            {/* SECTION 3: What I Did */}
+            <ScrollReveal personality="standard" className="flex flex-col gap-6 border-t border-line pt-12">
+              <Meta className="text-plum uppercase tracking-widest text-xs">Section 03</Meta>
+              <Headline as="h2" size="lg" className="text-ink font-sans">What I did</Headline>
+              <Body className="text-base md:text-lg text-slate font-serif leading-relaxed">
+                As Program Director, I assumed primary operational responsibility for aligning program delivery with institutional goals and evidence requirements. My intervention focused on four core operational priorities:
               </Body>
               <div className="flex flex-col gap-6 my-2">
                 <div className="bg-soft-stone/40 p-6 border-l-4 border-plum rounded-r-sm">
-                  <Meta className="text-plum mb-2">1. Client Intake &amp; Workflow Architecture</Meta>
+                  <Meta className="text-plum mb-2">1. Intake &amp; Client Workflow Architecture</Meta>
                   <Body className="text-sm md:text-base text-ink font-sans leading-relaxed">
-                    Standardized client onboarding and assessment processes, ensuring incoming entrepreneurs received consistent orientation and were matched to the appropriate counseling or cohort offerings efficiently.
+                    Designed and deployed a single, standardized client intake process to assess stage, service needs, and readiness before routing entrepreneurs to specific counselors or workshops.
                   </Body>
                 </div>
                 <div className="bg-soft-stone/40 p-6 border-l-4 border-plum rounded-r-sm">
-                  <Meta className="text-plum mb-2">2. CRM &amp; Data Infrastructure</Meta>
+                  <Meta className="text-plum mb-2">2. CRM System &amp; Data Pipeline</Meta>
                   <Body className="text-sm md:text-base text-ink font-sans leading-relaxed">
-                    Refined client management data tracking, linking session outcomes, participation metrics, and business milestones into a centralized data pipeline.
+                    Reorganized client relationship management protocols to capture session notes, demographic data, milestone completions, and technical assistance hours accurately.
                   </Body>
                 </div>
                 <div className="bg-soft-stone/40 p-6 border-l-4 border-plum rounded-r-sm">
-                  <Meta className="text-plum mb-2">3. Partnership Alignment</Meta>
+                  <Meta className="text-plum mb-2">3. Facilitator &amp; Partner Infrastructure</Meta>
                   <Body className="text-sm md:text-base text-ink font-sans leading-relaxed">
-                    Fostered collaborative agreements with regional ecosystem partners, guest facilitators, and resource organizations, expanding service reach while protecting core program quality.
+                    Established clear onboarding briefs, curriculum standards, and reporting templates for contracted instructors and community partner organizations.
                   </Body>
                 </div>
                 <div className="bg-soft-stone/40 p-6 border-l-4 border-plum rounded-r-sm">
-                  <Meta className="text-plum mb-2">4. Grant &amp; Compliance Reporting</Meta>
+                  <Meta className="text-plum mb-2">4. Grant Alignment &amp; Compliance Reporting</Meta>
                   <Body className="text-sm md:text-base text-ink font-sans leading-relaxed">
-                    Synchronized program milestones with grant requirements, ensuring clear data trails, accurate reporting, and timely evidence generation for institutional stakeholders.
+                    Mapped program milestones directly to federal and grant reporting requirements, ensuring real-time visibility into target metrics.
                   </Body>
                 </div>
               </div>
             </ScrollReveal>
 
-            {/* Key Outcomes & Operational Impact */}
+            {/* SECTION 4: Implementation and Adaptations */}
             <ScrollReveal personality="standard" className="flex flex-col gap-6 border-t border-line pt-12">
-              <Headline as="h2" size="lg" className="text-ink font-sans">Key outcomes &amp; operational impact</Headline>
+              <Meta className="text-plum uppercase tracking-widest text-xs">Section 04</Meta>
+              <Headline as="h2" size="lg" className="text-ink font-sans">Implementation and adaptations</Headline>
               <Body className="text-base md:text-lg text-slate font-serif leading-relaxed">
-                By reinforcing the operating infrastructure, the center improved delivery clarity across programs, strengthened compliance integrity, and elevated the overall client experience.
+                Moving systems from design into daily practice required iterative adjustments based on client and staff feedback during delivery:
+              </Body>
+              <Body className="text-base md:text-lg text-slate font-serif leading-relaxed">
+                Early in the implementation, initial intake forms proved overly detailed for early-stage founders seeking basic counseling. I adapted the intake sequence into a two-tiered format: a short initial intake for orientation, followed by a deeper diagnostic assessment once an active counseling relationship was established.
+              </Body>
+              <Body className="text-base md:text-lg text-slate font-serif leading-relaxed">
+                Similarly, to improve CRM compliance among external guest facilitators, I introduced simplified post-session reporting templates that captured required compliance metrics without creating undue administrative burden.
+              </Body>
+            </ScrollReveal>
+
+            {/* SECTION 5: Evidence of Progress */}
+            <ScrollReveal personality="standard" className="flex flex-col gap-6 border-t border-line pt-12">
+              <Meta className="text-plum uppercase tracking-widest text-xs">Section 05 · Bounded Reporting Period: April 2023–March 2024</Meta>
+              <Headline as="h2" size="lg" className="text-ink font-sans">Evidence of progress</Headline>
+              <Body className="text-base md:text-lg text-slate font-serif leading-relaxed">
+                During the specified case period of April 2023 through March 2024, implementation evidence demonstrated clear structural improvements across center operations:
               </Body>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 my-4">
-                <div className="p-6 border border-line bg-paper">
-                  <Meta className="text-plum mb-2">Operational Coherence</Meta>
+                <div className="p-6 border border-line bg-soft-stone/30">
+                  <Meta className="text-plum mb-2">Intake &amp; Onboarding Efficiency</Meta>
                   <p className="font-serif text-slate text-sm leading-relaxed">
-                    Established unified intake and CRM tracking protocols that reduced administrative overhead and improved client continuity across multiple advisors.
+                    Standardized intake workflows reduced average client assignment turnaround time and eliminated duplicate intake records across counseling staff.
                   </p>
                 </div>
-                <div className="p-6 border border-line bg-paper">
-                  <Meta className="text-plum mb-2">Institutional Evidence</Meta>
+                <div className="p-6 border border-line bg-soft-stone/30">
+                  <Meta className="text-plum mb-2">CRM Record Integrity</Meta>
                   <p className="font-serif text-slate text-sm leading-relaxed">
-                    Delivered transparent, auditable reporting streams that satisfied federal, regional, and foundation funding requirements seamlessly.
+                    Achieved consistent record capture for technical assistance hours, workshop attendances, and participant business milestones across all active programs.
+                  </p>
+                </div>
+                <div className="p-6 border border-line bg-soft-stone/30">
+                  <Meta className="text-plum mb-2">Reporting Timeliness</Meta>
+                  <p className="font-serif text-slate text-sm leading-relaxed">
+                    Quarterly and annual grant compliance reports were compiled directly from CRM pipelines without requiring post-hoc manual data audits.
+                  </p>
+                </div>
+                <div className="p-6 border border-line bg-soft-stone/30">
+                  <Meta className="text-plum mb-2">Partner Ecosystem Coordination</Meta>
+                  <p className="font-serif text-slate text-sm leading-relaxed">
+                    Coordinated multi-session cohort series with external subject-matter experts using standardized curriculum agreements and evaluation rubrics.
                   </p>
                 </div>
               </div>
             </ScrollReveal>
 
-            {/* Bottom CTA / Back */}
+            {/* SECTION 6: What the Evidence Does and Does Not Show */}
+            <ScrollReveal personality="standard" className="flex flex-col gap-6 border-t border-line pt-12">
+              <Meta className="text-plum uppercase tracking-widest text-xs">Section 06</Meta>
+              <Headline as="h2" size="lg" className="text-ink font-sans">What the evidence does and does not show</Headline>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-2">
+                <div className="p-6 border-l-2 border-plum bg-paper">
+                  <h3 className="font-sans font-medium text-plum text-base md:text-lg mb-3">What the evidence supports</h3>
+                  <Body className="text-sm text-slate font-serif leading-relaxed">
+                    The evidence confirms that standardized intake workflows and CRM protocols improved internal operational clarity, reduced administrative drag, and produced verifiable data streams suitable for grant compliance and institutional reporting during the April 2023–March 2024 period.
+                  </Body>
+                </div>
+                <div className="p-6 border-l-2 border-line bg-soft-stone/30">
+                  <h3 className="font-sans font-medium text-slate text-base md:text-lg mb-3">What remains unestablished</h3>
+                  <Body className="text-sm text-slate font-serif leading-relaxed">
+                    The evidence does not claim that operational systems alone cause long-term business survival or revenue growth for every client. Institutional infrastructure creates the necessary environment for delivery, but individual venture performance depends on external market factors, capital availability, and execution.
+                  </Body>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            {/* SECTION 7: What I Learned */}
+            <ScrollReveal personality="standard" className="flex flex-col gap-6 border-t border-line pt-12">
+              <Meta className="text-plum uppercase tracking-widest text-xs">Section 07</Meta>
+              <Headline as="h2" size="lg" className="text-ink font-sans">What I learned</Headline>
+              <Body className="text-base md:text-lg text-slate font-serif leading-relaxed">
+                Leading operational strengthening within an established institution reinforced three key insights:
+              </Body>
+              <div className="flex flex-col gap-4 font-serif text-base text-slate leading-relaxed">
+                <p>
+                  <strong className="text-ink font-sans font-medium">1. Systems must serve staff, not just reporting.</strong> Operational tools only generate reliable data if they simplify daily work for counselors and facilitators rather than adding friction.
+                </p>
+                <p>
+                  <strong className="text-ink font-sans font-medium">2. Intake is an intervention.</strong> The initial intake process is not merely administrative data gathering; it shapes a client’s expectations and clarifies their immediate priorities.
+                </p>
+                <p>
+                  <strong className="text-ink font-sans font-medium">3. Evidence requires intentional design.</strong> Institutional reporting cannot be an afterthought; the data pipeline must be integrated directly into the delivery arc from day one.
+                </p>
+              </div>
+            </ScrollReveal>
+
+            {/* SECTION 8: Capabilities Demonstrated (Note: Maintained in sidebar to prevent duplication) */}
             <div className="border-t border-line pt-12 flex flex-col md:flex-row items-center justify-between gap-6">
               <Link 
                 href="/selected-work" 

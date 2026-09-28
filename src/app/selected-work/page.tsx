@@ -28,7 +28,7 @@ export default function SelectedWorkPage() {
             
             <div className="lg:col-span-7 flex flex-col pt-2 lg:pt-8">
               <Body className="text-base md:text-lg text-ink font-semibold leading-relaxed font-serif">
-                Role titles tell only part of the story. The case below offers a closer look at how I translated a proposition into a program, led its delivery and learned from what implementation revealed.
+                Role titles tell only part of the story. The cases below offer a closer look at how I translated a proposition into a program, led its delivery and learned from what implementation revealed.
               </Body>
             </div>
           </ScrollReveal>
@@ -77,9 +77,26 @@ export default function SelectedWorkPage() {
 
                 <div className="border-t border-line/40 pt-8">
                   <Meta className="text-plum mb-3">Abstract</Meta>
-                  <Body className="text-base md:text-lg text-slate leading-relaxed font-serif mb-10 max-w-4xl">
+                  <Body className="text-base md:text-lg text-slate leading-relaxed font-serif mb-8 max-w-4xl">
                     I translated a venture-readiness proposition into a six-week founder-support pilot, designed its program and operating structure, led delivery, and examined what the evidence could—and could not—show. All six active founders reached the final session. Five participants created structural business deliverables that I personally reviewed and confirmed. The case shows how implementation, missed targets and measurement gaps shaped the next design questions.
                   </Body>
+
+                  <div className="mb-10">
+                    <Meta className="text-plum mb-3 text-xs">Capabilities Demonstrated</Meta>
+                    <div className="flex flex-wrap gap-2">
+                      {[
+                        "Program & Service Architecture",
+                        "Implementation Leadership",
+                        "Operational Systems Design",
+                        "Measurement & Evaluative Judgment",
+                        "Evidence-Informed Adaptation"
+                      ].map((tag) => (
+                        <span key={tag} className="text-xs font-sans font-medium px-3 py-1.5 bg-paper border border-line text-ink rounded-xs">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
                   
                   <div className="flex justify-center items-center pt-2">
                     <span className="inline-flex items-center justify-center gap-3 bg-transparent border border-plum text-plum px-6 sm:px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold group-hover:bg-plum group-hover:text-paper transition-colors duration-300 w-full sm:w-auto text-center">

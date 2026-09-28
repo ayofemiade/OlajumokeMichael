@@ -131,3 +131,13 @@
   }
 }
 
+/* ─── No-JS & Progressive Enhancement Fallback ──────────────────────── */
+noscript div,
+noscript section,
+noscript main,
+noscript [style*="opacity"] {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+

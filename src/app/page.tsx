@@ -123,12 +123,21 @@ export default function Home() {
                   I translated a venture-readiness proposition into a six-week founder-support pilot, designed its program and operating structure, led delivery, and examined what the evidence could—and could not—show. All six active founders reached the final session. Five participants created structural business deliverables that I personally reviewed and confirmed. The case shows how implementation, missed targets and measurement gaps shaped the next design questions.
                 </p>
               </div>
-              <div className="mt-4">
+              <div className="mt-4 flex flex-col sm:flex-row items-start sm:items-center gap-6">
                 <a
                   href="/selected-work/venture-readiness-lab"
                   className="inline-flex items-center justify-center bg-transparent border border-plum text-plum px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold hover:bg-plum hover:text-paper transition-colors duration-300"
                 >
                   Read the case study
+                </a>
+                <a
+                  href="/selected-work"
+                  className="inline-flex items-center gap-2 text-xs font-sans font-semibold uppercase tracking-wider text-plum hover:text-ink transition-colors duration-200"
+                >
+                  <span>View all Selected Work</span>
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
                 </a>
               </div>
             </ScrollReveal>
