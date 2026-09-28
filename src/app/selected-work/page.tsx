@@ -55,7 +55,7 @@ export default function SelectedWorkPage() {
                   </div>
                 </div>
 
-                <Headline as="h2" size="xl" className="text-ink leading-tight mb-8 font-sans font-medium max-w-4xl group-hover:text-plum transition-colors duration-300 text-xl sm:text-2xl md:text-3xl">
+                <Headline as="h2" size="lg" className="text-ink leading-tight mb-6 sm:mb-8 font-sans font-medium max-w-3xl group-hover:text-plum transition-colors duration-300 text-lg sm:text-xl md:text-2xl lg:text-[1.75rem]">
                   Designing a Founder Support Pilot—and Learning from Its Limits
                 </Headline>
                 
@@ -128,7 +128,7 @@ export default function SelectedWorkPage() {
                   </div>
                 </div>
 
-                <Headline as="h2" size="xl" className="text-ink leading-tight mb-8 font-sans font-medium max-w-4xl group-hover:text-plum transition-colors duration-300 text-xl sm:text-2xl md:text-3xl">
+                <Headline as="h2" size="lg" className="text-ink leading-tight mb-6 sm:mb-8 font-sans font-medium max-w-3xl group-hover:text-plum transition-colors duration-300 text-lg sm:text-xl md:text-2xl lg:text-[1.75rem]">
                   Strengthening the Operating Infrastructure of a Regional Women’s Business Center
                 </Headline>
                 
