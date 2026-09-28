@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 }
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    http_response_code(455);
+    http_response_code(405);
     echo json_encode(['success' => false, 'error' => 'Invalid request method.']);
     exit();
 }
@@ -79,10 +79,13 @@ $htmlMessage = '
 </html>
 ';
 
+$domain = !empty($_SERVER['HTTP_HOST']) ? preg_replace('/^www\./', '', $_SERVER['HTTP_HOST']) : 'olajumokemichael.com';
+$fromEmail = 'noreply@' . $domain;
+
 $headers = array(
     'MIME-Version: 1.0',
     'Content-type: text/html; charset=utf-8',
-    'From: Olajumoke Michael Portfolio <noreply@ethnoirconsulting.com>',
+    'From: Olajumoke Michael Portfolio <' . $fromEmail . '>',
     'Reply-To: ' . $name . ' <' . $email . '>',
     'X-Mailer: PHP/' . phpversion()
 );
