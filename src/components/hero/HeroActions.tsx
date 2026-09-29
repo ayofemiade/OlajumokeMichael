@@ -7,8 +7,8 @@ import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { elegantEase, duration } from "@/lib/motion";
 
 /**
- * Editorial Interactive Actions component for the Hero Section.
- * Implements high-contrast CTAs with smooth motion feedback and micro-badge.
+ * Concept 01: Hero Interactive Actions component.
+ * Features high-contrast magnetic CTAs with hover fill effects and micro-ledger metadata.
  */
 export function HeroActions() {
   const reduced = useReducedMotion();

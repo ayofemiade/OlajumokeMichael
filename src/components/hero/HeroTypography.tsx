@@ -6,13 +6,12 @@ import { useReducedMotion } from "@/hooks/useReducedMotion";
 import { elegantEase, duration } from "@/lib/motion";
 
 /**
- * Editorial Typography Component for the Hero Section.
- * Enforces 100% exact copy immutability with high-precision stagger animations.
+ * Concept 01: Master Editorial Typography Component.
+ * Preserves 100% exact copy immutability with staggered entrance reveals.
  */
 export function HeroTypography() {
   const reduced = useReducedMotion();
 
-  // Motion variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -56,7 +55,7 @@ export function HeroTypography() {
       animate="visible"
       className="flex flex-col justify-center relative z-20"
     >
-      {/* Eyebrow Label with Architectural Line Accent & Active Indicator */}
+      {/* Eyebrow Badge with Architectural Line Accent & Live Status Indicator */}
       <motion.div variants={badgeVariants} className="mb-5 sm:mb-7 flex items-center gap-3">
         <span className="flex h-2 w-2 relative">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-plum opacity-75"></span>
@@ -68,7 +67,7 @@ export function HeroTypography() {
         </span>
       </motion.div>
 
-      {/* Main Display Headline (IMMUTABLE COPY) */}
+      {/* Main Display Headline (100% IMMUTABLE COPY) */}
       <motion.h1
         variants={itemVariants}
         className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[4.25rem] text-ink font-normal leading-[1.08] tracking-tight max-w-full lg:max-w-3xl"
@@ -81,7 +80,7 @@ export function HeroTypography() {
         program ideas into structures that can be implemented, evaluated and improved.
       </motion.h1>
 
-      {/* Supporting Editorial Paragraph (IMMUTABLE COPY) */}
+      {/* Supporting Body Paragraph (100% IMMUTABLE COPY) */}
       <motion.p
         variants={itemVariants}
         className="mt-6 sm:mt-8 font-serif text-base sm:text-lg lg:text-xl text-slate leading-relaxed max-w-xl lg:max-w-2xl font-light"
