@@ -354,8 +354,8 @@ export default function Home() {
             className="lg:col-span-5 relative w-full aspect-[3/4] md:aspect-square lg:aspect-[4/5] rounded-sm overflow-hidden"
           >
             <Image
-              src="/images/Olajumoke-Michael-Contextual-Working-Desk.jpg"
-              alt="Olajumoke Michael working in a Winston-Salem setting"
+              src="/images/IMG_1941.jpg"
+              alt="Olajumoke Michael portrait"
               fill
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 40vw"
