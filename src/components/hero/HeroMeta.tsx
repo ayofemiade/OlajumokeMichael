@@ -19,7 +19,7 @@ interface HeroMetaProps {
 export function HeroMeta({ variant }: HeroMetaProps) {
   const reduced = useReducedMotion();
 
-  /* ─── Left taxonomy strip: Strategy / Design / Operations ─────── */
+  /* ─── Left taxonomy strip: Strategy / Design / Operations / Evaluation ─ */
   if (variant === "left-taxonomy") {
     return (
       <motion.div
@@ -30,18 +30,22 @@ export function HeroMeta({ variant }: HeroMetaProps) {
           ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number],
           delay: reduced ? 0 : 0.1,
         }}
-        className="flex items-center gap-0 tracking-[0.22em] select-none"
+        className="flex flex-wrap items-center gap-y-1 tracking-[0.20em] select-none"
       >
         <span className="font-sans text-[10px] sm:text-[11px] uppercase font-medium text-slate/80">
           PROGRAM STRATEGY
         </span>
-        <span className="mx-2.5 sm:mx-3 text-line/80 font-sans text-[10px]">/</span>
+        <span className="mx-2 sm:mx-2.5 text-line/80 font-sans text-[10px]">/</span>
         <span className="font-sans text-[10px] sm:text-[11px] uppercase font-medium text-slate/80">
           SERVICE DESIGN
         </span>
-        <span className="mx-2.5 sm:mx-3 text-line/80 font-sans text-[10px]">/</span>
+        <span className="mx-2 sm:mx-2.5 text-line/80 font-sans text-[10px]">/</span>
         <span className="font-sans text-[10px] sm:text-[11px] uppercase font-medium text-slate/80">
           OPERATIONS
+        </span>
+        <span className="mx-2 sm:mx-2.5 text-line/80 font-sans text-[10px]">/</span>
+        <span className="font-sans text-[10px] sm:text-[11px] uppercase font-medium text-slate/80">
+          EVALUATION
         </span>
       </motion.div>
     );

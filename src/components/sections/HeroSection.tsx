@@ -73,12 +73,9 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Right Editorial Pillar — Taxonomy & Supporting Body Copy */}
-          <div className="w-[24%] max-w-[320px] pt-0.5 pointer-events-auto">
-            <HeroMeta variant="right-taxonomy" />
-            <div className="mt-6 lg:mt-8">
-              <HeroBodyCopy />
-            </div>
+          {/* Right Editorial Pillar — Supporting Body Copy */}
+          <div className="w-[24%] max-w-[320px] pt-1 lg:pt-2 pointer-events-auto">
+            <HeroBodyCopy />
           </div>
         </div>
 
