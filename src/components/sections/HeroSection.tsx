@@ -62,8 +62,8 @@ export function HeroSection() {
         ].join(" ")}
       >
         {/* Main Content Row — Left Pillar & Right Pillar framing central portrait */}
-        <div className="flex-1 flex justify-between items-start pt-4 lg:pt-6">
-          {/* Left Editorial Pillar — Taxonomy, Headline, CTA */}
+        <div className="flex-1 flex justify-between items-stretch pt-4 lg:pt-6">
+          {/* Left Editorial Pillar — Taxonomy, Headline */}
           <div className="w-[38%] max-w-[520px] flex flex-col justify-between h-full max-h-[520px] pointer-events-auto">
             <div>
               <HeroMeta variant="left-taxonomy" />
@@ -73,8 +73,8 @@ export function HeroSection() {
             </div>
           </div>
 
-          {/* Right Editorial Pillar — Supporting Body Copy */}
-          <div className="w-[24%] max-w-[320px] pt-1 lg:pt-2 pointer-events-auto">
+          {/* Right Editorial Pillar — Supporting Body Copy (Vertically centered between PROGRAM & STRATEGY) */}
+          <div className="w-[24%] max-w-[340px] flex flex-col justify-center pointer-events-auto">
             <HeroBodyCopy />
           </div>
         </div>
