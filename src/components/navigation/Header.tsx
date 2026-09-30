@@ -33,11 +33,17 @@ export function Header() {
     setIsOpen(false);
   }, [pathname]);
 
+  // Transparent treatment: homepage only, before any scroll
+  const isHomePage = pathname === "/";
+  const isTransparent = isHomePage && !scrolled;
+
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full bg-paper/90 backdrop-blur-md border-b transition-colors duration-500",
-        scrolled ? "border-line/80" : "border-line/40"
+        "sticky top-0 z-50 w-full transition-all duration-500",
+        isTransparent
+          ? "bg-transparent border-b border-transparent"
+          : "bg-paper/90 backdrop-blur-md border-b border-line/80"
       )}
     >
       <Container className="flex h-16 md:h-20 items-center justify-between">

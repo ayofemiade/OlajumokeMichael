@@ -1,6 +1,7 @@
 "use client";
 
 import { HeroBackground } from "@/components/hero/HeroBackground";
+import { HeroDecoration } from "@/components/hero/HeroDecoration";
 import { HeroPortrait } from "@/components/hero/HeroPortrait";
 import { HeroHeadline } from "@/components/hero/HeroHeadline";
 import { HeroBodyCopy } from "@/components/hero/HeroBodyCopy";
@@ -14,31 +15,47 @@ import { HeroMeta } from "@/components/hero/HeroMeta";
  *   The headline (left) is the strategic statement — the thinking.
  *   The body copy (right) is the operational breadth — the system.
  *   The background letterforms are the taxonomy — the architecture.
+ *   The wave decoration adds editorial movement and visual rhythm.
+ *
+ * Full-bleed integration with the navigation:
+ *   The section uses -mt-16 md:-mt-20 to pull the hero UP behind the
+ *   now-transparent navbar. The hero portrait bleeds to the very top of
+ *   the viewport. Desktop pt-20/lg:pt-24 compensate inside the content
+ *   layer, keeping text below the nav.
  *
  * Layer order (desktop):
  *   z-0   HeroBackground    — decorative PROGRAM/STRATEGY letterforms
  *   z-10  HeroPortrait      — absolute, full hero height, centre-right
+ *   z-15  HeroDecoration    — flowing editorial wave stroke (over portrait)
  *   z-20  Content canvas    — headline left, body right, meta strips
  *
  * Mobile is a separate stacked layout: meta top → portrait → headline → body → CTA.
  *
- * All copy is 100% immutable. No navigation is modified.
+ * All copy is 100% immutable. Navigation architecture is not modified here.
  */
 export function HeroSection() {
   return (
     <section
-      className="relative bg-paper overflow-hidden md:h-screen border-b border-line/40"
+      // -mt-16 md:-mt-20 pulls the section behind the transparent sticky header
+      // so the portrait bleeds to the very top of the viewport.
+      // md:h-screen keeps the desktop hero exactly one viewport tall.
+      className="relative bg-paper overflow-hidden -mt-16 md:-mt-20 md:h-screen border-b border-line/40"
       aria-label="Introduction"
     >
       {/* ── z-0: Decorative background letterforms (desktop only) ────── */}
       <HeroBackground />
 
-      {/* ── z-10: Portrait (desktop absolute; mobile in-flow via separate render) */}
+      {/* ── z-10: Portrait (desktop absolute; mobile: in-flow below) ─── */}
       <HeroPortrait variant="desktop" />
+
+      {/* ── z-15: Flowing editorial wave decoration (desktop only) ────── */}
+      <HeroDecoration />
 
       {/* ════════════════════════════════════════════════════════════════
           DESKTOP CONTENT CANVAS
           Hidden on mobile. Absolutely fills the h-screen section.
+          pt-20 (md) / pt-24 (lg+) compensates for header height after
+          the -mt-20 pull-up so taxonomy strip starts cleanly below nav.
           pointer-events-none on container; auto on interactive children.
           ═══════════════════════════════════════════════════════════════ */}
       <div
@@ -46,7 +63,8 @@ export function HeroSection() {
           "hidden md:flex flex-col h-full",
           "relative z-20 pointer-events-none",
           "px-10 lg:px-12 xl:px-16",
-          "pt-8 pb-8 lg:pt-10 lg:pb-10",
+          // pt-20 = 80px = header height; pt-24 = 96px = header + 16px breathing
+          "pt-20 pb-8 lg:pt-24 lg:pb-10",
         ].join(" ")}
       >
         {/* Top: Taxonomy meta strip */}
@@ -75,11 +93,13 @@ export function HeroSection() {
 
       {/* ════════════════════════════════════════════════════════════════
           MOBILE LAYOUT — Stacked, in-flow, min-h-screen
+          pt-20 on first element compensates for header pull-up:
+          64px header + 16px gap = 80px (pt-20).
           Portrait sits above the text content.
           ═══════════════════════════════════════════════════════════════ */}
       <div className="md:hidden flex flex-col min-h-screen">
-        {/* Top: taxonomy strip */}
-        <div className="px-6 pt-6 pb-4">
+        {/* Top: taxonomy strip — pt-20 clears the transparent header */}
+        <div className="px-6 pt-20 pb-4">
           <HeroMeta variant="top" />
         </div>
 

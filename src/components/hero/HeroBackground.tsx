@@ -6,9 +6,9 @@ import { useReducedMotion } from "@/hooks/useReducedMotion";
 /**
  * HeroBackground — Decorative editorial background letterforms.
  *
- * "PROGRAM" and "STRATEGY" are large, low-opacity structural letterforms
+ * "PROGRAM" and "STRATEGY" are large, bolder structural letterforms
  * positioned in the right portion of the canvas, partially behind the portrait.
- * They are visual architecture — not readable content.
+ * They are visual architecture — taxonomic, not readable content.
  * Desktop only. Aria-hidden.
  */
 export function HeroBackground() {
@@ -19,12 +19,16 @@ export function HeroBackground() {
       className="hidden md:block absolute inset-0 pointer-events-none select-none overflow-hidden z-0"
       aria-hidden="true"
     >
-      {/* "PROGRAM" — upper right quadrant, bleeds beyond viewport edge */}
+      {/* "PROGRAM" — upper right quadrant, partially bleeds beyond viewport edge */}
       <motion.span
-        className="absolute top-[4%] right-[-6%] font-serif font-light text-ink leading-none tracking-tight uppercase whitespace-nowrap"
-        style={{ fontSize: "clamp(5rem, 12vw, 14rem)" }}
+        className="absolute font-serif font-normal text-ink leading-none tracking-tight uppercase whitespace-nowrap"
+        style={{
+          fontSize: "clamp(6rem, 14vw, 17rem)",
+          top: "8%",
+          right: "-4%",
+        }}
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.065 }}
+        animate={{ opacity: 0.11 }}
         transition={{
           duration: reduced ? 0 : 1.6,
           ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number],
@@ -34,12 +38,16 @@ export function HeroBackground() {
         PROGRAM
       </motion.span>
 
-      {/* "STRATEGY" — lower right quadrant, sits below portrait base */}
+      {/* "STRATEGY" — lower right quadrant, straddles portrait base */}
       <motion.span
-        className="absolute bottom-[3%] right-[-5%] font-serif font-light text-ink leading-none tracking-tight uppercase whitespace-nowrap"
-        style={{ fontSize: "clamp(5rem, 12vw, 14rem)" }}
+        className="absolute font-serif font-normal text-ink leading-none tracking-tight uppercase whitespace-nowrap"
+        style={{
+          fontSize: "clamp(6rem, 14vw, 17rem)",
+          bottom: "4%",
+          right: "-3%",
+        }}
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.065 }}
+        animate={{ opacity: 0.11 }}
         transition={{
           duration: reduced ? 0 : 1.6,
           ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number],
