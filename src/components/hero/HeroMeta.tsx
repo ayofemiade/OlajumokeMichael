@@ -26,28 +26,28 @@ export function HeroMeta({ variant }: HeroMetaProps) {
   if (variant === "top") {
     return (
       <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        initial={{ opacity: 0, y: -4 }}
+        animate={{ opacity: 1, y: 0 }}
         transition={{
           duration: reduced ? 0 : 0.9,
           ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number],
           delay: reduced ? 0 : 0.1,
         }}
-        className="flex items-center gap-0"
+        className="flex items-center gap-0 tracking-[0.24em] select-none"
       >
-        <span className="font-sans text-[10px] uppercase tracking-[0.22em] font-medium text-slate/80">
+        <span className="font-sans text-[10px] sm:text-[11px] uppercase font-medium text-slate/75">
           PROGRAM STRATEGY
         </span>
-        <span className="mx-3 text-line font-sans text-[10px]">/</span>
-        <span className="font-sans text-[10px] uppercase tracking-[0.22em] font-medium text-slate/80">
+        <span className="mx-3 sm:mx-4 text-line/80 font-sans text-[10px]">/</span>
+        <span className="font-sans text-[10px] sm:text-[11px] uppercase font-medium text-slate/75">
           SERVICE DESIGN
         </span>
-        <span className="mx-3 text-line font-sans text-[10px]">/</span>
-        <span className="font-sans text-[10px] uppercase tracking-[0.22em] font-medium text-slate/80">
+        <span className="mx-3 sm:mx-4 text-line/80 font-sans text-[10px]">/</span>
+        <span className="font-sans text-[10px] sm:text-[11px] uppercase font-medium text-slate/75">
           OPERATIONS
         </span>
-        <span className="mx-3 text-line font-sans text-[10px]">/</span>
-        <span className="font-sans text-[10px] uppercase tracking-[0.22em] font-medium text-slate/80">
+        <span className="mx-3 sm:mx-4 text-line/80 font-sans text-[10px]">/</span>
+        <span className="font-sans text-[10px] sm:text-[11px] uppercase font-medium text-slate/75">
           EVALUATION
         </span>
       </motion.div>

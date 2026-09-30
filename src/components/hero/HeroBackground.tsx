@@ -19,16 +19,16 @@ export function HeroBackground() {
       className="hidden md:block absolute inset-0 pointer-events-none select-none overflow-hidden z-0"
       aria-hidden="true"
     >
-      {/* "PROGRAM" — upper right quadrant, partially bleeds beyond viewport edge */}
+      {/* "PROGRAM" — upper right side, strictly right-aligned */}
       <motion.span
         className="absolute font-serif font-normal text-ink leading-none tracking-tight uppercase whitespace-nowrap"
         style={{
-          fontSize: "clamp(6rem, 14vw, 17rem)",
-          top: "8%",
-          right: "-4%",
+          fontSize: "clamp(3.5rem, 6.5vw, 7.5rem)",
+          top: "20%",
+          right: "3%",
         }}
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.11 }}
+        animate={{ opacity: 0.08 }}
         transition={{
           duration: reduced ? 0 : 1.6,
           ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number],
@@ -38,16 +38,16 @@ export function HeroBackground() {
         PROGRAM
       </motion.span>
 
-      {/* "STRATEGY" — lower right quadrant, straddles portrait base */}
+      {/* "STRATEGY" — lower right side, strictly right-aligned */}
       <motion.span
         className="absolute font-serif font-normal text-ink leading-none tracking-tight uppercase whitespace-nowrap"
         style={{
-          fontSize: "clamp(6rem, 14vw, 17rem)",
-          bottom: "4%",
-          right: "-3%",
+          fontSize: "clamp(3.5rem, 6.5vw, 7.5rem)",
+          bottom: "12%",
+          right: "3%",
         }}
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.11 }}
+        animate={{ opacity: 0.08 }}
         transition={{
           duration: reduced ? 0 : 1.6,
           ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number],

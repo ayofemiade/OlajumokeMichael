@@ -63,8 +63,8 @@ export function HeroSection() {
           "hidden md:flex flex-col h-full",
           "relative z-20 pointer-events-none",
           "px-10 lg:px-12 xl:px-16",
-          // pt-20 = 80px = header height; pt-24 = 96px = header + 16px breathing
-          "pt-20 pb-8 lg:pt-24 lg:pb-10",
+          // pt-28 (112px) / pt-36 (144px) leaves 32px to 64px vertical clearance below the 80px sticky header
+          "pt-28 pb-8 lg:pt-36 lg:pb-12",
         ].join(" ")}
       >
         {/* Top: Taxonomy meta strip */}

@@ -28,18 +28,19 @@ export function HeroPortrait({ variant }: HeroPortraitProps) {
   // Very subtle parallax: portrait moves up 35px over 600px of scroll
   const portraitY = useTransform(scrollY, [0, 600], [0, reduced ? 0 : -35]);
 
-  /* ─── Desktop: absolute, full-height, centered at 55% of viewport ── */
+  /* ─── Desktop: absolute, anchored bottom, top cleanly below nav ─ */
   if (variant === "desktop") {
     return (
       <motion.div
         className="hidden md:block absolute bottom-0 z-10 pointer-events-none"
         style={{
-          // 95% of section height (section is h-screen), anchored bottom
-          height: "95%",
+          // Height constrained so portrait top edge stays below header (y >= 105px)
+          height: "82%",
+          maxHeight: "calc(100vh - 105px)",
           // Width auto-calculated from aspect ratio: 2326×2672 original
           aspectRatio: "2326 / 2672",
-          // Left edge at 55% of viewport — x: "-50%" centers the portrait there
-          left: "55%",
+          // Positioned horizontally at 54% of viewport width
+          left: "54%",
           // Scroll parallax applied as motion value
           y: reduced ? 0 : portraitY,
         }}
