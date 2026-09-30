@@ -22,17 +22,17 @@ export function HeroHeadline() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: reduced ? 0 : 28 }}
+      initial={{ opacity: 0, y: reduced ? 0 : 24 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
         duration: reduced ? 0 : 1.0,
         ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number],
-        delay: reduced ? 0 : 0.5,
+        delay: reduced ? 0 : 0.4,
       }}
     >
       <h1
-        className="font-serif font-normal text-ink leading-[1.07] tracking-tight"
-        style={{ fontSize: "clamp(2.25rem, 4vw, 3.5rem)" }}
+        className="font-serif font-normal text-ink leading-[1.12] tracking-tight"
+        style={{ fontSize: "clamp(2.1rem, 3.3vw, 3.25rem)" }}
       >
         I turn complex program ideas into{" "}
         <em className="font-serif" style={{ fontStyle: "italic" }}>

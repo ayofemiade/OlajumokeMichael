@@ -5,24 +5,69 @@ import Link from "next/link";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 interface HeroMetaProps {
-  variant: "top" | "bottom";
+  variant: "top" | "left-taxonomy" | "right-taxonomy" | "bottom";
 }
 
 /**
  * HeroMeta — Structural editorial metadata strips.
  *
- * variant="top":  Taxonomy classification strip.
- *                 "PROGRAM STRATEGY / SERVICE DESIGN / OPERATIONS / EVALUATION"
- *                 Thin uppercase sans-serif — the system behind the person.
- *
- * variant="bottom": CTA + scroll indicator strip.
- *                   "→ EXPLORE SELECTED WORK →" (editorial text link, not a button)
- *                   + "SCROLL ↓" on right (desktop only)
+ * variant="left-taxonomy":  Upper left metadata strip (PROGRAM STRATEGY / SERVICE DESIGN / OPERATIONS)
+ * variant="right-taxonomy": Upper right metadata strip (EVALUATION)
+ * variant="top":            Full combined taxonomy strip (for mobile)
+ * variant="bottom":         CTA + scroll indicator strip
  */
 export function HeroMeta({ variant }: HeroMetaProps) {
   const reduced = useReducedMotion();
 
-  /* ─── Top: taxonomy strip ─────────────────────────────────────── */
+  /* ─── Left taxonomy strip: Strategy / Design / Operations ─────── */
+  if (variant === "left-taxonomy") {
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: -4 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: reduced ? 0 : 0.9,
+          ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number],
+          delay: reduced ? 0 : 0.1,
+        }}
+        className="flex items-center gap-0 tracking-[0.22em] select-none"
+      >
+        <span className="font-sans text-[10px] sm:text-[11px] uppercase font-medium text-slate/80">
+          PROGRAM STRATEGY
+        </span>
+        <span className="mx-2.5 sm:mx-3 text-line/80 font-sans text-[10px]">/</span>
+        <span className="font-sans text-[10px] sm:text-[11px] uppercase font-medium text-slate/80">
+          SERVICE DESIGN
+        </span>
+        <span className="mx-2.5 sm:mx-3 text-line/80 font-sans text-[10px]">/</span>
+        <span className="font-sans text-[10px] sm:text-[11px] uppercase font-medium text-slate/80">
+          OPERATIONS
+        </span>
+      </motion.div>
+    );
+  }
+
+  /* ─── Right taxonomy strip: Evaluation ───────────────────────── */
+  if (variant === "right-taxonomy") {
+    return (
+      <motion.div
+        initial={{ opacity: 0, y: -4 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: reduced ? 0 : 0.9,
+          ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number],
+          delay: reduced ? 0 : 0.15,
+        }}
+        className="flex items-center gap-0 tracking-[0.22em] select-none"
+      >
+        <span className="font-sans text-[10px] sm:text-[11px] uppercase font-medium text-slate/80">
+          EVALUATION
+        </span>
+      </motion.div>
+    );
+  }
+
+  /* ─── Top: full taxonomy strip (Mobile) ───────────────────────── */
   if (variant === "top") {
     return (
       <motion.div
@@ -33,21 +78,21 @@ export function HeroMeta({ variant }: HeroMetaProps) {
           ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number],
           delay: reduced ? 0 : 0.1,
         }}
-        className="flex items-center gap-0 tracking-[0.24em] select-none"
+        className="flex flex-wrap items-center gap-y-1 gap-x-2 tracking-[0.20em] select-none"
       >
-        <span className="font-sans text-[10px] sm:text-[11px] uppercase font-medium text-slate/75">
+        <span className="font-sans text-[10px] uppercase font-medium text-slate/80">
           PROGRAM STRATEGY
         </span>
-        <span className="mx-3 sm:mx-4 text-line/80 font-sans text-[10px]">/</span>
-        <span className="font-sans text-[10px] sm:text-[11px] uppercase font-medium text-slate/75">
+        <span className="text-line/80 font-sans text-[10px]">/</span>
+        <span className="font-sans text-[10px] uppercase font-medium text-slate/80">
           SERVICE DESIGN
         </span>
-        <span className="mx-3 sm:mx-4 text-line/80 font-sans text-[10px]">/</span>
-        <span className="font-sans text-[10px] sm:text-[11px] uppercase font-medium text-slate/75">
+        <span className="text-line/80 font-sans text-[10px]">/</span>
+        <span className="font-sans text-[10px] uppercase font-medium text-slate/80">
           OPERATIONS
         </span>
-        <span className="mx-3 sm:mx-4 text-line/80 font-sans text-[10px]">/</span>
-        <span className="font-sans text-[10px] sm:text-[11px] uppercase font-medium text-slate/75">
+        <span className="text-line/80 font-sans text-[10px]">/</span>
+        <span className="font-sans text-[10px] uppercase font-medium text-slate/80">
           EVALUATION
         </span>
       </motion.div>
@@ -64,12 +109,12 @@ export function HeroMeta({ variant }: HeroMetaProps) {
         ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number],
         delay: reduced ? 0 : 0.75,
       }}
-      className="flex items-end justify-between"
+      className="flex items-end justify-between w-full"
     >
       {/* Primary editorial CTA — arrow link, not a button */}
       <Link
         href="/selected-work"
-        className="group inline-flex items-center gap-3 font-sans text-xs uppercase tracking-[0.2em] font-medium text-ink hover:text-plum transition-colors duration-300"
+        className="group inline-flex items-center gap-3 font-sans text-xs uppercase tracking-[0.2em] font-medium text-ink hover:text-plum transition-colors duration-300 pointer-events-auto"
         aria-label="Explore Selected Work"
       >
         <span
@@ -86,7 +131,7 @@ export function HeroMeta({ variant }: HeroMetaProps) {
       </Link>
 
       {/* Right: scroll indicator (desktop only) */}
-      <div className="hidden md:flex items-center gap-3 text-[10px] font-sans uppercase tracking-[0.2em] font-medium text-slate/60">
+      <div className="hidden md:flex items-center gap-3 text-[10px] font-sans uppercase tracking-[0.2em] font-medium text-slate/60 pointer-events-auto">
         <span>SCROLL</span>
         <span
           className="inline-block"

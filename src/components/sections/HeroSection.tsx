@@ -1,7 +1,6 @@
 "use client";
 
 import { HeroBackground } from "@/components/hero/HeroBackground";
-import { HeroDecoration } from "@/components/hero/HeroDecoration";
 import { HeroPortrait } from "@/components/hero/HeroPortrait";
 import { HeroHeadline } from "@/components/hero/HeroHeadline";
 import { HeroBodyCopy } from "@/components/hero/HeroBodyCopy";
@@ -48,45 +47,43 @@ export function HeroSection() {
       {/* ── z-10: Portrait (desktop absolute; mobile: in-flow below) ─── */}
       <HeroPortrait variant="desktop" />
 
-      {/* ── z-15: Flowing editorial wave decoration (desktop only) ────── */}
-      <HeroDecoration />
-
       {/* ════════════════════════════════════════════════════════════════
           DESKTOP CONTENT CANVAS
           Hidden on mobile. Absolutely fills the h-screen section.
-          pt-20 (md) / pt-24 (lg+) compensates for header height after
-          the -mt-20 pull-up so taxonomy strip starts cleanly below nav.
+          pt-24 / pt-32 leaves 32px-64px clearance below the header.
           pointer-events-none on container; auto on interactive children.
           ═══════════════════════════════════════════════════════════════ */}
       <div
         className={[
-          "hidden md:flex flex-col h-full",
+          "hidden md:flex flex-col justify-between h-full",
           "relative z-20 pointer-events-none",
-          "px-10 lg:px-12 xl:px-16",
-          // pt-28 (112px) / pt-36 (144px) leaves 32px to 64px vertical clearance below the 80px sticky header
-          "pt-28 pb-8 lg:pt-36 lg:pb-12",
+          "px-10 lg:px-14 xl:px-20",
+          "pt-24 pb-8 lg:pt-32 lg:pb-10",
         ].join(" ")}
       >
-        {/* Top: Taxonomy meta strip */}
-        <div className="pointer-events-auto">
-          <HeroMeta variant="top" />
-        </div>
-
-        {/* Middle: Left headline + Right body copy (portrait is behind) */}
-        <div className="flex-1 flex items-center justify-between">
-          {/* Left column — headline sits partly in front of portrait */}
-          <div className="w-[32%] max-w-[460px] pointer-events-auto">
-            <HeroHeadline />
+        {/* Main Content Row — Left Pillar & Right Pillar framing central portrait */}
+        <div className="flex-1 flex justify-between items-start pt-4 lg:pt-6">
+          {/* Left Editorial Pillar — Taxonomy, Headline, CTA */}
+          <div className="w-[38%] max-w-[520px] flex flex-col justify-between h-full max-h-[520px] pointer-events-auto">
+            <div>
+              <HeroMeta variant="left-taxonomy" />
+              <div className="mt-6 lg:mt-8">
+                <HeroHeadline />
+              </div>
+            </div>
           </div>
 
-          {/* Right column — body copy sits just right of portrait */}
-          <div className="w-[19%] max-w-[260px] pointer-events-auto">
-            <HeroBodyCopy />
+          {/* Right Editorial Pillar — Taxonomy & Supporting Body Copy */}
+          <div className="w-[24%] max-w-[320px] pt-0.5 pointer-events-auto">
+            <HeroMeta variant="right-taxonomy" />
+            <div className="mt-6 lg:mt-8">
+              <HeroBodyCopy />
+            </div>
           </div>
         </div>
 
-        {/* Bottom: Editorial CTA + scroll indicator */}
-        <div className="pointer-events-auto">
+        {/* Bottom: Editorial CTA + Scroll Indicator */}
+        <div className="w-full pointer-events-auto pt-4">
           <HeroMeta variant="bottom" />
         </div>
       </div>
