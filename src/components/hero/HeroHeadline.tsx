@@ -31,7 +31,7 @@ export function HeroHeadline() {
       }}
     >
       <h1
-        className="font-serif font-normal text-ink leading-[1.12] tracking-tight"
+        className="font-serif font-normal text-ink leading-[1.12] tracking-tight text-center md:text-left"
         style={{ fontSize: "clamp(2.1rem, 3.3vw, 3.25rem)" }}
       >
         I turn complex program ideas into{" "}

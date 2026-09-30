@@ -82,7 +82,7 @@ export function HeroMeta({ variant }: HeroMetaProps) {
           ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number],
           delay: reduced ? 0 : 0.1,
         }}
-        className="flex flex-wrap items-center gap-y-1 gap-x-2 tracking-[0.20em] select-none"
+        className="flex flex-wrap items-center justify-center gap-y-1 gap-x-2 tracking-[0.20em] select-none text-center"
       >
         <span className="font-sans text-[10px] uppercase font-medium text-slate/80">
           PROGRAM STRATEGY

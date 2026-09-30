@@ -87,21 +87,20 @@ export function HeroSection() {
 
       {/* ════════════════════════════════════════════════════════════════
           MOBILE LAYOUT — Stacked, in-flow, min-h-screen
-          pt-20 on first element compensates for header pull-up:
-          64px header + 16px gap = 80px (pt-20).
-          Portrait sits above the text content.
+          pt-20 on first element compensates for header pull-up.
+          Portrait sits above text, headline + body are centered.
           ═══════════════════════════════════════════════════════════════ */}
       <div className="md:hidden flex flex-col min-h-screen">
-        {/* Top: taxonomy strip — pt-20 clears the transparent header */}
-        <div className="px-6 pt-20 pb-4">
+        {/* Top: taxonomy strip — pt-20 clears transparent header */}
+        <div className="px-6 pt-20 pb-4 flex justify-center text-center">
           <HeroMeta variant="top" />
         </div>
 
         {/* Portrait — in-flow, full width, face prominent */}
         <HeroPortrait variant="mobile" />
 
-        {/* Headline + body copy */}
-        <div className="px-6 pt-8 flex-1">
+        {/* Headline + body copy — centered */}
+        <div className="px-6 pt-8 pb-4 flex-1 flex flex-col items-center justify-center text-center max-w-lg mx-auto">
           <HeroHeadline />
           <div className="mt-5">
             <HeroBodyCopy />
@@ -109,7 +108,7 @@ export function HeroSection() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="px-6 pt-8 pb-10">
+        <div className="px-6 pt-6 pb-10 flex justify-center">
           <HeroMeta variant="bottom" />
         </div>
       </div>

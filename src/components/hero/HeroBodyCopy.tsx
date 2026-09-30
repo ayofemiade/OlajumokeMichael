@@ -22,7 +22,7 @@ export function HeroBodyCopy() {
 
   return (
     <motion.p
-      className="font-serif font-light text-slate leading-relaxed"
+      className="font-serif font-light text-slate leading-relaxed text-center md:text-left"
       style={{ fontSize: "clamp(0.98rem, 1.2vw, 1.15rem)" }}
       initial={{ opacity: 0, y: reduced ? 0 : 18 }}
       animate={{ opacity: 1, y: 0 }}
