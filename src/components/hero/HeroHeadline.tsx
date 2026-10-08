@@ -35,12 +35,15 @@ export function HeroHeadline() {
         stay on one line each from lg up. Font size follows the width of the
         text column (cqw), so both lines always fit. Mobile: flows and centres.
       */}
-      <h1 className="font-serif font-normal text-garnet leading-[1.12] tracking-tight text-balance text-center md:text-right text-[2.1rem] md:text-[clamp(2.0rem,5.5cqw,4.0rem)]">
-        I turn complex program ideas into{" "}
+      <h1 className="font-serif font-normal text-garnet leading-[1.12] tracking-tight text-center md:text-right text-[2.1rem] md:text-[clamp(2.4rem,4.2cqw,5.0rem)]">
+        I turn complex program ideas into
+        <br className="hidden md:block" />
         <em className="font-serif" style={{ fontStyle: "italic" }}>
           structures
         </em>{" "}
-        that can be implemented, evaluated and improved.
+        that can be implemented,
+        <br className="hidden md:block" />
+        evaluated and improved.
       </h1>
     </motion.div>
   );

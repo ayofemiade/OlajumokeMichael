@@ -49,16 +49,15 @@ export function HeroSection() {
 
       {/* DESKTOP CONTENT CANVAS — Strict Right Alignment block */}
       <div className="hidden md:flex flex-col h-full relative z-20 pointer-events-none pr-8 pt-24 pb-16 items-end justify-center w-full">
-        {/* Container-query box: constrained to the right side of the viewport to prevent photo overlap. 
-            Added md:mr-8 lg:mr-12 xl:mr-20 to gently shift the block leftward towards the portrait, 
-            creating a subtle indent relative to the global nav. */}
+        {/* Container-query box: widened to allow the 2-liner headline to fit at a larger font size. 
+            Maintains the subtle right indent. */}
         <div
-          className="flex flex-col items-end pointer-events-auto w-full max-w-[75vw] lg:max-w-[65vw] xl:max-w-[55vw] md:mr-8 lg:mr-12 xl:mr-20"
+          className="flex flex-col items-end pointer-events-auto w-full max-w-[95vw] lg:max-w-[90vw] xl:max-w-[85vw] md:mr-6 lg:mr-10 xl:mr-16"
           style={{ containerType: "inline-size" }}
         >
           <HeroHeadline />
 
-          <div className="mt-8 lg:mt-10 w-full flex flex-col items-end" style={{ maxWidth: "min(35rem, 88cqw)" }}>
+          <div className="mt-5 lg:mt-7 w-full flex flex-col items-end max-w-[45rem]">
             <HeroBodyCopy />
             <div className="mt-8 lg:mt-10 w-full flex justify-end">
               <HeroMeta variant="cta" />
