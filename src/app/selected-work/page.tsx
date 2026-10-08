@@ -112,13 +112,86 @@ export default function SelectedWorkPage() {
             </Link>
           </ScrollReveal>
 
-          {/* Primary Case 2: Winston-Salem Women's Business Center */}
+          {/* Primary Case 2: Bpeace */}
+          <ScrollReveal personality="structural">
+            <Link href="/selected-work/bpeace" className="block group">
+              <div className="border border-line bg-soft-stone/30 hover:bg-soft-stone/80 transition-colors duration-500 p-5 sm:p-8 md:p-12 lg:p-14 relative overflow-hidden rounded-sm">
+                
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-8 border-b border-line/40 pb-4 w-full">
+                  <Meta className="text-plum">Case 02 · Institutional Program Implementation</Meta>
+                  
+                  <div className="flex items-center gap-3 shrink-0">
+                    <Meta className="text-slate font-sans">2025–2026 · Bpeace</Meta>
+                    <svg className="w-5 h-5 text-plum transform group-hover:translate-x-1.5 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </div>
+                </div>
+
+                <Headline as="h2" size="lg" className="text-ink leading-tight mb-6 sm:mb-8 font-sans font-medium max-w-3xl group-hover:text-plum transition-colors duration-300 text-lg sm:text-xl md:text-2xl lg:text-[1.75rem]">
+                  Coordinating the People and Processes Behind a Founder-Support Program
+                </Headline>
+                
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 border-t border-line/40 pt-8 mb-8">
+                  <div className="md:col-span-5">
+                    <Meta className="text-plum mb-2">Context</Meta>
+                    <Body className="text-slate font-sans text-sm leading-relaxed">
+                      Breaking the $1M Barrier<br/>
+                      Founder-support initiative delivered by Bpeace
+                    </Body>
+                  </div>
+                  <div className="md:col-span-7">
+                    <Meta className="text-plum mb-2">Role</Meta>
+                    <Body className="text-slate font-sans text-sm leading-relaxed">
+                      U.S. Program Manager (Contract), September 2025 - June 2026
+                    </Body>
+                  </div>
+                </div>
+
+                <div className="border-t border-line/40 pt-8">
+                  <Meta className="text-plum mb-3">Abstract</Meta>
+                  <Body className="text-base md:text-lg text-slate leading-relaxed font-serif mb-8 max-w-4xl">
+                    I helped translate Bpeace’s program goals into coordinated delivery across founders, staff, volunteer specialists, facilitators and regional Showcases. My work connected practical program design with implementation—preparing contributors, clarifying expectations and coordinating activities across the founder experience. Within the team-delivered program, I created guidance for coaches and facilitators, designed and facilitated peer-learning sessions, and substantially shaped onboarding and Showcase preparation.
+                  </Body>
+
+                  <div className="mb-10">
+                    <Meta className="text-plum mb-3 text-xs">Capabilities Demonstrated</Meta>
+                    <div className="flex flex-wrap gap-2">
+                      {[
+                        "Program Implementation",
+                        "Operational Systems Design",
+                        "Facilitation & Learning Design",
+                        "Stakeholder Coordination",
+                        "Implementation Learning"
+                      ].map((tag) => (
+                        <span key={tag} className="text-xs font-sans font-medium px-3 py-1.5 bg-paper border border-line text-ink rounded-xs">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div className="flex justify-center items-center pt-2">
+                    <span className="inline-flex items-center justify-center gap-3 bg-transparent border border-plum text-plum px-6 sm:px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold group-hover:bg-plum group-hover:text-paper transition-colors duration-300 w-full sm:w-auto text-center">
+                      <span>Read the case study</span>
+                      <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+            </Link>
+          </ScrollReveal>
+
+          {/* Primary Case 3: Winston-Salem Women's Business Center */}
           <ScrollReveal personality="structural">
             <Link href="/selected-work/winston-salem-wbc" className="block group">
               <div className="border border-line bg-soft-stone/30 hover:bg-soft-stone/80 transition-colors duration-500 p-5 sm:p-8 md:p-12 lg:p-14 relative overflow-hidden rounded-sm">
                 
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-8 border-b border-line/40 pb-4 w-full">
-                  <Meta className="text-plum">Case 02 · Regional Institutional Leadership</Meta>
+                  <Meta className="text-plum">Case 03 · Regional Institutional Leadership</Meta>
                   
                   <div className="flex items-center gap-3 shrink-0">
                     <Meta className="text-slate font-sans">April 2023–March 2024</Meta>

@@ -30,10 +30,12 @@ export function HeroHeadline() {
         delay: reduced ? 0 : 0.4,
       }}
     >
-      <h1
-        className="font-serif font-normal text-ink leading-[1.12] tracking-tight text-center md:text-left"
-        style={{ fontSize: "clamp(2.1rem, 3.3vw, 3.25rem)" }}
-      >
+      {/*
+        Desktop: two deliberate lines (split at the natural clause break) that
+        stay on one line each from lg up. Font size follows the width of the
+        text column (cqw), so both lines always fit. Mobile: flows and centres.
+      */}
+      <h1 className="font-serif font-normal text-garnet leading-[1.12] tracking-tight text-balance text-center md:text-right text-[2.1rem] md:text-[clamp(2.0rem,5.5cqw,4.0rem)]">
         I turn complex program ideas into{" "}
         <em className="font-serif" style={{ fontStyle: "italic" }}>
           structures

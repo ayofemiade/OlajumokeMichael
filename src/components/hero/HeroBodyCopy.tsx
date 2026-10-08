@@ -22,8 +22,7 @@ export function HeroBodyCopy() {
 
   return (
     <motion.p
-      className="font-serif font-light text-slate leading-relaxed text-center md:text-left"
-      style={{ fontSize: "clamp(0.98rem, 1.2vw, 1.15rem)" }}
+      className="font-serif font-light text-[#5C5F67] leading-[1.75] text-balance text-center md:text-right text-[0.98rem] md:text-[clamp(1.0rem,2.8cqw,1.3rem)]"
       initial={{ opacity: 0, y: reduced ? 0 : 18 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
@@ -33,7 +32,7 @@ export function HeroBodyCopy() {
       }}
     >
       I work across program strategy, program and service design,
-      implementation, operations and evaluation—connecting the thinking
+      implementation, operations and evaluation - connecting the thinking
       behind an initiative with the structures, delivery and evidence
       needed to move it forward.
     </motion.p>

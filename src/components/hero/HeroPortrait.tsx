@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
@@ -8,68 +8,74 @@ interface HeroPortraitProps {
   variant: "desktop" | "mobile";
 }
 
+const PORTRAIT_SRC = "/images/IMG_1941.jpg";
+const PORTRAIT_ALT = "Olajumoke Michael — Strategist & Program Architect";
+
 /**
- * HeroPortrait — The central visual anchor of the editorial hero.
+ * HeroPortrait — Monochrome portrait anchored to the left of the hero.
  *
- * Desktop: absolutely positioned, full hero height, centred at 55% of viewport.
- * Portrait sits between the headline (left) and body copy (right) columns,
- * with its left edge slightly behind the headline text creating editorial depth.
- * Subtle scroll parallax on desktop.
+ * Desktop: a framed panel anchored to the bottom-left of the hero.
+ *   - Frame = top 83% of the photo (aspect 3427/4000): head, raised arm and
+ *     hair are fully visible; the table is cropped out.
+ *   - Width comes from the section's --hero-photo-w variable (max 50vw, and
+ *     limited by viewport height so the head never meets the wordmark). The
+ *     text column is offset from the same variable, so the two always sit
+ *     close together at every screen size.
+ *   - The frame overhangs the section bottom by 8vh; that part is already
+ *     faded out by the mask.
+ *   - Greyscale via CSS (source file stays in colour).
+ *   - mix-blend-multiply turns the white studio backdrop into the page's
+ *     paper colour, so there is no visible rectangle.
+ *   - Masks feather the right and bottom edges.
  *
- * Mobile: in-flow, full viewport width, face-cropped to 55vh height.
- * Uses object-cover with face-priority object-position.
+ * Mobile: in-flow, full width, face-priority crop, same monochrome treatment.
  *
  * Face is preserved exactly. No facial alteration.
  */
 export function HeroPortrait({ variant }: HeroPortraitProps) {
   const reduced = useReducedMotion();
-  const { scrollY } = useScroll();
 
-  // Very subtle parallax: portrait moves up 35px over 600px of scroll
-  const portraitY = useTransform(scrollY, [0, 600], [0, reduced ? 0 : -35]);
-
-  /* ─── Desktop: absolute, anchored bottom, top cleanly below nav ─ */
   if (variant === "desktop") {
+    const mask =
+      "linear-gradient(to right, #000 54%, transparent 96%), linear-gradient(to bottom, #000 58%, transparent 96%)";
     return (
       <motion.div
-        className="hidden md:block absolute bottom-0 z-10 pointer-events-none"
+        className="hidden md:block absolute left-0 z-10 pointer-events-none overflow-hidden mix-blend-multiply"
         style={{
-          // Height constrained so portrait top edge stays below header (y >= 105px)
-          height: "82%",
-          maxHeight: "calc(100vh - 105px)",
-          // Width auto-calculated from aspect ratio: 2326×2672 original
-          aspectRatio: "2326 / 2672",
-          // Positioned horizontally at 54% of viewport width
-          left: "54%",
-          // Scroll parallax applied as motion value
-          y: reduced ? 0 : portraitY,
+          width: "var(--hero-photo-w)",
+          aspectRatio: "3427 / 4000",
+          bottom: "-8vh",
+          maskImage: mask,
+          WebkitMaskImage: mask,
+          maskComposite: "intersect",
+          WebkitMaskComposite: "source-in",
         }}
-        // Entrance: opacity + subtle scale, x stays constant at -50%
-        initial={{ opacity: 0, scale: reduced ? 1 : 0.98, x: "-50%" }}
-        animate={{ opacity: 1, scale: 1, x: "-50%" }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
         transition={{
-          duration: reduced ? 0 : 1.1,
+          duration: reduced ? 0 : 1.2,
           ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number],
-          delay: reduced ? 0 : 0.35,
+          delay: reduced ? 0 : 0.2,
         }}
       >
         <Image
-          src="/images/hero_pic_web.webp"
-          alt="Olajumoke Michael — Strategist & Program Architect"
+          src={PORTRAIT_SRC}
+          alt={PORTRAIT_ALT}
           fill
-          className="object-contain object-bottom"
+          className="object-cover grayscale contrast-[1.05]"
+          style={{ objectPosition: "30% 0%" }}
           priority
           loading="eager"
-          sizes="(max-width: 1280px) 50vw, 55vw"
+          quality={85}
+          sizes="50vw"
         />
       </motion.div>
     );
   }
 
-  /* ─── Mobile: in-flow, full width, face prominently cropped ──────── */
   return (
     <motion.div
-      className="md:hidden relative w-full overflow-hidden"
+      className="md:hidden relative w-full overflow-hidden mix-blend-multiply"
       style={{ height: "58vh", maxHeight: "440px" }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -79,11 +85,11 @@ export function HeroPortrait({ variant }: HeroPortraitProps) {
       }}
     >
       <Image
-        src="/images/hero_pic_web.webp"
-        alt="Olajumoke Michael — Strategist & Program Architect"
+        src={PORTRAIT_SRC}
+        alt={PORTRAIT_ALT}
         fill
-        className="object-cover"
-        style={{ objectPosition: "50% 10%" }}
+        className="object-cover grayscale contrast-[1.05]"
+        style={{ objectPosition: "50% 22%" }}
         priority
         loading="eager"
         sizes="100vw"

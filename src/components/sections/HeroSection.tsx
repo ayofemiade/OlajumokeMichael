@@ -1,34 +1,30 @@
 "use client";
 
-import { HeroBackground } from "@/components/hero/HeroBackground";
 import { HeroPortrait } from "@/components/hero/HeroPortrait";
 import { HeroHeadline } from "@/components/hero/HeroHeadline";
 import { HeroBodyCopy } from "@/components/hero/HeroBodyCopy";
 import { HeroMeta } from "@/components/hero/HeroMeta";
 
 /**
- * HeroSection — Editorial Luxury Hero: "The Person Inside the System"
+ * HeroSection — Editorial split hero.
  *
- * Compositional concept:
- *   The portrait is the human presence — centred visually.
- *   The headline (left) is the strategic statement — the thinking.
- *   The body copy (right) is the operational breadth — the system.
- *   The background letterforms are the taxonomy — the architecture.
- *   The wave decoration adds editorial movement and visual rhythm.
+ * Left: monochrome portrait that dissolves into the page.
+ * Right: right-aligned statement (two-line headline → hairline → body → CTA).
  *
- * Full-bleed integration with the navigation:
- *   The section uses -mt-16 md:-mt-20 to pull the hero UP behind the
- *   now-transparent navbar. The hero portrait bleeds to the very top of
- *   the viewport. Desktop pt-20/lg:pt-24 compensate inside the content
- *   layer, keeping text below the nav.
+ * One shared variable drives the composition:
+ *   --hero-photo-w = min(50vw, height-limited width)
+ * The portrait is exactly that wide, and the text column starts at 88% of it,
+ * so the text always begins just after the image at every viewport size.
+ *
+ * The section uses -mt-16 md:-mt-20 to pull the hero UP behind the
+ * transparent navbar.
  *
  * Layer order (desktop):
- *   z-0   HeroBackground    — decorative PROGRAM/STRATEGY letterforms
- *   z-10  HeroPortrait      — absolute, full hero height, centre-right
- *   z-15  HeroDecoration    — flowing editorial wave stroke (over portrait)
- *   z-20  Content canvas    — headline left, body right, meta strips
+ *   z-10  HeroPortrait   — absolute, bottom-left
+ *   z-20  Content canvas — text column + scroll cue
  *
- * Mobile is a separate stacked layout: meta top → portrait → headline → body → CTA.
+ * Mobile is a separate stacked layout: portrait → headline → body → CTA.
+ * (HeroBackground ghost letters are intentionally no longer rendered.)
  *
  * All copy is 100% immutable. Navigation architecture is not modified here.
  */
@@ -40,48 +36,39 @@ export function HeroSection() {
       // md:h-screen keeps the desktop hero exactly one viewport tall.
       className="relative bg-paper overflow-hidden -mt-16 md:-mt-20 md:h-screen border-b border-line/40"
       aria-label="Introduction"
+      style={
+        {
+          // Photo frame ratio is 3427/4000 (0.857). Its height may reach
+          // 100vh + 8vh (overhang) minus 2.5rem so the head clears the wordmark.
+          "--hero-photo-w": "min(54vw, calc((108vh - 2.5rem) * 0.857))",
+        } as React.CSSProperties
+      }
     >
-      {/* ── z-0: Decorative background letterforms (desktop only) ────── */}
-      <HeroBackground />
-
       {/* ── z-10: Portrait (desktop absolute; mobile: in-flow below) ─── */}
       <HeroPortrait variant="desktop" />
 
-      {/* ════════════════════════════════════════════════════════════════
-          DESKTOP CONTENT CANVAS
-          Hidden on mobile. Absolutely fills the h-screen section.
-          pt-24 / pt-32 leaves 32px-64px clearance below the header.
-          pointer-events-none on container; auto on interactive children.
-          ═══════════════════════════════════════════════════════════════ */}
-      <div
-        className={[
-          "hidden md:flex flex-col justify-between h-full",
-          "relative z-20 pointer-events-none",
-          "px-10 lg:px-14 xl:px-20",
-          "pt-24 pb-8 lg:pt-32 lg:pb-10",
-        ].join(" ")}
-      >
-        {/* Main Content Row — Left Pillar & Right Pillar framing central portrait */}
-        <div className="flex-1 flex justify-between items-stretch pt-4 lg:pt-6">
-          {/* Left Editorial Pillar — Taxonomy, Headline */}
-          <div className="w-[38%] max-w-[520px] flex flex-col justify-between h-full max-h-[520px] pointer-events-auto">
-            <div>
-              <HeroMeta variant="left-taxonomy" />
-              <div className="mt-6 lg:mt-8">
-                <HeroHeadline />
-              </div>
-            </div>
-          </div>
+      {/* DESKTOP CONTENT CANVAS — Strict Right Alignment block */}
+      <div className="hidden md:flex flex-col h-full relative z-20 pointer-events-none pr-8 pt-24 pb-16 items-end justify-center w-full">
+        {/* Container-query box: constrained to the right side of the viewport to prevent photo overlap. 
+            Added md:mr-8 lg:mr-12 xl:mr-20 to gently shift the block leftward towards the portrait, 
+            creating a subtle indent relative to the global nav. */}
+        <div
+          className="flex flex-col items-end pointer-events-auto w-full max-w-[75vw] lg:max-w-[65vw] xl:max-w-[55vw] md:mr-8 lg:mr-12 xl:mr-20"
+          style={{ containerType: "inline-size" }}
+        >
+          <HeroHeadline />
 
-          {/* Right Editorial Pillar — Supporting Body Copy (Vertically centered between PROGRAM & STRATEGY) */}
-          <div className="w-[24%] max-w-[340px] flex flex-col justify-center pointer-events-auto">
+          <div className="mt-8 lg:mt-10 w-full flex flex-col items-end" style={{ maxWidth: "min(35rem, 88cqw)" }}>
             <HeroBodyCopy />
+            <div className="mt-8 lg:mt-10 w-full flex justify-end">
+              <HeroMeta variant="cta" />
+            </div>
           </div>
         </div>
 
-        {/* Bottom: Editorial CTA + Scroll Indicator */}
-        <div className="w-full pointer-events-auto pt-4">
-          <HeroMeta variant="bottom" />
+        {/* Scroll cue — bottom-right */}
+        <div className="absolute bottom-8 right-8 pointer-events-auto">
+          <HeroMeta variant="scroll" />
         </div>
       </div>
 
@@ -91,13 +78,10 @@ export function HeroSection() {
           Portrait sits above text, headline + body are centered.
           ═══════════════════════════════════════════════════════════════ */}
       <div className="md:hidden flex flex-col min-h-screen">
-        {/* Top: taxonomy strip — pt-20 clears transparent header */}
-        <div className="px-6 pt-20 pb-4 flex justify-center text-center">
-          <HeroMeta variant="top" />
+        {/* Portrait — in-flow, full width, face prominent. pt-20 clears transparent header */}
+        <div className="pt-20">
+          <HeroPortrait variant="mobile" />
         </div>
-
-        {/* Portrait — in-flow, full width, face prominent */}
-        <HeroPortrait variant="mobile" />
 
         {/* Headline + body copy — centered */}
         <div className="px-6 pt-8 pb-4 flex-1 flex flex-col items-center justify-center text-center max-w-lg mx-auto">
