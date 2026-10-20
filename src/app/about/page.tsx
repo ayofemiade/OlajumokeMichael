@@ -6,13 +6,22 @@ import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import { ParallaxImage } from "@/components/motion/ParallaxImage";
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: "About",
+export const metadata: Metadata = {
+  title: {
+    absolute: "About Olajumoke Michael | Program Design, Delivery and Evaluation",
+  },
   description:
-    "Learn about Olajumoke Michael's background, program design approach, leadership principles, and core focus.",
+    "About Olajumoke Michael: how she approaches program design, operations and delivery, her experience across sectors, and the wider life that shapes her work.",
   alternates: {
     canonical: "/about",
+  },
+  openGraph: {
+    title: "About Olajumoke Michael | Program Design, Delivery and Evaluation",
+    description:
+      "About Olajumoke Michael: how she approaches program design, operations and delivery, her experience across sectors, and the wider life that shapes her work.",
+    url: "https://olajumokemichael.com/about",
   },
 };
 
@@ -21,19 +30,19 @@ export default function AboutPage() {
     <div className="flex flex-col w-full">
       
       {/* 1. Core Tension (Hero) */}
-      <section className="relative min-h-[65vh] flex flex-col justify-center px-6 md:px-12 lg:px-24 pt-32 pb-20 bg-paper border-b border-line/30">
+      <section className="relative min-h-[60vh] flex flex-col justify-center px-6 md:px-12 lg:px-24 pt-32 pb-20 bg-paper border-b border-line/30">
         <div className="max-w-[1200px] w-full mx-auto relative z-10">
           <ScrollReveal personality="strong">
             <Meta className="text-plum mb-6">Core Focus &amp; Purpose</Meta>
             <Display italic className="text-ink leading-[1.1] tracking-tight max-w-5xl">
-              I work at the point where a program’s purpose meets the realities of putting it into practice.
+              I work at the point where a program&apos;s purpose meets the realities of putting it into practice.
             </Display>
           </ScrollReveal>
         </div>
       </section>
 
-      {/* 2. Experience Context */}
-      <section className="relative px-6 md:px-12 lg:px-24 py-24 md:py-32 bg-paper">
+      {/* 2. Pull Quote, Background & CTAs */}
+      <section className="relative px-6 md:px-12 lg:px-24 py-20 md:py-28 bg-paper">
         <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
           
           {/* Left Column: Core Philosophy Pullquote */}
@@ -46,11 +55,11 @@ export default function AboutPage() {
             </blockquote>
           </ScrollReveal>
 
-          {/* Right Column: Experience Context Narrative & CTAs */}
+          {/* Right Column: Background Narrative & CTAs */}
           <ScrollReveal personality="structural" delay={0.15} className="lg:col-span-7 flex flex-col pt-2 lg:pt-0">
             <Meta className="text-slate mb-6">Background &amp; Scope</Meta>
             <Body className="text-lg text-slate leading-relaxed font-serif mb-10">
-              My experience spans entrepreneurship support, economic and community development, higher education, and international-development work in Nigeria. Across those settings, I have led programs, coordinated people and partners, built operating approaches, and used evidence from implementation to inform what comes next. The contexts have differed; the recurring work has been connecting direction with delivery.
+              I have worked in entrepreneurship support, economic and community development, higher education, and international-development work in Nigeria. In those settings I have led programs, coordinated staff, volunteers and partners, built and strengthened the operating systems programs depend on, and used what delivery revealed to decide what to change.
             </Body>
             
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-5">
@@ -72,7 +81,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 3. Methodology (Structural Blueprint) */}
+      {/* 3. How I approach the work */}
       <section className="relative border-t border-line bg-soft-stone">
         <div className="grid grid-cols-1 md:grid-cols-12 w-full">
           
@@ -90,36 +99,107 @@ export default function AboutPage() {
             </div>
           </ScrollReveal>
 
-          <ScrollReveal
-            personality="standard"
-            delay={0.1}
-            className="col-span-1 md:col-span-6 border-b md:border-b-0 md:border-r border-line p-6 md:p-8 md:p-12 xl:p-24 flex flex-col h-full min-h-[450px] relative transition-colors duration-300 hover:bg-paper/40"
-          >
-            <Meta className="mb-auto pb-12 text-plum">01. Connecting the elements</Meta>
-            <div className="mt-auto">
-              <Headline size="lg" className="mb-6 font-sans leading-snug max-w-md">Understanding purpose, people, and conditions</Headline>
-              <Body className="text-slate max-w-md">I start by understanding the purpose, the people involved, and the conditions in which the work will happen. From there, I look at how the activities, responsibilities, resources and evidence need to connect. I care about whether a program can actually be carried out, not just whether it makes sense on paper.</Body>
-            </div>
-          </ScrollReveal>
-          
-          <ScrollReveal
-            personality="standard"
-            delay={0.25}
-            className="col-span-1 md:col-span-6 p-6 md:p-8 md:p-12 xl:p-24 flex flex-col h-full min-h-[450px] relative transition-colors duration-300 hover:bg-paper/40"
-          >
-            <Meta className="mb-auto pb-12 text-plum">02. Learning from implementation</Meta>
-            <div className="mt-auto">
-              <Headline size="lg" className="mb-6 font-sans leading-snug max-w-md">Distinguishing feedback from outcomes</Headline>
-              <Body className="text-slate max-w-md">Implementation is also a source of learning. Participation, feedback, completed work and gaps in the evidence can each tell us something different. I try to distinguish what happened from what people reported, and both from the outcomes we may still need to test.</Body>
-            </div>
-          </ScrollReveal>
+          {/* 3 Columns detailing the progression of practice */}
+          <div className="col-span-1 md:col-span-12 grid grid-cols-1 md:grid-cols-3">
+            
+            {/* Column 01: Purpose, People & Conditions */}
+            <ScrollReveal
+              personality="standard"
+              delay={0.1}
+              className="col-span-1 border-b md:border-b-0 border-r-0 md:border-r border-line p-6 md:p-8 md:p-10 xl:p-14 flex flex-col justify-between transition-colors duration-300 hover:bg-paper/40"
+            >
+              <div>
+                <Meta className="mb-6 text-plum">01. Connecting the elements</Meta>
+                <Body className="text-slate text-base md:text-lg leading-relaxed font-serif">
+                  I start by understanding the purpose, the people involved, and the conditions in which the work will happen. From there, I look at how the activities, responsibilities, resources and evidence need to connect. I care about whether a program can actually be carried out, not just whether it makes sense on paper.
+                </Body>
+              </div>
+            </ScrollReveal>
+
+            {/* Column 02: Implementation as learning */}
+            <ScrollReveal
+              personality="standard"
+              delay={0.2}
+              className="col-span-1 border-b md:border-b-0 border-r-0 md:border-r border-line p-6 md:p-8 md:p-10 xl:p-14 flex flex-col justify-between transition-colors duration-300 hover:bg-paper/40"
+            >
+              <div>
+                <Meta className="mb-6 text-plum">02. Learning from implementation</Meta>
+                <Body className="text-slate text-base md:text-lg leading-relaxed font-serif">
+                  Implementation is also a source of learning. Participation, feedback, completed work and gaps in the evidence can each tell us something different. I try to distinguish what happened from what people reported, and both from the outcomes we may still need to test.
+                </Body>
+              </div>
+            </ScrollReveal>
+
+            {/* Column 03: Practical demonstration */}
+            <ScrollReveal
+              personality="standard"
+              delay={0.3}
+              className="col-span-1 p-6 md:p-8 md:p-10 xl:p-14 flex flex-col justify-between transition-colors duration-300 hover:bg-paper/40"
+            >
+              <div>
+                <Meta className="mb-6 text-plum">03. Evidence in practice</Meta>
+                <Body className="text-slate text-base md:text-lg leading-relaxed font-serif">
+                  In my Venture Readiness Lab pilot, office hours were available but rarely used. That showed me that offering support is not the same as making it usable.
+                </Body>
+              </div>
+            </ScrollReveal>
+
+          </div>
 
         </div>
       </section>
 
-      {/* 4. Current Work (Bridge) */}
-      <section className="relative border-t border-line bg-paper py-24 md:py-32 px-6 md:px-12 lg:px-24">
-        <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
+      {/* 4. Who I work with */}
+      <section className="relative border-t border-line bg-paper py-20 md:py-28 px-6 md:px-12 lg:px-24">
+        <div className="max-w-[1200px] mx-auto">
+          <ScrollReveal
+            personality="structural"
+            className="flex justify-between items-center border-b border-line pb-6 mb-12"
+          >
+            <Meta className="text-plum">Stakeholders &amp; Partners</Meta>
+            <Meta>Collaborative Scope</Meta>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
+            <ScrollReveal personality="standard" className="lg:col-span-5">
+              <Headline as="h2" size="xl" className="text-ink leading-tight mb-6">
+                Who I work with
+              </Headline>
+              <Body className="text-slate text-base md:text-lg leading-relaxed font-serif">
+                I have worked with entrepreneurs and founders, college advancement teams, nonprofit and volunteer networks, and government, civil-society and international partners.
+              </Body>
+            </ScrollReveal>
+
+            <ScrollReveal
+              personality="structural"
+              stagger
+              staggerDelay={0.1}
+              className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4"
+            >
+              {[
+                "Entrepreneurs and founders",
+                "College advancement teams",
+                "Nonprofit and volunteer networks",
+                "Government, civil-society and international partners",
+              ].map((group, idx) => (
+                <div
+                  key={idx}
+                  className="p-6 border border-line bg-soft-stone/40 flex items-start gap-4 rounded-sm"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-plum mt-2.5 shrink-0" aria-hidden="true" />
+                  <span className="font-serif text-base text-ink leading-relaxed">
+                    {group}
+                  </span>
+                </div>
+              ))}
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Current work */}
+      <section className="relative border-t border-line bg-soft-stone py-24 md:py-32 px-6 md:px-12 lg:px-24">
+        <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
           
           <ScrollReveal
             personality="standard"
@@ -127,10 +207,10 @@ export default function AboutPage() {
           >
             <Meta className="text-plum mb-6">Current Work</Meta>
             <Headline as="h2" size="xl" italic className="text-ink leading-tight mb-8">
-              I founded Ethnoir as a separate organization focused on venture development.
+              I founded Ethnoir to build practical support for founders.
             </Headline>
-            <Body className="text-slate mb-10 max-w-2xl mx-auto">
-              Through it, I have designed and delivered founder-facing work, including the Venture Readiness Lab. That pilot is the first detailed case in my Selected Work: it shows the program I built and led, what the evidence established, and what remained unresolved.
+            <Body className="text-slate mb-10 max-w-2xl mx-auto font-serif text-base md:text-lg leading-relaxed">
+              Ethnoir is a separate organization. Through it I designed and ran the Venture Readiness Lab, a six-week pilot for early-stage founders. It is the first case in my Selected Work and shows the program I built and led, what the evidence established, and what remained unresolved.
             </Body>
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center items-center">
               <Link
@@ -153,20 +233,20 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 5. The Human Dimension */}
-      <section className="relative bg-soft-stone py-24 md:py-32 lg:py-40 px-6 md:px-12 lg:px-24 overflow-hidden">
+      {/* 6. Beyond the work */}
+      <section className="relative bg-paper py-24 md:py-32 lg:py-40 px-6 md:px-12 lg:px-24 overflow-hidden border-t border-line">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center relative z-10">
           
-          {/* Facilitation Portrait with subtle GSAP Parallax */}
+          {/* Facilitation Portrait with subtle Parallax */}
           <div className="lg:col-span-5 order-2 lg:order-1">
             <ParallaxImage
               speed={0.08}
-              containerClassName="w-full aspect-[4/5] rounded-sm bg-paper shadow-lg border border-line"
+              containerClassName="w-full aspect-[4/5] rounded-sm bg-soft-stone shadow-lg border border-line"
             >
               <div className="relative w-full h-full">
                 <Image
                   src="/images/03_Olajumoke-Michael_Shalom-Facilitation.jpg"
-                  alt="Olajumoke Michael facilitating"
+                  alt="Portrait of Olajumoke Michael"
                   fill
                   className="object-cover object-[80%_85%]"
                   sizes="(max-width: 1024px) 100vw, 40vw"
@@ -175,7 +255,7 @@ export default function AboutPage() {
             </ParallaxImage>
           </div>
           
-          {/* Quiet Fire Reflection — Quiet personality */}
+          {/* Quiet Fire Reflection */}
           <ScrollReveal
             personality="quiet"
             delay={0.2}
@@ -201,8 +281,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 6. Contact Invitation */}
-      <section className="relative bg-ink text-paper py-24 md:py-32 px-6 md:px-12 lg:px-24">
+      {/* 7. A conversation */}
+      <section className="relative bg-ink text-paper py-24 md:py-32 px-6 md:px-12 lg:px-24 border-t border-line">
         <ScrollReveal
           personality="strong"
           className="max-w-[1400px] mx-auto flex flex-col md:flex-row md:items-end justify-between gap-12 border-t border-slate/30 pt-16"
@@ -213,12 +293,20 @@ export default function AboutPage() {
               If my experience is relevant to a role, a program or service challenge, or a possible collaboration, I would be glad to hear from you.
             </Headline>
           </div>
-          <Link 
-            href="/contact" 
-            className="inline-flex items-center justify-center px-10 py-5 bg-plum text-white hover:bg-paper hover:text-ink transition-colors duration-300 text-sm font-medium tracking-wide uppercase shrink-0"
-          >
-            Contact me
-          </Link>
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 shrink-0">
+            <Link 
+              href="/contact" 
+              className="inline-flex items-center justify-center px-8 py-4 bg-plum text-white hover:bg-paper hover:text-ink transition-colors duration-300 text-xs font-semibold tracking-[0.15em] uppercase text-center"
+            >
+              Discuss a role or project
+            </Link>
+            <Link 
+              href="/selected-work" 
+              className="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-paper/70 text-paper hover:bg-paper hover:text-ink transition-colors duration-300 text-xs font-semibold tracking-[0.15em] uppercase text-center"
+            >
+              View selected work
+            </Link>
+          </div>
         </ScrollReveal>
       </section>
 

@@ -4,37 +4,29 @@ import { motion } from "framer-motion";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 /**
- * HeroBodyCopy — Supporting editorial paragraph.
+ * HeroBodyCopy — Supporting editorial proposition statement.
  *
- * Copy is 100% immutable:
- * "I work across program strategy, program and service design,
- *  implementation, operations and evaluation—connecting the thinking
- *  behind an initiative with the structures, delivery and evidence
- *  needed to move it forward."
- *
- * Desktop: right column of the hero, narrow width (~19% of content width).
- * Mobile: flows below the headline, full width.
- *
- * Typography: Newsreader serif, light weight, relaxed leading.
+ * Approved copy:
+ * "Across entrepreneurship support, higher education and an international
+ *  grants portfolio, I have designed programs, built and strengthened
+ *  the operating systems they depend on, led the people and partners who
+ *  deliver them, and evaluated what the evidence shows."
  */
 export function HeroBodyCopy() {
   const reduced = useReducedMotion();
 
   return (
     <motion.p
-      className="font-serif font-light text-[#5C5F67] leading-[1.75] text-balance text-center md:text-right text-[0.98rem] md:text-[clamp(1.0rem,2.8cqw,1.3rem)]"
-      initial={{ opacity: 0, y: reduced ? 0 : 18 }}
+      className="font-serif font-light text-[#D8D2CA] leading-[1.7] text-left text-base sm:text-lg lg:text-[1.18rem] max-w-2xl"
+      initial={{ opacity: 0, y: reduced ? 0 : 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
-        duration: reduced ? 0 : 1.0,
-        ease: [0.21, 0.47, 0.32, 0.98] as [number, number, number, number],
-        delay: reduced ? 0 : 0.65,
+        duration: reduced ? 0 : 0.9,
+        ease: [0.16, 1, 0.3, 1] as [number, number, number, number],
+        delay: reduced ? 0 : 0.25,
       }}
     >
-      I work across program strategy, program and service design,
-      implementation, operations and evaluation - connecting the thinking
-      behind an initiative with the structures, delivery and evidence
-      needed to move it forward.
+      Across entrepreneurship support, higher education and an international grants portfolio, I have designed programs, built and strengthened the operating systems they depend on, led the people and partners who deliver them, and evaluated what the evidence shows.
     </motion.p>
   );
 }

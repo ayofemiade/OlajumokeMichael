@@ -4,13 +4,22 @@ import { Body } from "@/components/typography/Body";
 import { Meta } from "@/components/typography/Meta";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import Link from "next/link";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: "Experience",
+export const metadata: Metadata = {
+  title: {
+    absolute: "Experience | Olajumoke Michael",
+  },
   description:
-    "Professional progression, leadership roles, and downloadable résumé of Olajumoke Michael.",
+    "Olajumoke Michael's experience leading entrepreneurship programs, founder-support delivery, advancement operations and international grants.",
   alternates: {
     canonical: "/experience",
+  },
+  openGraph: {
+    title: "Experience | Olajumoke Michael",
+    description:
+      "Olajumoke Michael's experience leading entrepreneurship programs, founder-support delivery, advancement operations and international grants.",
+    url: "https://olajumokemichael.com/experience",
   },
 };
 
@@ -42,7 +51,7 @@ export default function ExperiencePage() {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-3 bg-ink text-paper px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold hover:bg-plum transition-colors duration-300 w-full sm:w-auto group shadow-sm"
                 >
-                  <span>Download résumé (PDF)</span>
+                  <span>Download my résumé</span>
                   <svg className="w-4 h-4 transform group-hover:translate-y-0.5 transition-transform duration-300 text-paper/80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
@@ -70,7 +79,7 @@ export default function ExperiencePage() {
             </div>
             <div className="lg:col-span-7 lg:col-start-6 flex flex-col pt-1">
               <Body className="text-base md:text-lg text-slate leading-relaxed font-serif mb-8">
-                I founded Ethnoir to work on questions of venture development. I designed and delivered its founder-facing Venture Readiness Lab pilot, connecting the program’s purpose with a six-week structure, participant activities, delivery operations and evidence collection. The pilot is documented in Selected Work, including what I personally led, what participants created and what the evidence does—and does not—show.
+                I founded Ethnoir to build practical support for founders. I designed and ran its first program, the Venture Readiness Lab, a six-week pilot with six active founders. My work covered the program design, the sessions, the participant workflow for intake, communication and tracking, and the review of evidence. The case in Selected Work shows what I led, what participants created and what the evidence does—and does not—show.
               </Body>
               <Link
                 href="/selected-work/venture-readiness-lab"
@@ -84,28 +93,40 @@ export default function ExperiencePage() {
           {/* Bpeace */}
           <ScrollReveal personality="structural" delay={0.08} className="group grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 py-16 md:py-20 border-b border-line border-l-2 border-l-transparent hover:border-l-plum hover:pl-4 transition-all duration-300">
             <div className="lg:col-span-4 flex flex-col gap-2">
-              <Meta className="text-plum mb-2">2025–2026 · Remote / NC &amp; GA</Meta>
+              <Meta className="text-plum mb-2">September 2025–June 2026 · Remote; program work in North Carolina and Georgia</Meta>
               <Headline size="lg" className="text-ink font-sans group-hover:text-plum transition-colors duration-300">Bpeace</Headline>
               <Meta className="text-slate uppercase tracking-wider font-semibold text-xs">U.S. Program Manager (Contract)</Meta>
             </div>
             <div className="lg:col-span-7 lg:col-start-6 flex flex-col pt-1">
-              <Body className="text-base md:text-lg text-slate leading-relaxed font-serif">
-                For Bpeace’s Breaking the $1M Barrier program, I managed implementation and coordinated delivery across a multi-state founder-support initiative. The role brought together participant engagement, learning and coaching activities, communications, stakeholder coordination and reporting. The work required keeping contributors, activities and moving parts aligned throughout implementation while responding to the realities of delivery.
+              <Body className="text-base md:text-lg text-slate leading-relaxed font-serif mb-8">
+                For Breaking the $1M Barrier, a founder-support program delivered by Bpeace, I helped translate the program&apos;s goals into coordinated delivery across founders, staff, volunteer specialists, facilitators and regional Showcases. Within the team-delivered program, I created guidance for coaches and facilitators, designed and facilitated peer-learning sessions, and substantially shaped onboarding and Showcase preparation.
               </Body>
+              <Link
+                href="/selected-work/bpeace"
+                className="inline-flex items-center justify-center bg-transparent border border-plum text-plum px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold hover:bg-plum hover:text-paper transition-colors duration-300 w-fit"
+              >
+                Read the Bpeace case
+              </Link>
             </div>
           </ScrollReveal>
 
           {/* Winston-Salem WBC */}
           <ScrollReveal personality="structural" delay={0.16} className="group grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 py-16 md:py-20 border-b border-line border-l-2 border-l-transparent hover:border-l-plum hover:pl-4 transition-all duration-300">
             <div className="lg:col-span-4 flex flex-col gap-2">
-              <Meta className="text-plum mb-2">2023–2025 · Winston-Salem, North Carolina</Meta>
-              <Headline size="lg" className="text-ink font-sans group-hover:text-plum transition-colors duration-300">Winston-Salem Women’s Business Center</Headline>
+              <Meta className="text-plum mb-2">April 2023–February 2025 · Winston-Salem, North Carolina</Meta>
+              <Headline size="lg" className="text-ink font-sans group-hover:text-plum transition-colors duration-300">Winston-Salem Women&apos;s Business Center</Headline>
               <Meta className="text-slate uppercase tracking-wider font-semibold text-xs">Program Director</Meta>
             </div>
             <div className="lg:col-span-7 lg:col-start-6 flex flex-col pt-1">
-              <Body className="text-base md:text-lg text-slate leading-relaxed font-serif">
-                I led regional entrepreneurship-support programming and the operations behind it. My responsibilities included program planning and delivery, partnerships, staff and contributor coordination, grant requirements, and reporting. This role deepened my experience in connecting what entrepreneurs needed with the resources, relationships and operating structures available to support them.
+              <Body className="text-base md:text-lg text-slate leading-relaxed font-serif mb-8">
+                I led regional entrepreneurship-support programming and the operations behind it: program planning and delivery, partnerships, coordination of staff and contributors, grant requirements and reporting. I also worked to improve client intake, CRM use and reporting. This role deepened my experience in connecting what entrepreneurs needed with the resources, relationships and operating structures available to support them.
               </Body>
+              <Link
+                href="/selected-work/winston-salem-wbc"
+                className="inline-flex items-center justify-center bg-transparent border border-plum text-plum px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold hover:bg-plum hover:text-paper transition-colors duration-300 w-fit"
+              >
+                Read the Winston-Salem Women&apos;s Business Center case
+              </Link>
             </div>
           </ScrollReveal>
 
@@ -146,7 +167,7 @@ export default function ExperiencePage() {
             </div>
             <div className="lg:col-span-7 lg:col-start-6 flex flex-col pt-1">
               <Body className="text-base md:text-lg text-slate leading-relaxed font-serif">
-                I managed grants and program work within the British High Commission in Nigeria. The portfolio covered justice, economic development and security-related initiatives. My responsibilities included partner coordination, grant administration, monitoring, compliance, reporting and analysis for program decisions. The work involved government, civil-society and international stakeholders; it was not work performed in the United Kingdom.
+                I managed grants and program work within the British High Commission in Nigeria. The portfolio covered justice, economic development and security-related initiatives. My responsibilities included partner coordination, grant administration, monitoring, compliance, reporting and analysis for program decisions. The work involved government, civil-society and international stakeholders.
               </Body>
             </div>
           </ScrollReveal>
@@ -162,25 +183,22 @@ export default function ExperiencePage() {
               The thread across the roles
             </Headline>
             <Body className="text-base md:text-lg text-slate leading-relaxed mb-10 max-w-3xl mx-auto font-serif">
-              These positions did not involve identical work. Together, they show a progression in responsibility for turning intentions into organized delivery, coordinating people and processes, and using information from practice to inform decisions. My Selected Work examines one project in greater depth.
+              These positions did not involve identical work. Together, they show a progression in responsibility for turning intentions into organized delivery, coordinating people and processes, and using information from practice to inform decisions. My Selected Work looks at three of these projects in greater depth.
             </Body>
             
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 justify-center items-center">
               <Link
                 href="/selected-work"
-                className="inline-flex items-center justify-center bg-transparent border border-plum text-plum px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold hover:bg-plum hover:text-paper transition-colors duration-300"
+                className="inline-flex items-center justify-center bg-plum text-paper px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold hover:bg-ink transition-colors duration-300 shadow-sm"
               >
                 View selected work
               </Link>
-              <a
-                href="/Olajumoke-Michael-Resume.pdf"
-                download="Olajumoke-Michael-Resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center bg-transparent border border-line text-ink px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold hover:border-ink transition-colors duration-300"
+              <Link
+                href="/contact"
+                className="inline-flex items-center justify-center bg-transparent border border-plum text-plum px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold hover:bg-plum hover:text-paper transition-colors duration-300"
               >
-                Download résumé (PDF)
-              </a>
+                Discuss a role or project
+              </Link>
             </div>
           </ScrollReveal>
         </div>
@@ -195,12 +213,20 @@ export default function ExperiencePage() {
               If my experience is relevant to a role, a program or service challenge, or a possible collaboration, I would be glad to hear from you.
             </Headline>
           </div>
-          <Link 
-            href="/contact" 
-            className="inline-flex items-center justify-center px-10 py-5 bg-plum text-white hover:bg-paper hover:text-ink transition-colors duration-300 text-sm font-medium tracking-wide uppercase shrink-0"
-          >
-            Contact me
-          </Link>
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 shrink-0">
+            <Link 
+              href="/contact" 
+              className="inline-flex items-center justify-center px-8 py-4 bg-plum text-white hover:bg-paper hover:text-ink transition-colors duration-300 text-xs font-semibold tracking-[0.15em] uppercase text-center"
+            >
+              Discuss a role or project
+            </Link>
+            <Link 
+              href="/selected-work" 
+              className="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-paper/70 text-paper hover:bg-paper hover:text-ink transition-colors duration-300 text-xs font-semibold tracking-[0.15em] uppercase text-center"
+            >
+              View selected work
+            </Link>
+          </div>
         </ScrollReveal>
       </section>
 

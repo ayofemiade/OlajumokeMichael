@@ -24,18 +24,18 @@ const baseUrl = "https://olajumokemichael.com";
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Olajumoke Michael | Strategist & Program Architect",
+    default: "Olajumoke Michael | Program Design, Delivery and Evaluation",
     template: "%s | Olajumoke Michael",
   },
   description:
-    "Connecting program strategy with implementation, operations and evidence to move complex initiatives forward.",
+    "Olajumoke Michael designs programs, builds the operating systems behind them, leads delivery and evaluates what the evidence supports. Discuss a role or project.",
   alternates: {
     canonical: "./",
   },
   openGraph: {
-    title: "Olajumoke Michael | Strategist & Program Architect",
+    title: "Olajumoke Michael | Program Design, Delivery and Evaluation",
     description:
-      "Connecting program strategy with implementation, operations and evidence to move complex initiatives forward.",
+      "Olajumoke Michael designs programs, builds the operating systems behind them, leads delivery and evaluates what the evidence supports. Discuss a role or project.",
     url: baseUrl,
     siteName: "Olajumoke Michael",
     locale: "en_US",
@@ -51,9 +51,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Olajumoke Michael | Strategist & Program Architect",
+    title: "Olajumoke Michael | Program Design, Delivery and Evaluation",
     description:
-      "Connecting program strategy with implementation, operations and evidence to move complex initiatives forward.",
+      "Olajumoke Michael designs programs, builds the operating systems behind them, leads delivery and evaluates what the evidence supports. Discuss a role or project.",
     images: ["/images/Olajumoke-Michael-Professional-Headshot.jpg"],
   },
   robots: {

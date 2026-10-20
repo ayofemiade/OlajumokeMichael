@@ -49,7 +49,10 @@ export function Header() {
       <Container className="flex h-16 md:h-20 items-center justify-between">
         <Link
           href="/"
-          className="font-serif text-lg md:text-xl font-medium text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plum focus-visible:ring-offset-2 focus-visible:ring-offset-paper transition-opacity duration-300 hover:opacity-70"
+          className={cn(
+            "font-serif text-lg md:text-xl font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-2 transition-colors duration-300",
+            isTransparent ? "text-paper hover:text-coral-light" : "text-ink hover:opacity-70"
+          )}
         >
           Olajumoke Michael
         </Link>
@@ -64,8 +67,14 @@ export function Header() {
                 href={item.href}
                 data-active={isActive}
                 className={cn(
-                  "nav-link font-sans text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plum focus-visible:ring-offset-2 focus-visible:ring-offset-paper rounded-sm",
-                  isActive ? "text-plum" : "text-slate hover:text-plum"
+                  "nav-link font-sans text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-2 rounded-sm",
+                  isTransparent
+                    ? isActive
+                      ? "text-coral-light"
+                      : "text-paper/80 hover:text-paper"
+                    : isActive
+                    ? "text-plum"
+                    : "text-slate hover:text-plum"
                 )}
               >
                 {item.label}
@@ -76,7 +85,10 @@ export function Header() {
 
         {/* Mobile Menu Toggle */}
         <motion.button
-          className="md:hidden p-2 -mr-2 text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plum focus-visible:ring-offset-2 focus-visible:ring-offset-paper"
+          className={cn(
+            "md:hidden p-2 -mr-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-2 transition-colors duration-300",
+            isTransparent ? "text-paper" : "text-ink"
+          )}
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? "Close menu" : "Open menu"}
           aria-expanded={isOpen}

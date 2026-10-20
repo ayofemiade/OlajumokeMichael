@@ -1,14 +1,24 @@
-import { Display } from "@/components/typography/Display";
 import { Headline } from "@/components/typography/Headline";
 import { Body } from "@/components/typography/Body";
 import { Meta } from "@/components/typography/Meta";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
+import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: "Venture Readiness Lab Case Study",
+export const metadata: Metadata = {
+  title: {
+    absolute:
+      "Designing a Founder Support Pilot—and Learning from Its Limits | Olajumoke Michael",
+  },
   description:
-    "Designing a Founder Support Pilot—and Learning from Its Limits. A professional portfolio case study by Olajumoke Michael.",
+    "How Olajumoke Michael designed and led a six-week pilot for early-stage founders, reviewed what participants created, and used the pilot's limits to shape the next design.",
+  openGraph: {
+    title:
+      "Designing a Founder Support Pilot—and Learning from Its Limits | Olajumoke Michael",
+    description:
+      "How Olajumoke Michael designed and led a six-week pilot for early-stage founders, reviewed what participants created, and used the pilot's limits to shape the next design.",
+  },
 };
 
 export default function VRLCasePage() {
@@ -18,12 +28,20 @@ export default function VRLCasePage() {
       {/* 1. Header (Dossier Title) */}
       <section className="relative px-6 md:px-12 lg:px-24 pt-32 pb-16 md:pb-24 border-b border-line">
         <ScrollReveal personality="strong" className="max-w-[1400px] mx-auto">
-          <Meta className="text-plum mb-4 uppercase tracking-widest">Case Study</Meta>
-          <Headline as="h1" size="xl" className="text-ink leading-tight mb-6 max-w-5xl font-sans">
+          <div className="flex items-center gap-3 mb-4">
+            <Meta className="text-plum uppercase tracking-widest text-xs sm:text-sm">
+              Case Study
+            </Meta>
+            <span className="text-slate/40" aria-hidden="true">·</span>
+            <Meta className="text-slate uppercase tracking-wider text-xs">
+              Ethnoir Pilot
+            </Meta>
+          </div>
+          <Headline as="h1" size="xl" className="text-ink leading-tight mb-6 max-w-5xl font-sans text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
             Designing a Founder Support Pilot—and Learning from Its Limits
           </Headline>
           <Body className="text-base md:text-lg text-slate leading-relaxed font-serif max-w-3xl">
-            How I translated a venture-readiness proposition into a six-week program, led delivery, built an evidence system and used the pilot’s limits to sharpen the next design.
+            How I turned a plan to help early-stage founders into a six-week program, led delivery, built a way to track evidence and used what the pilot did not show to sharpen the next design.
           </Body>
         </ScrollReveal>
       </section>
@@ -33,48 +51,51 @@ export default function VRLCasePage() {
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
           
           {/* Sticky Sidebar (Left Column) */}
-          <div className="lg:col-span-4 lg:sticky lg:top-32 flex flex-col gap-8 bg-soft-stone/40 p-8 rounded-sm border border-line">
+          <aside className="lg:col-span-4 lg:sticky lg:top-32 flex flex-col gap-8 bg-soft-stone/40 p-6 md:p-8 rounded-sm border border-line">
             
+            {/* At a glance */}
             <div>
-              <Meta as="h2" className="text-plum mb-6 pb-3 border-b border-line block font-semibold">At a glance</Meta>
-              <div className="flex flex-col gap-6">
+              <Meta as="h2" className="text-plum mb-6 pb-3 border-b border-line block font-semibold text-xs tracking-wider uppercase">
+                At a glance
+              </Meta>
+              <div className="flex flex-col gap-5">
                 
-                <div className="flex flex-col gap-1.5 border-b border-line/40 pb-4">
+                <div className="flex flex-col gap-1 border-b border-line/40 pb-4">
                   <Meta as="div" className="text-plum text-xs font-semibold uppercase tracking-wider">Project</Meta>
                   <p className="font-sans text-ink text-sm font-medium leading-relaxed">
                     Venture Readiness Lab, an Ethnoir founder-facing venture-development pilot.
                   </p>
                 </div>
                 
-                <div className="flex flex-col gap-1.5 border-b border-line/40 pb-4">
+                <div className="flex flex-col gap-1 border-b border-line/40 pb-4">
                   <Meta as="div" className="text-plum text-xs font-semibold uppercase tracking-wider">Role</Meta>
                   <p className="font-sans text-ink text-sm font-medium leading-relaxed">
                     Founder, program architect, lead facilitator, primary implementer and lead evidence interpreter.
                   </p>
                 </div>
                 
-                <div className="flex flex-col gap-1.5 border-b border-line/40 pb-4">
+                <div className="flex flex-col gap-1 border-b border-line/40 pb-4">
                   <Meta as="div" className="text-plum text-xs font-semibold uppercase tracking-wider">Format</Meta>
                   <p className="font-sans text-ink text-sm font-medium leading-relaxed">
                     Six weekly virtual cohort sessions totaling 9.5 hours, plus two one-hour office-hour sessions, participant resources, between-session support, progress tracking and closing reflection.
                   </p>
                 </div>
                 
-                <div className="flex flex-col gap-1.5 border-b border-line/40 pb-4">
+                <div className="flex flex-col gap-1 border-b border-line/40 pb-4">
                   <Meta as="div" className="text-plum text-xs font-semibold uppercase tracking-wider">Participation</Meta>
                   <p className="font-sans text-ink text-sm font-medium leading-relaxed">
                     Six active founders; all six reached the final session; 32 of 36 possible participant-session attendances.
                   </p>
                 </div>
                 
-                <div className="flex flex-col gap-1.5 border-b border-line/40 pb-4">
-                  <Meta as="div" className="text-plum text-xs font-semibold uppercase tracking-wider">Verified Outputs</Meta>
+                <div className="flex flex-col gap-1 border-b border-line/40 pb-4">
+                  <Meta as="div" className="text-plum text-xs font-semibold uppercase tracking-wider">Verified outputs</Meta>
                   <p className="font-sans text-ink text-sm font-medium leading-relaxed">
                     I personally reviewed and confirmed structural business deliverables created by five active participants.
                   </p>
                 </div>
                 
-                <div className="flex flex-col gap-1.5">
+                <div className="flex flex-col gap-1">
                   <Meta as="div" className="text-plum text-xs font-semibold uppercase tracking-wider">Context</Meta>
                   <p className="font-sans text-ink text-sm font-medium leading-relaxed">
                     Founder-led Ethnoir pilot supported through an NC IDEA ENGAGE grant.
@@ -84,11 +105,14 @@ export default function VRLCasePage() {
               </div>
             </div>
 
+            {/* Capabilities Demonstrated */}
             <div className="pt-6 border-t border-line">
-              <Meta as="h3" className="text-plum mb-4 block font-semibold">Capabilities demonstrated</Meta>
+              <Meta as="h3" className="text-plum mb-4 block font-semibold text-xs tracking-wider uppercase">
+                Capabilities demonstrated
+              </Meta>
               <div className="flex flex-col gap-4 font-sans text-xs text-ink font-medium">
                 <div>
-                  <strong className="block text-ink font-semibold">Program &amp; service architecture</strong>
+                  <strong className="block text-ink font-semibold">Program and service architecture</strong>
                   <span className="text-slate font-serif text-xs leading-normal">Translated an initial proposition into a coherent six-week participant journey connecting assessment, learning, implementation and evidence collection.</span>
                 </div>
                 <div>
@@ -100,7 +124,7 @@ export default function VRLCasePage() {
                   <span className="text-slate font-serif text-xs leading-normal">Designed the participant workflow and operating requirements across intake, communication, resources, tracking and reporting.</span>
                 </div>
                 <div>
-                  <strong className="block text-ink font-semibold">Measurement &amp; evaluative judgment</strong>
+                  <strong className="block text-ink font-semibold">Measurement and evaluative judgment</strong>
                   <span className="text-slate font-serif text-xs leading-normal">Structured evidence capture, personally reviewed participant outputs and distinguished implementation evidence from unsupported outcome claims.</span>
                 </div>
                 <div>
@@ -110,22 +134,37 @@ export default function VRLCasePage() {
               </div>
             </div>
 
-            {/* Grant Acknowledgment */}
-            <div className="pt-6 border-t border-line bg-paper/60 p-4 rounded-sm">
-              <Meta className="text-plum mb-2 text-xs">Project Context &amp; Acknowledgment</Meta>
+            {/* Grant Acknowledgment Card with Official NC IDEA Logo */}
+            <div className="pt-6 border-t border-line bg-paper/80 p-5 rounded-sm border border-line/60">
+              <div className="flex items-center gap-3 mb-3">
+                <div className="w-24 shrink-0">
+                  <Image
+                    src="/images/nc-idea-logo.svg"
+                    alt="NC IDEA Logo"
+                    width={96}
+                    height={41}
+                    className="h-7 w-auto object-contain"
+                  />
+                </div>
+                <Meta className="text-plum text-[11px] uppercase tracking-wider font-semibold">
+                  Grant Support
+                </Meta>
+              </div>
               <p className="font-serif text-xs text-slate leading-relaxed">
-                Venture Readiness Lab was designed and delivered through Ethnoir. This activity received support from NC IDEA Foundation through NC IDEA ENGAGE.
+                Venture Readiness Lab was designed and delivered through Ethnoir. This activity received support from NC IDEA through NC IDEA ENGAGE.
               </p>
             </div>
 
-          </div>
+          </aside>
 
           {/* Core Narrative (Right Column) */}
-          <div className="lg:col-span-8 flex flex-col gap-20">
+          <main className="lg:col-span-8 flex flex-col gap-20">
             
-            {/* The Challenge */}
+            {/* The challenge */}
             <ScrollReveal personality="standard" className="flex flex-col gap-6">
-              <Headline as="h2" size="lg" className="text-ink font-sans">The challenge</Headline>
+              <Headline as="h2" size="lg" className="text-ink font-sans">
+                The challenge
+              </Headline>
               <Body className="text-base md:text-lg text-slate font-serif leading-relaxed">
                 I designed the Venture Readiness Lab around a recurring implementation problem: founders may be able to name a visible business concern—uneven revenue, an informal process, limited financial visibility or excessive dependence on the founder—without yet knowing what is producing it or what response would be useful.
               </Body>
@@ -139,19 +178,26 @@ export default function VRLCasePage() {
 
             {/* How I designed the intervention */}
             <ScrollReveal personality="standard" className="flex flex-col gap-6 border-t border-line pt-12">
-              <Headline as="h2" size="lg" className="text-ink font-sans">How I designed the intervention</Headline>
+              <Headline as="h2" size="lg" className="text-ink font-sans">
+                How I designed the intervention
+              </Headline>
               <Body className="text-base md:text-lg text-slate font-serif leading-relaxed">
-                I designed the Lab’s core program architecture and led its development and operation. The shared six-week arc covered readiness orientation, revenue and customer visibility, operations and founder dependency, financial visibility, business-asset development and closing reflection. It connected intake and assessment inputs with session designs, participant workbooks, a Participant Hub, implementation activities, progress tracking, office hours, between-session communication, a structural-deliverable expectation and post-pilot evidence synthesis.
+                I designed the Lab&apos;s core program architecture and led its development and operation. The shared six-week arc covered readiness orientation, revenue and customer visibility, operations and founder dependency, financial visibility, business-asset development and closing reflection. It connected intake and assessment inputs with session designs, participant workbooks, a Participant Hub, implementation activities, progress tracking, office hours, between-session communication, a structural-deliverable expectation and post-pilot evidence synthesis.
               </Body>
               <Body className="text-base md:text-lg text-slate font-serif leading-relaxed">
                 The common sequence created a coherent learning environment, while the practical response could vary according to the venture issue under examination. Assessment and application information served as inputs, not verdicts. I used them to understand goals, constraints, prior activity and available capacity, then helped participants move from an initial concern toward a plausible structural response.
               </Body>
-              <div className="bg-soft-stone p-6 md:p-8 my-4 border-l-4 border-plum rounded-r-sm">
-                <Meta className="text-plum mb-3">The working sequence that emerged was:</Meta>
-                <span className="font-sans text-ink font-medium leading-relaxed block text-sm md:text-base">
+              
+              {/* Working Sequence Diagram */}
+              <div className="bg-soft-stone p-6 md:p-8 my-2 border-l-4 border-plum rounded-r-sm">
+                <Meta className="text-plum mb-3 block text-xs tracking-wider uppercase font-semibold">
+                  The working sequence that emerged was:
+                </Meta>
+                <div className="font-sans text-ink font-medium leading-relaxed text-sm md:text-base">
                   Visible concern → contextual interpretation → plausible structural constraint → practical response → use or testing → follow-up
-                </span>
+                </div>
               </div>
+
               <Body className="text-base md:text-lg text-slate font-serif leading-relaxed">
                 This is pilot learning, not a validated diagnostic or universal model. It captures how I worked with ambiguity: I did not assume the first symptom named was the root cause, and I did not wait for perfect certainty before helping someone frame a practical next step.
               </Body>
@@ -159,9 +205,11 @@ export default function VRLCasePage() {
 
             {/* From design to implementation */}
             <ScrollReveal personality="standard" className="flex flex-col gap-6 border-t border-line pt-12">
-              <Headline as="h2" size="lg" className="text-ink font-sans">From design to implementation</Headline>
+              <Headline as="h2" size="lg" className="text-ink font-sans">
+                From design to implementation
+              </Headline>
               <Body className="text-base md:text-lg text-slate font-serif leading-relaxed">
-                I served as lead facilitator and primary implementer across the virtual cohort. I led the sessions, managed the shared learning sequence, supported participants as they translated broad concerns into specific work, maintained between-session communication and personally reviewed and confirmed all five verified participant-created deliverables. A guest practitioner contributed a limited financial-institution perspective during one session; the core instructional content, workbook activities and implementation discussion remained within Ethnoir’s facilitation. I also facilitated two one-hour office-hour sessions for individualized support. Uptake was limited, with one founder attending each session.
+                I served as lead facilitator and primary implementer across the virtual cohort. I led the sessions, managed the shared learning sequence, supported participants as they translated broad concerns into specific work, maintained between-session communication and personally reviewed and confirmed all five verified participant-created deliverables. A guest practitioner contributed a limited financial-institution perspective during one session; the core instructional content, workbook activities and implementation discussion remained within Ethnoir&apos;s facilitation. I also facilitated two one-hour office-hour sessions for individualized support. Uptake was limited, with one founder attending each session.
               </Body>
               <Body className="text-base md:text-lg text-slate font-serif leading-relaxed">
                 The deliverables reflected different responses within the common structure: a client intake and routing process; a standard operating procedure or other documented process; an inventory sourcing and order-decision process; a client pipeline tracker; and a customer-acquisition strategy. Participants created these assets. My contribution was to design and facilitate the process through which the relevant issue was interpreted, a focus was framed, and a practical response was developed and reviewed.
@@ -176,36 +224,43 @@ export default function VRLCasePage() {
 
             {/* What the evidence showed */}
             <ScrollReveal personality="standard" className="flex flex-col gap-6 border-t border-line pt-12">
-              <Headline as="h2" size="lg" className="text-ink font-sans">What the evidence showed</Headline>
+              <Headline as="h2" size="lg" className="text-ink font-sans">
+                What the evidence showed
+              </Headline>
               <Body className="text-base md:text-lg text-slate font-serif leading-relaxed">
                 The pilot ran for six weeks. Six founders formed the active cohort, all six reached the final session, and the attendance record documents 32 of 36 possible participant-session attendances—88.9 percent. Five active participants had structural business deliverables that I personally reviewed and confirmed. A sixth participant reported completing a contractor-selection process, but the artifact was not received for review at the time of reporting.
               </Body>
               
-              <Meta className="text-plum mt-6 mb-2">Closing Ratings (5-point scale, self-reported)</Meta>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-                <div className="border border-line p-6 flex justify-between items-center bg-paper rounded-sm">
-                  <span className="font-sans text-sm text-slate">Overall value</span>
-                  <span className="font-sans text-2xl text-ink font-semibold">4.2</span>
-                </div>
-                <div className="border border-line p-6 flex justify-between items-center bg-paper rounded-sm">
-                  <span className="font-sans text-sm text-slate">Clearer priorities</span>
-                  <span className="font-sans text-2xl text-ink font-semibold">4.0</span>
-                </div>
-                <div className="border border-line p-6 flex justify-between items-center bg-paper rounded-sm">
-                  <span className="font-sans text-sm text-slate">Stronger operational systems</span>
-                  <span className="font-sans text-2xl text-ink font-semibold">4.0</span>
-                </div>
-                <div className="border border-line p-6 flex justify-between items-center bg-paper rounded-sm">
-                  <span className="font-sans text-sm text-slate">Confidence in business decisions</span>
-                  <span className="font-sans text-2xl text-ink font-semibold">3.8</span>
-                </div>
-                <div className="border border-line p-6 flex justify-between items-center bg-paper rounded-sm">
-                  <span className="font-sans text-sm text-slate">Confidence continuing to build</span>
-                  <span className="font-sans text-2xl text-ink font-semibold">4.2</span>
-                </div>
-                <div className="border border-line p-6 flex justify-between items-center bg-soft-stone rounded-sm">
-                  <span className="font-sans text-sm text-slate">Financial visibility</span>
-                  <span className="font-sans text-2xl text-ink font-semibold">2.7</span>
+              <div className="bg-soft-stone/40 border border-line p-6 md:p-8 rounded-sm my-2">
+                <p className="font-serif text-ink text-base md:text-lg leading-relaxed mb-6">
+                  All six active participants completed closing ratings. On a five-point scale, they reported:
+                </p>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="border border-line p-5 flex justify-between items-center bg-paper rounded-sm">
+                    <span className="font-sans text-sm text-slate">Overall value</span>
+                    <span className="font-sans text-2xl text-ink font-semibold">4.2</span>
+                  </div>
+                  <div className="border border-line p-5 flex justify-between items-center bg-paper rounded-sm">
+                    <span className="font-sans text-sm text-slate">Clearer priorities</span>
+                    <span className="font-sans text-2xl text-ink font-semibold">4.0</span>
+                  </div>
+                  <div className="border border-line p-5 flex justify-between items-center bg-paper rounded-sm">
+                    <span className="font-sans text-sm text-slate">Stronger operational systems</span>
+                    <span className="font-sans text-2xl text-ink font-semibold">4.0</span>
+                  </div>
+                  <div className="border border-line p-5 flex justify-between items-center bg-paper rounded-sm">
+                    <span className="font-sans text-sm text-slate">Greater confidence making business decisions</span>
+                    <span className="font-sans text-2xl text-ink font-semibold">3.8</span>
+                  </div>
+                  <div className="border border-line p-5 flex justify-between items-center bg-paper rounded-sm">
+                    <span className="font-sans text-sm text-slate">Confidence continuing to build stronger systems</span>
+                    <span className="font-sans text-2xl text-ink font-semibold">4.2</span>
+                  </div>
+                  <div className="border border-line p-5 flex justify-between items-center bg-soft-stone rounded-sm">
+                    <span className="font-sans text-sm text-slate">Financial visibility</span>
+                    <span className="font-sans text-2xl text-ink font-semibold">2.7</span>
+                  </div>
                 </div>
               </div>
 
@@ -214,9 +269,11 @@ export default function VRLCasePage() {
               </Body>
             </ScrollReveal>
 
-            {/* What didn’t work—and what I learned */}
+            {/* What didn't work—and what I learned */}
             <ScrollReveal personality="standard" className="flex flex-col gap-6 border-t border-line pt-12">
-              <Headline as="h2" size="lg" className="text-ink font-sans">What didn’t work—and what I learned</Headline>
+              <Headline as="h2" size="lg" className="text-ink font-sans">
+                What didn&apos;t work—and what I learned
+              </Headline>
               <Body className="text-base md:text-lg text-slate font-serif leading-relaxed">
                 The proposal targeted 10–12 participants. The reconciled funnel showed 13 diagnostic completions, eight application submissions from seven unique applicants, seven founders entering participant tracking and six becoming active participants. The target was not achieved. The effective recruitment runway was compressed while the program infrastructure was still being developed, but the record does not establish comparative channel performance or prove that limited demand caused the shortfall.
               </Body>
@@ -233,19 +290,26 @@ export default function VRLCasePage() {
 
             {/* How my thinking changed */}
             <ScrollReveal personality="standard" className="flex flex-col gap-6 border-t border-line pt-12">
-              <Headline as="h2" size="lg" className="text-ink font-sans">How my thinking changed</Headline>
+              <Headline as="h2" size="lg" className="text-ink font-sans">
+                How my thinking changed
+              </Headline>
               <Body className="text-base md:text-lg text-slate font-serif leading-relaxed">
                 The Lab strengthened a more disciplined distinction between assessment and interpretation. Assessment information can organize inquiry, but movement from a visible concern to a plausible structural constraint requires context. Even then, the result is a working interpretation—not diagnosis or definitive root-cause identification.
               </Body>
               <Body className="text-base md:text-lg text-slate font-serif leading-relaxed">
                 It also separated identifying a focus from creating and using a response. A founder may understand an issue and create a useful asset yet still need time, information, practice, specialist input or support to implement it. The evidence sequence became:
               </Body>
-              <div className="bg-soft-stone p-6 md:p-8 my-4 border-l-4 border-plum rounded-r-sm">
-                <Meta className="text-plum mb-3">The evidence sequence became:</Meta>
-                <span className="font-sans text-ink font-medium leading-relaxed block text-sm md:text-base">
+              
+              {/* Evidence Sequence Callout */}
+              <div className="bg-soft-stone p-6 md:p-8 my-2 border-l-4 border-plum rounded-r-sm">
+                <Meta className="text-plum mb-3 block text-xs tracking-wider uppercase font-semibold">
+                  The evidence sequence became:
+                </Meta>
+                <div className="font-sans text-ink font-medium leading-relaxed text-sm md:text-base">
                   Asset creation → usability → testing → regular use → downstream effect
-                </span>
+                </div>
               </div>
+
               <Body className="text-base md:text-lg text-slate font-serif leading-relaxed">
                 The Lab had its strongest evidence near the beginning of this sequence. It confirmed that assets existed; it had limited evidence of initial use or testing and did not establish regular use or downstream effects. This changed how I interpret program outputs and how I would design follow-up measurement.
               </Body>
@@ -256,7 +320,9 @@ export default function VRLCasePage() {
 
             {/* What I would do differently */}
             <ScrollReveal personality="standard" className="flex flex-col gap-6 border-t border-line pt-12">
-              <Headline as="h2" size="lg" className="text-ink font-sans">What I would do differently</Headline>
+              <Headline as="h2" size="lg" className="text-ink font-sans">
+                What I would do differently
+              </Headline>
               <Body className="text-base md:text-lg text-slate font-serif leading-relaxed">
                 In another iteration, I would frame the work as a bounded founder-facing venture-development pilot rather than a test of a broad readiness model. I would define one implementation focus and its evidence basis more explicitly, preserve variation in the practical response, and align presentation, workbook and Participant Hub language more tightly.
               </Body>
@@ -265,30 +331,52 @@ export default function VRLCasePage() {
               </Body>
             </ScrollReveal>
 
-            {/* Capabilities Demonstrated Full Section */}
+            {/* Capabilities demonstrated */}
             <ScrollReveal personality="standard" className="flex flex-col gap-6 border-t border-line pt-12">
-              <Headline as="h2" size="lg" className="text-ink font-sans">Capabilities demonstrated</Headline>
+              <Headline as="h2" size="lg" className="text-ink font-sans">
+                Capabilities demonstrated
+              </Headline>
               
               <div className="flex flex-col gap-6 pl-4 border-l-2 border-plum">
                 <div>
-                  <h3 className="text-ink font-sans font-semibold text-lg mb-1">Program &amp; service architecture</h3>
-                  <Body className="text-base text-slate font-serif">Translated an initial proposition into a coherent six-week participant journey connecting assessment, learning, implementation and evidence collection.</Body>
+                  <h3 className="text-ink font-sans font-semibold text-lg mb-1">
+                    Program and service architecture
+                  </h3>
+                  <Body className="text-base text-slate font-serif">
+                    Translated an initial proposition into a coherent six-week participant journey connecting assessment, learning, implementation and evidence collection.
+                  </Body>
                 </div>
                 <div>
-                  <h3 className="text-ink font-sans font-semibold text-lg mb-1">Implementation leadership</h3>
-                  <Body className="text-base text-slate font-serif">Led cohort delivery, participant support and adaptation while moving the intervention from design into practice.</Body>
+                  <h3 className="text-ink font-sans font-semibold text-lg mb-1">
+                    Implementation leadership
+                  </h3>
+                  <Body className="text-base text-slate font-serif">
+                    Led cohort delivery, participant support and adaptation while moving the intervention from design into practice.
+                  </Body>
                 </div>
                 <div>
-                  <h3 className="text-ink font-sans font-semibold text-lg mb-1">Operational systems design</h3>
-                  <Body className="text-base text-slate font-serif">Designed the participant workflow and operating requirements across intake, communication, resources, tracking and reporting.</Body>
+                  <h3 className="text-ink font-sans font-semibold text-lg mb-1">
+                    Operational systems design
+                  </h3>
+                  <Body className="text-base text-slate font-serif">
+                    Designed the participant workflow and operating requirements across intake, communication, resources, tracking and reporting.
+                  </Body>
                 </div>
                 <div>
-                  <h3 className="text-ink font-sans font-semibold text-lg mb-1">Measurement &amp; evaluative judgment</h3>
-                  <Body className="text-base text-slate font-serif">Structured evidence capture, personally reviewed participant outputs and distinguished implementation evidence from unsupported outcome claims.</Body>
+                  <h3 className="text-ink font-sans font-semibold text-lg mb-1">
+                    Measurement and evaluative judgment
+                  </h3>
+                  <Body className="text-base text-slate font-serif">
+                    Structured evidence capture, personally reviewed participant outputs and distinguished implementation evidence from unsupported outcome claims.
+                  </Body>
                 </div>
                 <div>
-                  <h3 className="text-ink font-sans font-semibold text-lg mb-1">Evidence-informed adaptation</h3>
-                  <Body className="text-base text-slate font-serif">Used participant experience, missed targets and measurement gaps to determine what to retain, modify, test or defer.</Body>
+                  <h3 className="text-ink font-sans font-semibold text-lg mb-1">
+                    Evidence-informed adaptation
+                  </h3>
+                  <Body className="text-base text-slate font-serif">
+                    Used participant experience, missed targets and measurement gaps to determine what to retain, modify, test or defer.
+                  </Body>
                 </div>
               </div>
 
@@ -297,34 +385,40 @@ export default function VRLCasePage() {
               </Body>
             </ScrollReveal>
 
-          </div>
+          </main>
         </div>
       </section>
 
-      {/* 3. Synthesis & Next Steps */}
-      <section className="relative bg-ink text-paper py-24 md:py-32 px-6 md:px-12 lg:px-24">
+      {/* 3. Synthesis: What this case does—and doesn't—show */}
+      <section className="relative bg-ink text-paper py-20 md:py-28 px-6 md:px-12 lg:px-24">
         <ScrollReveal personality="strong" className="max-w-[1400px] mx-auto flex flex-col gap-12 lg:gap-16">
           
-          <div className="flex flex-col items-start border-b border-slate/30 pb-10">
-            <Meta className="text-soft-stone/70 mb-4">Synthesis</Meta>
-            <Headline as="h2" size="xl" className="text-paper leading-tight font-sans max-w-4xl">
-              What this case does and doesn&apos;t show
+          <div className="flex flex-col items-start border-b border-slate/30 pb-8">
+            <Meta className="text-soft-stone/70 mb-3 uppercase tracking-wider text-xs">
+              Synthesis
+            </Meta>
+            <Headline as="h2" size="xl" className="text-paper leading-tight font-sans max-w-4xl text-2xl sm:text-3xl md:text-4xl">
+              What this case does—and doesn&apos;t—show
             </Headline>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
             
-            {/* Column 1: What it shows */}
+            {/* Column 1: What this case does show */}
             <div className="flex flex-col gap-4">
-              <Meta className="text-soft-stone/70 text-xs uppercase tracking-wider font-semibold">What it shows</Meta>
+              <Meta className="text-soft-stone/70 text-xs uppercase tracking-wider font-semibold">
+                What this case does show
+              </Meta>
               <Body className="text-base md:text-lg text-soft-stone/90 font-serif leading-relaxed">
                 This case demonstrates how I approached the design, delivery and evaluation of a founder-support pilot: translating an initial proposition into a working program, adapting it through implementation, examining the evidence it produced and using its limitations to inform the next design.
               </Body>
             </div>
 
-            {/* Column 2: What it doesn't show */}
+            {/* Column 2: What this case doesn't show */}
             <div className="flex flex-col gap-4">
-              <Meta className="text-soft-stone/70 text-xs uppercase tracking-wider font-semibold">What it doesn&apos;t show</Meta>
+              <Meta className="text-soft-stone/70 text-xs uppercase tracking-wider font-semibold">
+                What this case doesn&apos;t show
+              </Meta>
               <Body className="text-base md:text-lg text-soft-stone/90 font-serif leading-relaxed">
                 The evidence is strongest on implementation, participation, reviewed outputs and participant-reported experience. It does not establish program effectiveness, diagnostic validity, sustained capability change or downstream business outcomes. The Lab was a single founder-facing pilot, so questions about scalability and institutional applications require further testing.
               </Body>
@@ -332,22 +426,54 @@ export default function VRLCasePage() {
 
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-5 items-center justify-center pt-8 border-t border-slate/30 w-full">
-            <Link
-              href="/experience"
-              className="inline-flex items-center justify-center bg-plum text-white px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold hover:bg-paper hover:text-ink transition-colors duration-300"
-            >
-              View my experience
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center bg-transparent border border-paper text-paper px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold hover:bg-paper hover:text-ink transition-colors duration-300"
-            >
-              Contact me
-            </Link>
-          </div>
-
         </ScrollReveal>
+      </section>
+
+      {/* 4. Project context & Official NC IDEA Recognition (Visually Distinct Note) */}
+      <section className="relative bg-soft-stone border-t border-line py-16 md:py-20 px-6 md:px-12 lg:px-24">
+        <div className="max-w-[1400px] mx-auto">
+          <ScrollReveal
+            personality="standard"
+            className="border border-line bg-paper p-8 md:p-12 rounded-sm shadow-sm flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12"
+          >
+            {/* NC IDEA Official Logo + Text */}
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6 md:gap-8 max-w-3xl">
+              <div className="w-36 md:w-44 shrink-0 bg-paper p-2 rounded-sm">
+                <Image
+                  src="/images/nc-idea-logo.svg"
+                  alt="Official NC IDEA Logo"
+                  width={176}
+                  height={76}
+                  className="w-full h-auto object-contain"
+                />
+              </div>
+              <div className="flex flex-col gap-2">
+                <Meta className="text-plum uppercase tracking-widest text-xs font-semibold">
+                  Project context
+                </Meta>
+                <p className="font-serif text-base md:text-lg text-ink leading-relaxed">
+                  Venture Readiness Lab was designed and delivered through Ethnoir. This activity received support from NC IDEA through NC IDEA ENGAGE.
+                </p>
+              </div>
+            </div>
+
+            {/* Call to Action Buttons */}
+            <div className="flex flex-col sm:flex-row items-center gap-4 shrink-0 w-full md:w-auto">
+              <Link
+                href="/experience"
+                className="w-full sm:w-auto inline-flex items-center justify-center bg-transparent border border-plum text-plum px-7 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold hover:bg-plum hover:text-paper transition-colors duration-300 text-center"
+              >
+                View my experience
+              </Link>
+              <Link
+                href="/contact"
+                className="w-full sm:w-auto inline-flex items-center justify-center bg-plum text-paper px-7 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold hover:bg-ink transition-colors duration-300 text-center shadow-sm"
+              >
+                Discuss a role or project
+              </Link>
+            </div>
+          </ScrollReveal>
+        </div>
       </section>
 
     </div>

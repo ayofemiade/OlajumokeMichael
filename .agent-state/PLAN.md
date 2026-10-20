@@ -45,3 +45,12 @@
 ### 10. SEO Metadata & Technical Production Setup (Item 10)
 - Canonical URLs, Open Graph tags, page-specific titles/descriptions.
 - `app/robots.ts`, `app/sitemap.ts`, Skip-to-content accessible link, Mobile menu keyboard traps, reduced-motion fallbacks.
+
+### 11. Privacy Notice & Contact Form Data Policy Integration (Item 11)
+- Target: `src/app/privacy/page.tsx`, `src/components/navigation/Footer.tsx`, `src/app/contact/page.tsx`, `next.config.ts`, `src/app/sitemap.ts`.
+- Content: Faithfully implement Olajumoke's approved Part 1 notice copy at `/privacy`.
+- Verified details: Hostinger hosting, native server mail processing to Google Workspace, no database persistence of form submissions.
+- Gating: Footer link to `/privacy`, Contact form disclaimer line above Send button.
+- Clean Hostinger static export: `trailingSlash: true` to prevent directory listing 403 errors.
+- Status: COMPLETED & VERIFIED.
+

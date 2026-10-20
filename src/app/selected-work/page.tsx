@@ -4,11 +4,23 @@ import { Body } from "@/components/typography/Body";
 import { Meta } from "@/components/typography/Meta";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
 import Link from "next/link";
+import type { Metadata } from "next";
 
-export const metadata = {
-  title: "Selected Work",
+export const metadata: Metadata = {
+  title: {
+    absolute: "Selected Work | Olajumoke Michael",
+  },
   description:
-    "Case studies in program architecture, implementation leadership, and evidence interpretation by Olajumoke Michael.",
+    "Three cases from Olajumoke Michael: a founder-support pilot she designed, a founder-support program she helped deliver, and the operating systems of a regional business center.",
+  alternates: {
+    canonical: "/selected-work",
+  },
+  openGraph: {
+    title: "Selected Work | Olajumoke Michael",
+    description:
+      "Three cases from Olajumoke Michael: a founder-support pilot she designed, a founder-support program she helped deliver, and the operating systems of a regional business center.",
+    url: "https://olajumokemichael.com/selected-work",
+  },
 };
 
 export default function SelectedWorkPage() {
@@ -28,7 +40,7 @@ export default function SelectedWorkPage() {
             
             <div className="lg:col-span-7 flex flex-col pt-2 lg:pt-8">
               <Body className="text-base md:text-lg text-ink font-semibold leading-relaxed font-serif">
-                Role titles tell only part of the story. The cases below offer a closer look at how I translated a proposition into a program, led its delivery and learned from what implementation revealed.
+                Role titles tell only part of the story. These cases take a closer look at what I built, what I contributed and what I learned from what happened.
               </Body>
             </div>
           </ScrollReveal>
@@ -64,7 +76,7 @@ export default function SelectedWorkPage() {
                     <Meta className="text-plum mb-2">Context</Meta>
                     <Body className="text-slate font-sans text-sm leading-relaxed">
                       Venture Readiness Lab<br/>
-                      Founder-facing pilot delivered through Ethnoir
+                      Founder-facing pilot delivered through Ethnoir · 2026
                     </Body>
                   </div>
                   <div className="md:col-span-7">
@@ -76,10 +88,35 @@ export default function SelectedWorkPage() {
                 </div>
 
                 <div className="border-t border-line/40 pt-8">
-                  <Meta className="text-plum mb-3">Abstract</Meta>
-                  <Body className="text-base md:text-lg text-slate leading-relaxed font-serif mb-8 max-w-4xl">
-                    I translated a venture-readiness proposition into a six-week founder-support pilot, designed its program and operating structure, led delivery, and examined what the evidence could—and could not—show. All six active founders reached the final session. Five participants created structural business deliverables that I personally reviewed and confirmed. The case shows how implementation, missed targets and measurement gaps shaped the next design questions.
-                  </Body>
+                  {/* Structured 3-part evidence narrative */}
+                  <div className="space-y-6 mb-8 font-serif">
+                    <div>
+                      <span className="font-sans text-xs uppercase tracking-wider font-semibold text-plum block mb-1.5">
+                        What I built
+                      </span>
+                      <Body className="text-base md:text-lg text-slate leading-relaxed font-serif">
+                        A six-week pilot for early-stage founders, including the program design and the intake, communication, resource and tracking workflow behind it.
+                      </Body>
+                    </div>
+
+                    <div>
+                      <span className="font-sans text-xs uppercase tracking-wider font-semibold text-plum block mb-1.5">
+                        What I contributed
+                      </span>
+                      <Body className="text-base md:text-lg text-slate leading-relaxed font-serif">
+                        I designed the program, led the six weekly sessions, supported participants between sessions and reviewed what they created. All six active founders reached the final session, and five created business deliverables that I personally reviewed and confirmed.
+                      </Body>
+                    </div>
+
+                    <div>
+                      <span className="font-sans text-xs uppercase tracking-wider font-semibold text-plum block mb-1.5">
+                        What I learned
+                      </span>
+                      <Body className="text-base md:text-lg text-slate leading-relaxed font-serif">
+                        Offering support is not the same as getting it used, and a meaningful assessment of change needs comparable measures planned and collected across the program. The case covers the targets the pilot missed and what I would change.
+                      </Body>
+                    </div>
+                  </div>
 
                   <div className="mb-10">
                     <Meta className="text-plum mb-3 text-xs">Capabilities Demonstrated</Meta>
@@ -150,9 +187,14 @@ export default function SelectedWorkPage() {
 
                 <div className="border-t border-line/40 pt-8">
                   <Meta className="text-plum mb-3">Abstract</Meta>
-                  <Body className="text-base md:text-lg text-slate leading-relaxed font-serif mb-8 max-w-4xl">
-                    I helped translate Bpeace’s program goals into coordinated delivery across founders, staff, volunteer specialists, facilitators and regional Showcases. My work connected practical program design with implementation—preparing contributors, clarifying expectations and coordinating activities across the founder experience. Within the team-delivered program, I created guidance for coaches and facilitators, designed and facilitated peer-learning sessions, and substantially shaped onboarding and Showcase preparation.
-                  </Body>
+                  <div className="space-y-4 mb-8 max-w-4xl">
+                    <Body className="text-base md:text-lg text-slate leading-relaxed font-serif">
+                      I helped translate Bpeace&apos;s program goals into coordinated delivery across founders, staff, volunteer specialists, facilitators and regional Showcases. My work connected practical program design with implementation—preparing contributors, clarifying expectations and coordinating activities across the founder experience.
+                    </Body>
+                    <Body className="text-base md:text-lg text-slate leading-relaxed font-serif">
+                      Within the team-delivered program, I created guidance for coaches and facilitators, designed and facilitated peer-learning sessions, and substantially shaped onboarding and Showcase preparation.
+                    </Body>
+                  </div>
 
                   <div className="mb-10">
                     <Meta className="text-plum mb-3 text-xs">Capabilities Demonstrated</Meta>
@@ -202,14 +244,14 @@ export default function SelectedWorkPage() {
                 </div>
 
                 <Headline as="h2" size="lg" className="text-ink leading-tight mb-6 sm:mb-8 font-sans font-medium max-w-3xl group-hover:text-plum transition-colors duration-300 text-lg sm:text-xl md:text-2xl lg:text-[1.75rem]">
-                  Strengthening the Operating Infrastructure of a Regional Women’s Business Center
+                  Strengthening the Operating Infrastructure of a Regional Women&apos;s Business Center
                 </Headline>
                 
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-8 border-t border-line/40 pt-8 mb-8">
                   <div className="md:col-span-5">
                     <Meta className="text-plum mb-2">Context</Meta>
                     <Body className="text-slate font-sans text-sm leading-relaxed">
-                      Winston-Salem Women’s Business Center<br/>
+                      Winston-Salem Women&apos;s Business Center<br/>
                       Case period: April 2023–March 2024
                     </Body>
                   </div>
@@ -222,10 +264,26 @@ export default function SelectedWorkPage() {
                 </div>
 
                 <div className="border-t border-line/40 pt-8">
-                  <Meta className="text-plum mb-3">Abstract</Meta>
-                  <Body className="text-base md:text-lg text-slate leading-relaxed font-serif mb-8 max-w-4xl">
-                    At the Winston-Salem Women’s Business Center, I led a growing regional portfolio while strengthening the systems behind delivery—from program planning and client intake to CRM, reporting, partnerships and grant-supported operations. This case shows how I worked across an established institution to connect multiple programs, contributors and evidence requirements within a more coherent operating environment.
-                  </Body>
+                  {/* Structured 2-part evidence narrative */}
+                  <div className="space-y-6 mb-8 max-w-4xl font-serif">
+                    <div>
+                      <span className="font-sans text-xs uppercase tracking-wider font-semibold text-plum block mb-1.5">
+                        What I built and contributed
+                      </span>
+                      <Body className="text-base md:text-lg text-slate leading-relaxed font-serif">
+                        I led a regional program portfolio and strengthened the systems behind it: program planning, client intake, CRM, reporting, partnerships and grant-supported operations.
+                      </Body>
+                    </div>
+
+                    <div>
+                      <span className="font-sans text-xs uppercase tracking-wider font-semibold text-plum block mb-1.5">
+                        What I learned
+                      </span>
+                      <Body className="text-base md:text-lg text-slate leading-relaxed font-serif">
+                        A new process can make an institution more consistent while adding burden for the people who use it, so I watched what happened in delivery and adjusted the approach.
+                      </Body>
+                    </div>
+                  </div>
 
                   <div className="mb-10">
                     <Meta className="text-plum mb-3 text-xs">Capabilities Demonstrated</Meta>
@@ -259,6 +317,35 @@ export default function SelectedWorkPage() {
           </ScrollReveal>
 
         </div>
+      </section>
+
+      {/* 3. Closing Band */}
+      <section className="relative bg-ink text-paper py-20 md:py-28 px-6 md:px-12 lg:px-24">
+        <ScrollReveal
+          personality="strong"
+          className="max-w-[1400px] mx-auto flex flex-col md:flex-row md:items-center justify-between gap-8 border-t border-slate/30 pt-12"
+        >
+          <div className="max-w-2xl">
+            <Meta className="text-soft-stone/70 mb-4 tracking-[0.1em]">A CONVERSATION</Meta>
+            <Headline as="h2" size="lg" className="text-paper leading-tight">
+              Relevant to a role or project you are considering?
+            </Headline>
+          </div>
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 shrink-0">
+            <Link 
+              href="/contact" 
+              className="inline-flex items-center justify-center px-8 py-4 bg-plum text-white hover:bg-paper hover:text-ink transition-colors duration-300 text-xs font-semibold tracking-[0.15em] uppercase text-center shadow-sm"
+            >
+              Discuss a role or project
+            </Link>
+            <Link 
+              href="/experience" 
+              className="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-paper/70 text-paper hover:bg-paper hover:text-ink transition-colors duration-300 text-xs font-semibold tracking-[0.15em] uppercase text-center"
+            >
+              Explore my experience
+            </Link>
+          </div>
+        </ScrollReveal>
       </section>
 
     </div>

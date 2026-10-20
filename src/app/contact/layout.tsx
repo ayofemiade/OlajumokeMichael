@@ -1,9 +1,16 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: {
+    absolute: "Contact Olajumoke Michael",
+  },
   description:
-    "Get in touch with Olajumoke Michael to discuss program strategy, implementation leadership, or collaboration opportunities.",
+    "Contact Olajumoke Michael about a role, a program or service challenge, or a collaboration.",
+  openGraph: {
+    title: "Contact Olajumoke Michael",
+    description:
+      "Contact Olajumoke Michael about a role, a program or service challenge, or a collaboration.",
+  },
   alternates: {
     canonical: "/contact",
   },

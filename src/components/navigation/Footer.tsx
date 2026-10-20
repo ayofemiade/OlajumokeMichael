@@ -26,6 +26,9 @@ export function Footer() {
           <TextLink href="/contact" className="text-sm">
             Contact
           </TextLink>
+          <TextLink href="/privacy" className="text-sm">
+            Privacy Notice
+          </TextLink>
         </nav>
       </Container>
     </footer>
