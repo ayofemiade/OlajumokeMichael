@@ -19,7 +19,7 @@ export function Footer() {
           </Text>
         </div>
 
-        <nav className="flex flex-col md:flex-row gap-4 md:gap-8">
+        <nav className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-6 md:gap-8">
           <TextLink href="https://thequietfire.olajumokemichael.com" className="text-sm">
             The Quiet Fire
           </TextLink>
@@ -28,6 +28,9 @@ export function Footer() {
           </TextLink>
           <TextLink href="/privacy" className="text-sm">
             Privacy Notice
+          </TextLink>
+          <TextLink href="https://www.linkedin.com/in/olamichael/" className="text-sm">
+            LinkedIn
           </TextLink>
         </nav>
       </Container>

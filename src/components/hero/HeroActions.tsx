@@ -28,14 +28,14 @@ export function HeroActions() {
       <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-5">
         <Link
           href="/selected-work"
-          className="inline-flex items-center justify-center bg-coral text-white px-8 py-3.5 font-sans uppercase tracking-[0.16em] text-xs font-semibold hover:bg-white hover:text-ink transition-all duration-300 shadow-[0_10px_25px_rgba(224,90,71,0.35)] hover:shadow-[0_10px_25px_rgba(255,255,255,0.25)] text-center rounded-sm"
+          className="inline-flex items-center justify-center bg-coral text-white px-8 py-3.5 font-sans uppercase tracking-[0.16em] text-xs font-semibold hover:bg-ink hover:text-white transition-all duration-300 shadow-[0_10px_25px_rgba(224,90,71,0.22)] text-center rounded-sm"
         >
           View selected work
         </Link>
 
         <Link
           href="/contact"
-          className="inline-flex items-center justify-center border border-white/30 text-paper hover:border-marigold hover:text-marigold px-8 py-3.5 font-sans uppercase tracking-[0.16em] text-xs font-semibold backdrop-blur-sm bg-white/[0.04] hover:bg-white/[0.08] transition-all duration-300 text-center rounded-sm"
+          className="inline-flex items-center justify-center border border-ink/20 text-ink hover:border-ink hover:bg-ink/[0.04] px-8 py-3.5 font-sans uppercase tracking-[0.16em] text-xs font-semibold transition-all duration-300 text-center rounded-sm"
         >
           Discuss a role or project
         </Link>
@@ -45,7 +45,7 @@ export function HeroActions() {
       <div className="flex items-center">
         <Link
           href="/experience"
-          className="group inline-flex items-center gap-2 font-sans text-xs uppercase tracking-[0.15em] font-medium text-[#C5BEB3] hover:text-coral-light transition-colors duration-200"
+          className="group inline-flex items-center gap-2 font-sans text-xs uppercase tracking-[0.15em] font-medium text-ink/65 hover:text-coral transition-colors duration-200"
         >
           <span className="underline underline-offset-4">Explore my experience</span>
           <span

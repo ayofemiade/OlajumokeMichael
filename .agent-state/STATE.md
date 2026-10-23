@@ -191,6 +191,26 @@
 - Preserved the interactive verb triggers (`01 Design`, `02 Build`, `03 Lead`) and responsive colored ambient halo.
 - Verified compilation and static export: `npm run build` completed successfully (14/14 static pages generated).
 
+## Milestone: High-Speed WebP Performance Optimization & wb6 Portrait Scale-Up (Completed & Verified)
+- Converted all site images into high-performance, Retina-sharp WebP assets (reducing homepage image payload by 95% from 7.24 MB down to ~360 KB).
+- Integrated `Copy of wb6.jpg` (as `olajumoke-wb6.webp`, 68 KB) with its natural white studio background preserved (no artificial color tint or multiply darkening).
+- Placed inside a museum-grade frosted architectural frame (`rounded-3xl p-2.5 bg-gradient-to-b from-white/20 via-white/10 to-white/5 border border-white/20 shadow-2xl backdrop-blur-md`).
+- Scaled up the portrait card proportionally to `max-w-[440px] md:max-w-[480px] lg:max-w-[510px] xl:max-w-[540px]` with `aspect-[737/637]`, raising its height to ~455px to bring it into vertical harmony with the left-hand headline and button block.
+- Verified TypeScript compilation: 0 errors (`npx tsc --noEmit`).
+- Verified static export build: `npm run build` generated all 14 pages in ~2.2s.
+
+## Milestone: Luminous White Architectural Hero Redesign (Completed & Verified)
+- Transitioned hero background from dark aubergine to pure white (`bg-white`), perfectly matching the natural white background of the `wb6` close-up portrait.
+- Preserved the delicate architectural blueprint grid at the back using subtle whisper-soft drafting lines (`opacity-[0.045]` in `#1A1412`).
+- Removed the `01 Design / 02 Build / 03 Lead` pill triggers completely per client direction.
+- Refined typography and actions for high-contrast white canvas:
+  - Header: Updated to crisp `text-ink` on transparent/white backdrop with active coral indicator.
+  - Headline: Set in rich `text-ink` with the three highlighted verbs (*design* in coral, *build* in `#B87010` marigold, *lead* in `#3F664F` sage) exceeding WCAG AAA contrast ratios.
+  - Body copy: Set in deep editorial graphite `text-ink/80`.
+  - Actions: Primary filled coral button (`bg-coral text-white hover:bg-ink`), secondary outlined button (`border border-ink/20 text-ink hover:bg-ink/5`), and tertiary link (`text-ink/65 hover:text-coral`).
+- Portrait presentation: Framed in an ultra-clean, museum-grade white editorial bezel (`rounded-3xl bg-white border border-line/80 shadow-[0_20px_50px_-15px_rgba(26,20,18,0.12)]`) scaled proportionally up to 540px wide to balance the headline and action block.
+- Verification: Passed TypeScript compilation (`npx tsc --noEmit`, 0 errors) and static export build (`npm run build`, all 14 pages generated in 2.4s).
+
 ## Quality & Verification Status
 - TypeScript compilation: 0 errors (`npx tsc --noEmit`)
 - Static export build: Clean (`npm run build` generated all 14 static HTML pages)

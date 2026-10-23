@@ -17,7 +17,7 @@ export function HeroBodyCopy() {
 
   return (
     <motion.p
-      className="font-serif font-light text-[#D8D2CA] leading-[1.7] text-left text-base sm:text-lg lg:text-[1.18rem] max-w-2xl"
+      className="font-serif font-light text-ink/80 leading-[1.7] text-left text-base sm:text-lg lg:text-[1.18rem] max-w-2xl"
       initial={{ opacity: 0, y: reduced ? 0 : 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{

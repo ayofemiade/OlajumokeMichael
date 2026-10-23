@@ -444,9 +444,11 @@ export default function Home() {
                 >
                   <div className="relative w-full h-full">
                     <Image
-                      src="/images/Copy of E500519F-A43F-4D1A-B938-B1762EA919D0.JPG"
+                      src="/images/olajumoke-facilitation-experience.webp"
                       alt="Olajumoke Michael facilitating a session"
                       fill
+                      loading="lazy"
+                      decoding="async"
                       className="object-cover object-top"
                       sizes="(max-width: 1024px) 100vw, 40vw"
                     />
@@ -566,9 +568,11 @@ export default function Home() {
             className="lg:col-span-5 relative w-full aspect-[3/4] md:aspect-square lg:aspect-[4/5] rounded-sm overflow-hidden"
           >
             <Image
-              src="/images/IMG_1941.jpg"
+              src="/images/olajumoke-portrait-quiet-fire.webp"
               alt="Olajumoke Michael portrait"
               fill
+              loading="lazy"
+              decoding="async"
               className="object-cover"
               sizes="(max-width: 1024px) 100vw, 40vw"
             />

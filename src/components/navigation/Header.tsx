@@ -33,34 +33,51 @@ export function Header() {
     setIsOpen(false);
   }, [pathname]);
 
-  // Transparent treatment: homepage only, before any scroll
+  // Scrolled styling for sticky header
   const isHomePage = pathname === "/";
-  const isTransparent = isHomePage && !scrolled;
+  const isTopOnHome = isHomePage && !scrolled;
 
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 w-full transition-all duration-500",
-        isTransparent
-          ? "bg-transparent border-b border-transparent"
-          : "bg-paper/90 backdrop-blur-md border-b border-line/80"
+        "sticky top-0 z-50 w-full transition-all duration-300",
+        isTopOnHome
+          ? "bg-white/80 backdrop-blur-md border-b border-line/50"
+          : "bg-paper/95 backdrop-blur-md border-b border-line/80 shadow-xs"
       )}
     >
       <Container className="flex h-16 md:h-20 items-center justify-between">
         <Link
           href="/"
-          className={cn(
-            "font-serif text-lg md:text-xl font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-2 transition-colors duration-300",
-            isTransparent ? "text-paper hover:text-coral-light" : "text-ink hover:opacity-70"
-          )}
+          className="font-serif text-lg md:text-xl font-medium text-ink hover:text-coral focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-2 transition-colors duration-200"
         >
           Olajumoke Michael
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-7">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
+            const isContact = item.href === "/contact";
+
+            if (isContact) {
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  data-active={isActive}
+                  className={cn(
+                    "font-sans text-xs uppercase tracking-[0.14em] font-semibold px-4 py-2 border rounded-sm transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plum focus-visible:ring-offset-2",
+                    isActive
+                      ? "bg-plum text-paper border-plum"
+                      : "border-plum/40 text-plum hover:bg-plum hover:text-paper hover:border-plum"
+                  )}
+                >
+                  {item.label}
+                </Link>
+              );
+            }
+
             return (
               <Link
                 key={item.href}
@@ -68,13 +85,9 @@ export function Header() {
                 data-active={isActive}
                 className={cn(
                   "nav-link font-sans text-sm font-medium transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-2 rounded-sm",
-                  isTransparent
-                    ? isActive
-                      ? "text-coral-light"
-                      : "text-paper/80 hover:text-paper"
-                    : isActive
-                    ? "text-plum"
-                    : "text-slate hover:text-plum"
+                  isActive
+                    ? "text-coral font-semibold"
+                    : "text-ink/75 hover:text-ink"
                 )}
               >
                 {item.label}
@@ -85,10 +98,7 @@ export function Header() {
 
         {/* Mobile Menu Toggle */}
         <motion.button
-          className={cn(
-            "md:hidden p-2 -mr-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-2 transition-colors duration-300",
-            isTransparent ? "text-paper" : "text-ink"
-          )}
+          className="md:hidden p-2 -mr-2 text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-coral focus-visible:ring-offset-2 transition-colors duration-200"
           onClick={() => setIsOpen(!isOpen)}
           aria-label={isOpen ? "Close menu" : "Open menu"}
           aria-expanded={isOpen}
@@ -134,6 +144,32 @@ export function Header() {
             <nav className="flex flex-col px-6 py-4 space-y-1">
               {navItems.map((item, i) => {
                 const isActive = pathname === item.href;
+                const isContact = item.href === "/contact";
+
+                if (isContact) {
+                  return (
+                    <motion.div
+                      key={item.href}
+                      initial={{ opacity: 0, x: -8 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.05, duration: 0.25, ease: elegantEase }}
+                      className="pt-2"
+                    >
+                      <Link
+                        href={item.href}
+                        className={cn(
+                          "font-sans text-xs uppercase tracking-[0.15em] font-semibold py-3 px-4 block text-center border rounded-sm transition-colors duration-200",
+                          isActive
+                            ? "bg-plum text-paper border-plum"
+                            : "border-plum/40 text-plum hover:bg-plum hover:text-paper"
+                        )}
+                      >
+                        {item.label}
+                      </Link>
+                    </motion.div>
+                  );
+                }
+
                 return (
                   <motion.div
                     key={item.href}

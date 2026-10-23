@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/images/Olajumoke-Michael-Professional-Headshot.jpg",
+        url: "/images/olajumoke-og-image.webp",
         width: 1200,
         height: 630,
         alt: "Olajumoke Michael",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     title: "Olajumoke Michael | Program Design, Delivery and Evaluation",
     description:
       "Olajumoke Michael designs programs, builds the operating systems behind them, leads delivery and evaluates what the evidence supports. Discuss a role or project.",
-    images: ["/images/Olajumoke-Michael-Professional-Headshot.jpg"],
+    images: ["/images/olajumoke-og-image.webp"],
   },
   robots: {
     index: process.env.VERCEL_ENV !== "preview" && process.env.NEXT_PUBLIC_VERCEL_ENV !== "preview",

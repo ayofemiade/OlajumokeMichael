@@ -245,9 +245,11 @@ export default function AboutPage() {
             >
               <div className="relative w-full h-full">
                 <Image
-                  src="/images/03_Olajumoke-Michael_Shalom-Facilitation.jpg"
+                  src="/images/olajumoke-about-facilitation.webp"
                   alt="Portrait of Olajumoke Michael"
                   fill
+                  loading="lazy"
+                  decoding="async"
                   className="object-cover object-[80%_85%]"
                   sizes="(max-width: 1024px) 100vw, 40vw"
                 />
