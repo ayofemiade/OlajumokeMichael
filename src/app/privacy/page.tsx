@@ -35,7 +35,7 @@ export default function PrivacyPage() {
               Privacy Notice
             </Display>
             <Body className="text-sm font-sans text-slate uppercase tracking-wider font-medium">
-              Effective date: October 19, 2026
+              Effective date: October 23, 2026
             </Body>
           </div>
 

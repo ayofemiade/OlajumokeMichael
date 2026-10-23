@@ -204,32 +204,6 @@ export default function ExperiencePage() {
         </div>
       </section>
 
-      {/* 4. Contact Invitation */}
-      <section className="relative bg-ink text-paper py-24 md:py-32 px-6 md:px-12 lg:px-24">
-        <ScrollReveal personality="strong" className="max-w-[1400px] mx-auto flex flex-col md:flex-row md:items-end justify-between gap-12 border-t border-slate/30 pt-16">
-          <div className="max-w-2xl">
-            <Meta className="text-soft-stone/70 mb-6">A conversation</Meta>
-            <Headline as="h2" size="lg" className="text-paper leading-tight mb-6">
-              If my experience is relevant to a role, a program or service challenge, or a possible collaboration, I would be glad to hear from you.
-            </Headline>
-          </div>
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 sm:gap-6 shrink-0">
-            <Link 
-              href="/contact" 
-              className="inline-flex items-center justify-center px-8 py-4 bg-plum text-white hover:bg-paper hover:text-ink transition-colors duration-300 text-xs font-semibold tracking-[0.15em] uppercase text-center"
-            >
-              Discuss a role or project
-            </Link>
-            <Link 
-              href="/selected-work" 
-              className="inline-flex items-center justify-center px-8 py-4 bg-transparent border border-paper/70 text-paper hover:bg-paper hover:text-ink transition-colors duration-300 text-xs font-semibold tracking-[0.15em] uppercase text-center"
-            >
-              View selected work
-            </Link>
-          </div>
-        </ScrollReveal>
-      </section>
-
     </div>
   );
 }

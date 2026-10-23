@@ -272,8 +272,9 @@ export default function ContactPage() {
                             href="/privacy" 
                             className="text-plum underline underline-offset-4 hover:text-ink transition-colors duration-200 font-medium"
                           >
-                            Privacy Notice →
+                            Privacy Notice
                           </Link>
+                          .
                         </p>
                         <div>
                           <Button

@@ -29,7 +29,6 @@ export function HeroArchitecturalStage() {
           alt={ALT_TEXT}
           fill
           priority
-          quality={95}
           sizes="(max-width: 768px) 92vw, (max-width: 1024px) 44vw, 530px)"
           className="object-contain object-top pointer-events-none select-none"
         />
