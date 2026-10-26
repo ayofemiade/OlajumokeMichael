@@ -55,7 +55,7 @@ export default function AboutPage() {
           {/* Right Column: Background Narrative & CTAs */}
           <ScrollReveal personality="structural" delay={0.15} className="lg:col-span-7 flex flex-col pt-2 lg:pt-0">
             <Body className="text-lg text-slate leading-relaxed font-serif mb-10">
-              I have worked in entrepreneurship support, economic and community development, higher education, and international-development work in Nigeria. In those settings I have led programs, coordinated staff, volunteers and partners, built and strengthened the operating systems programs depend on, and used what delivery revealed to decide what to change.
+              I have worked in entrepreneurship support, economic and community development, higher education, and international-development work. In those settings I have led programs, coordinated staff, volunteers and partners, built and strengthened the operating systems programs depend on, and used what delivery revealed to decide what to change.
             </Body>
             
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-5">

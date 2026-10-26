@@ -8,6 +8,7 @@
   - *Where this contribution fits*: Removed the `Who this work is for` eyebrow label and border line. Removed the 4 card boxes and replaced with two narrative paragraphs (*"I work across sectors to help organizations turn strategic priorities into practical delivery..."* and *"My contribution is particularly useful when an initiative is taking shape..."*).
   - *The Quiet Fire*: Removed the eyebrow `The fuller person behind the work` and old headline. Set headline to `The Quiet Fire` with updated two-paragraph body copy and kept the `Visit The Quiet Fire` button.
 - **About Page (`src/app/about/page.tsx`)**:
+  - *Background Narrative*: Removed `in Nigeria.` from the introductory paragraph so the sentence concludes cleanly at `international-development work.`
   - *People and teams I have worked with*: Renamed section title from `Who I work with` to `People and teams I have worked with`. Removed the 4 card boxes and updated narrative body copy to two editorial paragraphs.
   - *Beyond the work*: Replaced the previous facilitation photo with the isolated cutout portrait (`/images/new.webp`, optimized from 9.45MB down to 170KB). Enabled `priority` preloading so it downloads immediately upon page load. Removed card borders, background box, and shadows so the image blends directly into the page with a gentle bottom dissolve mask. Removed the `Visit The Quiet Fire` button, changed headline to `What matters to me shapes how I work.`, and updated body text to the two reflection paragraphs.
 - **Experience Page (`src/app/experience/page.tsx`)**:
