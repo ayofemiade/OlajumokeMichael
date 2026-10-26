@@ -205,13 +205,12 @@ export default function AboutPage() {
               className="relative w-full max-w-[440px] aspect-[3/4] [mask-image:linear-gradient(to_bottom,black_90%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_90%,transparent_100%)]"
             >
               <Image
-                src="/images/new.png"
+                src="/images/new.webp"
                 alt="Portrait of Olajumoke Michael"
                 fill
-                loading="lazy"
-                decoding="async"
+                priority
                 className="object-contain object-bottom"
-                sizes="(max-width: 1024px) 100vw, 40vw"
+                sizes="(max-width: 1024px) 90vw, 440px"
               />
             </ScrollReveal>
           </div>
