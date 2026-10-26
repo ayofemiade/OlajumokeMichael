@@ -115,7 +115,7 @@ export default function ExperiencePage() {
             </div>
             <div className="lg:col-span-7 lg:col-start-6 flex flex-col pt-1">
               <Body className="text-base md:text-lg text-slate leading-relaxed font-serif mb-8">
-                I led regional entrepreneurship-support programming and the operations behind it: program planning and delivery, partnerships, coordination of staff and contributors, grant requirements and reporting. I also worked to improve client intake, CRM use and reporting. This role deepened my experience in connecting what entrepreneurs needed with the resources, relationships and operating structures available to support them.
+                I led regional entrepreneurship-support programming and the operations behind it: program planning and delivery, partnerships, coordination of staff and contributors, grant requirements and reporting. My work covered a nine-county service area and included raising approximately $740,000 through grants, sponsorships and partnerships to support programming and resources. I also worked to improve client intake, CRM use and reporting. This role deepened my experience in connecting what entrepreneurs needed with the resources, relationships and operating structures available to support them.
               </Body>
               <Link
                 href="/selected-work/winston-salem-wbc"

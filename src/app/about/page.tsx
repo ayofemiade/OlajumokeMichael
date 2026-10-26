@@ -3,7 +3,6 @@ import { Headline } from "@/components/typography/Headline";
 import { Body } from "@/components/typography/Body";
 import { Meta } from "@/components/typography/Meta";
 import { ScrollReveal } from "@/components/motion/ScrollReveal";
-import { ParallaxImage } from "@/components/motion/ParallaxImage";
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -138,41 +137,23 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 4. Who I work with */}
+      {/* 4. People and teams I have worked with */}
       <section className="relative border-t border-line bg-paper py-20 md:py-28 px-6 md:px-12 lg:px-24">
         <div className="max-w-[1200px] mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
             <ScrollReveal personality="standard" className="lg:col-span-5">
-              <Headline as="h2" size="xl" className="text-ink leading-tight mb-6">
-                Who I work with
+              <Headline as="h2" size="xl" className="text-ink leading-tight">
+                People and teams I have worked with
               </Headline>
-              <Body className="text-slate text-base md:text-lg leading-relaxed font-serif">
-                I have worked with entrepreneurs and founders, college advancement teams, nonprofit and volunteer networks, and government, civil-society and international partners.
-              </Body>
             </ScrollReveal>
 
-            <ScrollReveal
-              personality="structural"
-              stagger
-              staggerDelay={0.1}
-              className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4"
-            >
-              {[
-                "Entrepreneurs and founders",
-                "College advancement teams",
-                "Nonprofit and volunteer networks",
-                "Government, civil-society and international partners",
-              ].map((group, idx) => (
-                <div
-                  key={idx}
-                  className="p-6 border border-line bg-soft-stone/40 flex items-start gap-4 rounded-sm"
-                >
-                  <span className="w-1.5 h-1.5 rounded-full bg-plum mt-2.5 shrink-0" aria-hidden="true" />
-                  <span className="font-serif text-base text-ink leading-relaxed">
-                    {group}
-                  </span>
-                </div>
-              ))}
+            <ScrollReveal personality="standard" delay={0.15} className="lg:col-span-7 flex flex-col space-y-6 pt-1">
+              <Body className="text-slate text-base md:text-lg leading-relaxed font-serif">
+                My experience includes working with entrepreneurs and founders, college advancement teams, nonprofit staff and volunteer networks, and government, civil-society and international partners.
+              </Body>
+              <Body className="text-slate text-base md:text-lg leading-relaxed font-serif">
+                Across these settings, I have connected different perspectives, clarified responsibilities and coordinated people around shared goals.
+              </Body>
             </ScrollReveal>
           </div>
         </div>
@@ -217,24 +198,22 @@ export default function AboutPage() {
       <section className="relative bg-paper py-24 md:py-32 lg:py-40 px-6 md:px-12 lg:px-24 overflow-hidden border-t border-line">
         <div className="max-w-[1400px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center relative z-10">
           
-          {/* Facilitation Portrait with subtle Parallax */}
-          <div className="lg:col-span-5 order-2 lg:order-1">
-            <ParallaxImage
-              speed={0.08}
-              containerClassName="w-full aspect-[4/5] rounded-sm bg-soft-stone shadow-lg border border-line"
+          {/* Portrait — blending seamlessly with background */}
+          <div className="lg:col-span-5 order-2 lg:order-1 flex justify-center items-center">
+            <ScrollReveal
+              personality="quiet"
+              className="relative w-full max-w-[440px] aspect-[3/4] [mask-image:linear-gradient(to_bottom,black_90%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_bottom,black_90%,transparent_100%)]"
             >
-              <div className="relative w-full h-full">
-                <Image
-                  src="/images/olajumoke-about-facilitation.webp"
-                  alt="Portrait of Olajumoke Michael"
-                  fill
-                  loading="lazy"
-                  decoding="async"
-                  className="object-cover object-[80%_85%]"
-                  sizes="(max-width: 1024px) 100vw, 40vw"
-                />
-              </div>
-            </ParallaxImage>
+              <Image
+                src="/images/new.png"
+                alt="Portrait of Olajumoke Michael"
+                fill
+                loading="lazy"
+                decoding="async"
+                className="object-contain object-bottom"
+                sizes="(max-width: 1024px) 100vw, 40vw"
+              />
+            </ScrollReveal>
           </div>
           
           {/* Quiet Fire Reflection */}
@@ -245,19 +224,16 @@ export default function AboutPage() {
           >
             <Meta className="text-plum mb-8">Beyond the work</Meta>
             <Headline as="h2" size="xl" className="text-ink leading-tight mb-8">
-              Professional work is central to this site, but it is one part of my life.
+              What matters to me shapes how I work.
             </Headline>
-            <Body className="text-lg text-slate leading-relaxed mb-10 font-serif">
-              Faith, culture, motherhood, creativity and reflection also shape how I think about work, responsibility and becoming. I explore some of that wider landscape through The Quiet Fire, a separate reflective publication.
-            </Body>
-            <a
-              href="https://thequietfire.olajumokemichael.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center bg-transparent border border-plum text-plum px-8 py-3.5 font-sans uppercase tracking-[0.15em] text-xs font-semibold hover:bg-plum hover:text-paper transition-colors duration-300"
-            >
-              Visit The Quiet Fire
-            </a>
+            <div className="space-y-6">
+              <Body className="text-lg text-slate leading-relaxed font-serif">
+                Faith, family, learning and creativity are central to my life. They influence how I think about responsibility, achievement and the kind of contribution I want to make.
+              </Body>
+              <Body className="text-lg text-slate leading-relaxed font-serif">
+                I value clarity, thoughtful follow-through and room for people to learn. I care about building things that endure while making space for family, reflection and creative expression.
+              </Body>
+            </div>
           </ScrollReveal>
 
         </div>

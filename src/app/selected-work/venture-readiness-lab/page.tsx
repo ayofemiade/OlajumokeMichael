@@ -297,7 +297,7 @@ export default function VRLCasePage() {
                 The Lab strengthened a more disciplined distinction between assessment and interpretation. Assessment information can organize inquiry, but movement from a visible concern to a plausible structural constraint requires context. Even then, the result is a working interpretation—not diagnosis or definitive root-cause identification.
               </Body>
               <Body className="text-base md:text-lg text-slate font-serif leading-relaxed">
-                It also separated identifying a focus from creating and using a response. A founder may understand an issue and create a useful asset yet still need time, information, practice, specialist input or support to implement it. The evidence sequence became:
+                It also separated identifying a focus from creating and using a response. A founder may understand an issue and create a useful asset yet still need time, information, practice, specialist input or support to implement it.
               </Body>
               
               {/* Evidence Sequence Callout */}

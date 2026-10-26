@@ -195,13 +195,6 @@ export default function Home() {
       <section className="relative border-t border-line bg-paper py-20 md:py-28 px-6 md:px-12 lg:px-24">
         <div className="max-w-[1400px] mx-auto">
           
-          <ScrollReveal
-            personality="structural"
-            className="flex justify-between items-center border-b border-line pb-6 mb-12 md:mb-16"
-          >
-            <Meta className="text-plum">Who this work is for</Meta>
-          </ScrollReveal>
-
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             
             {/* Left Column: Where this contribution fits */}
@@ -216,27 +209,13 @@ export default function Home() {
                 Where this contribution fits
               </h2>
               
-              <p className="font-serif text-base md:text-lg leading-relaxed text-ink mb-8">
-                My experience is most relevant to organizations that run programs and services and need them to work in practice:
-              </p>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                {[
-                  "Entrepreneurship-support and economic-development organizations",
-                  "Nonprofits and community organizations",
-                  "Colleges and universities",
-                  "Government and international-development programs",
-                ].map((item, idx) => (
-                  <div
-                    key={idx}
-                    className="p-5 md:p-6 border border-line bg-soft-stone/40 flex items-start gap-4 rounded-sm"
-                  >
-                    <span className="w-1.5 h-1.5 rounded-full bg-plum mt-2 shrink-0" aria-hidden="true" />
-                    <span className="font-serif text-base text-ink leading-relaxed">
-                      {item}
-                    </span>
-                  </div>
-                ))}
+              <div className="space-y-6 font-serif text-base md:text-lg leading-relaxed text-ink">
+                <p>
+                  I work across sectors to help organizations turn strategic priorities into practical delivery—designing programs and services, strengthening operating systems, coordinating people and partners, and using evidence to inform decisions.
+                </p>
+                <p className="text-slate font-light">
+                  My contribution is particularly useful when an initiative is taking shape, an existing program or service needs improvement, or a team needs clearer responsibilities and more coordinated delivery.
+                </p>
               </div>
             </ScrollReveal>
 
@@ -460,7 +439,7 @@ export default function Home() {
 
               <ScrollReveal personality="standard" className="prose prose-lg prose-slate font-serif text-lg leading-relaxed text-ink mb-12">
                 <p>
-                  My experience spans entrepreneurship support, higher education, and government and international-development programs in Nigeria.
+                  My experience spans entrepreneurship support, higher education, and government and international-development programs.
                 </p>
               </ScrollReveal>
 
@@ -582,18 +561,15 @@ export default function Home() {
             delay={0.3}
             className="lg:col-span-7 flex flex-col items-start lg:pl-8"
           >
-            <p className="font-serif italic text-plum mb-5" style={{ fontSize: "clamp(0.9rem, 1.05vw, 1.05rem)", letterSpacing: "0.01em" }}>
-              The fuller person behind the work
-            </p>
-            <Headline size="xl" className="font-serif font-light text-ink mb-10 max-w-2xl leading-tight">
-              Professional work is the front door here, but it is not the whole person.
+            <Headline size="xl" className="font-serif font-light text-ink mb-8 max-w-2xl leading-tight">
+              The Quiet Fire
             </Headline>
-            <div className="prose prose-lg prose-slate font-serif text-lg leading-relaxed text-slate italic max-w-2xl mb-14 space-y-4">
-              <p>
-                Faith, culture, motherhood, creativity and reflection shape how I think about work, responsibility and becoming.
+            <div className="prose prose-lg prose-slate font-serif text-lg leading-relaxed text-slate max-w-2xl mb-12 space-y-4">
+              <p className="italic text-ink">
+                Writing on life, identity and becoming.
               </p>
               <p>
-                <span className="font-semibold not-italic">The Quiet Fire</span> is a distinct reflective publication within that wider personal landscape.
+                Alongside my professional work, I write about faith, culture, motherhood, creativity and the questions that shape how we live.
               </p>
             </div>
 

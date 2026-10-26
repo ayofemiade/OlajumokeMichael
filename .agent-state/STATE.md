@@ -2,6 +2,22 @@
 
 **Last Updated:** October 26, 2026
 
+## Editorial & Layout Refinements (Completed & Verified)
+- **Home Page (`src/app/page.tsx`)**:
+  - *Where I have done this work*: Removed `(in Nigeria.)` from the intro statement, ending cleanly at `programs.`
+  - *Where this contribution fits*: Removed the `Who this work is for` eyebrow label and border line. Removed the 4 card boxes and replaced with two narrative paragraphs (*"I work across sectors to help organizations turn strategic priorities into practical delivery..."* and *"My contribution is particularly useful when an initiative is taking shape..."*).
+  - *The Quiet Fire*: Removed the eyebrow `The fuller person behind the work` and old headline. Set headline to `The Quiet Fire` with updated two-paragraph body copy and kept the `Visit The Quiet Fire` button.
+- **About Page (`src/app/about/page.tsx`)**:
+  - *People and teams I have worked with*: Renamed section title from `Who I work with` to `People and teams I have worked with`. Removed the 4 card boxes and updated narrative body copy to two editorial paragraphs.
+  - *Beyond the work*: Replaced the previous facilitation photo with the isolated cutout portrait (`/images/new.png`). Removed card borders, background box, and shadows so the image blends directly into the page with a gentle bottom dissolve mask. Removed the `Visit The Quiet Fire` button, changed headline to `What matters to me shapes how I work.`, and updated body text to the two reflection paragraphs.
+- **Experience Page (`src/app/experience/page.tsx`)**:
+  - *Winston-Salem Women's Business Center*: Added nine-county service area and grant-raising sentence: *"My work covered a nine-county service area and included raising approximately $740,000 through grants, sponsorships and partnerships to support programming and resources."*
+- **Selected Work (`src/app/selected-work/page.tsx`)**:
+  - Replaced the large fixed Tailwind header utility with custom fluid clamp typography (`clamp(1.125rem, 0.95rem + 0.75vw, 1.75rem)` with `lineHeight: 1.45`), preventing giant 40px+ wrapping on laptop screens while ensuring strong, substantial presence (up to 28px) on wide desktops.
+- **Venture Readiness Lab Case (`src/app/selected-work/venture-readiness-lab/page.tsx`)**:
+  - Removed duplicate phrase `"The evidence sequence became:"` from the body paragraph immediately preceding the callout box.
+- **Verification**: Zero TypeScript errors (`npx tsc --noEmit`). Verified across all changed files.
+
 ## Final Content Reconciliation & Sitewide Verification (Completed)
 - **Label & Eyebrow Removals (Strict V3.2 Fidelity)**:
   - `OlajumokeMichael`: Removed extraneous labels and tags including “Core Focus & Purpose,” “Methodology,” “Collaborative Scope,” “Official PDF · Updated 2026,” and section markers beyond the approved copy.

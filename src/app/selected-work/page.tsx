@@ -38,10 +38,16 @@ export default function SelectedWorkPage() {
               </Display>
             </div>
             
-            <div className="lg:col-span-7 flex flex-col pt-2 lg:pt-8">
-              <Body className="text-base md:text-lg text-ink font-semibold leading-relaxed font-serif">
+            <div className="lg:col-span-7 flex flex-col pt-2 lg:pt-6">
+              <p
+                className="text-ink font-serif font-light leading-relaxed max-w-3xl"
+                style={{
+                  fontSize: "clamp(1.125rem, 0.95rem + 0.75vw, 1.75rem)",
+                  lineHeight: 1.45,
+                }}
+              >
                 Role titles tell only part of the story. These cases take a closer look at what I built, what I contributed and what I learned from what happened.
-              </Body>
+              </p>
             </div>
           </ScrollReveal>
         </div>
