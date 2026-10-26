@@ -31,10 +31,6 @@ export default function BpeaceCasePage() {
             <Meta className="text-plum uppercase tracking-widest text-xs sm:text-sm">
               Bpeace / Breaking the $1M Barrier
             </Meta>
-            <span className="text-slate/40" aria-hidden="true">·</span>
-            <Meta className="text-slate uppercase tracking-wider text-xs">
-              Founder-Support Program
-            </Meta>
           </div>
           
           <Headline as="h1" size="xl" className="text-ink leading-tight mb-6 max-w-5xl font-sans text-2xl sm:text-3xl md:text-4xl lg:text-5xl">

@@ -33,7 +33,6 @@ export default function AboutPage() {
       <section className="relative min-h-[60vh] flex flex-col justify-center px-6 md:px-12 lg:px-24 pt-32 pb-20 bg-paper border-b border-line/30">
         <div className="max-w-[1200px] w-full mx-auto relative z-10">
           <ScrollReveal personality="strong">
-            <Meta className="text-plum mb-6">Core Focus &amp; Purpose</Meta>
             <Display italic className="text-ink leading-[1.1] tracking-tight max-w-5xl">
               I work at the point where a program&apos;s purpose meets the realities of putting it into practice.
             </Display>
@@ -47,7 +46,6 @@ export default function AboutPage() {
           
           {/* Left Column: Core Philosophy Pullquote */}
           <ScrollReveal personality="structural" className="lg:col-span-5 flex flex-col">
-            <Meta className="text-plum mb-6">Perspective &amp; Approach</Meta>
             <blockquote className="border-l-2 border-plum pl-5 py-1">
               <p className="font-serif text-base md:text-lg text-ink leading-relaxed italic">
                 &ldquo;An idea needs more than a compelling case for why it matters. It needs a structure people can deliver, a way to understand what is happening, and room to learn when reality differs from the plan.&rdquo;
@@ -57,7 +55,6 @@ export default function AboutPage() {
 
           {/* Right Column: Background Narrative & CTAs */}
           <ScrollReveal personality="structural" delay={0.15} className="lg:col-span-7 flex flex-col pt-2 lg:pt-0">
-            <Meta className="text-slate mb-6">Background &amp; Scope</Meta>
             <Body className="text-lg text-slate leading-relaxed font-serif mb-10">
               I have worked in entrepreneurship support, economic and community development, higher education, and international-development work in Nigeria. In those settings I have led programs, coordinated staff, volunteers and partners, built and strengthened the operating systems programs depend on, and used what delivery revealed to decide what to change.
             </Body>
@@ -87,16 +84,11 @@ export default function AboutPage() {
           
           <ScrollReveal
             personality="structural"
-            className="col-span-1 md:col-span-12 border-b border-line flex flex-col md:flex-row"
+            className="col-span-1 md:col-span-12 border-b border-line p-6 md:p-8 md:p-12 xl:px-24"
           >
-            <div className="w-full md:w-1/4 p-6 md:p-8 md:px-12 border-b md:border-b-0 md:border-r border-line flex items-start">
-              <Meta className="text-plum">Methodology</Meta>
-            </div>
-            <div className="w-full md:w-3/4 p-6 md:p-8 md:p-12 xl:px-24">
-              <Headline as="h2" size="xl" className="max-w-4xl leading-tight">
-                How I approach the work
-              </Headline>
-            </div>
+            <Headline as="h2" size="xl" className="max-w-4xl leading-tight">
+              How I approach the work
+            </Headline>
           </ScrollReveal>
 
           {/* 3 Columns detailing the progression of practice */}
@@ -109,7 +101,6 @@ export default function AboutPage() {
               className="col-span-1 border-b md:border-b-0 border-r-0 md:border-r border-line p-6 md:p-8 md:p-10 xl:p-14 flex flex-col justify-between transition-colors duration-300 hover:bg-paper/40"
             >
               <div>
-                <Meta className="mb-6 text-plum">01. Connecting the elements</Meta>
                 <Body className="text-slate text-base md:text-lg leading-relaxed font-serif">
                   I start by understanding the purpose, the people involved, and the conditions in which the work will happen. From there, I look at how the activities, responsibilities, resources and evidence need to connect. I care about whether a program can actually be carried out, not just whether it makes sense on paper.
                 </Body>
@@ -123,7 +114,6 @@ export default function AboutPage() {
               className="col-span-1 border-b md:border-b-0 border-r-0 md:border-r border-line p-6 md:p-8 md:p-10 xl:p-14 flex flex-col justify-between transition-colors duration-300 hover:bg-paper/40"
             >
               <div>
-                <Meta className="mb-6 text-plum">02. Learning from implementation</Meta>
                 <Body className="text-slate text-base md:text-lg leading-relaxed font-serif">
                   Implementation is also a source of learning. Participation, feedback, completed work and gaps in the evidence can each tell us something different. I try to distinguish what happened from what people reported, and both from the outcomes we may still need to test.
                 </Body>
@@ -137,7 +127,6 @@ export default function AboutPage() {
               className="col-span-1 p-6 md:p-8 md:p-10 xl:p-14 flex flex-col justify-between transition-colors duration-300 hover:bg-paper/40"
             >
               <div>
-                <Meta className="mb-6 text-plum">03. Evidence in practice</Meta>
                 <Body className="text-slate text-base md:text-lg leading-relaxed font-serif">
                   In my Venture Readiness Lab pilot, office hours were available but rarely used. That showed me that offering support is not the same as making it usable.
                 </Body>
@@ -152,14 +141,6 @@ export default function AboutPage() {
       {/* 4. Who I work with */}
       <section className="relative border-t border-line bg-paper py-20 md:py-28 px-6 md:px-12 lg:px-24">
         <div className="max-w-[1200px] mx-auto">
-          <ScrollReveal
-            personality="structural"
-            className="flex justify-between items-center border-b border-line pb-6 mb-12"
-          >
-            <Meta className="text-plum">Stakeholders &amp; Partners</Meta>
-            <Meta>Collaborative Scope</Meta>
-          </ScrollReveal>
-
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
             <ScrollReveal personality="standard" className="lg:col-span-5">
               <Headline as="h2" size="xl" className="text-ink leading-tight mb-6">
@@ -205,7 +186,6 @@ export default function AboutPage() {
             personality="standard"
             className="lg:col-span-8 lg:col-start-3 text-center flex flex-col items-center"
           >
-            <Meta className="text-plum mb-6">Current Work</Meta>
             <Headline as="h2" size="xl" italic className="text-ink leading-tight mb-8">
               I founded Ethnoir to build practical support for founders.
             </Headline>

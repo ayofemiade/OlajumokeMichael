@@ -30,7 +30,6 @@ export default function PrivacyPage() {
           
           {/* Header Block */}
           <div className="border-b border-line pb-12 mb-16 md:mb-20">
-            <Meta className="text-plum mb-4 block">Policy &amp; Data Practices</Meta>
             <Display italic className="text-ink leading-[1.05] tracking-tight mb-6">
               Privacy Notice
             </Display>

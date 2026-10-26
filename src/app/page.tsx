@@ -200,7 +200,6 @@ export default function Home() {
             className="flex justify-between items-center border-b border-line pb-6 mb-12 md:mb-16"
           >
             <Meta className="text-plum">Who this work is for</Meta>
-            <Meta>Fit &amp; Collaboration</Meta>
           </ScrollReveal>
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
@@ -248,7 +247,6 @@ export default function Home() {
               className="lg:col-span-5 flex flex-col justify-between h-full lg:border-l lg:border-line lg:pl-12 pt-8 lg:pt-0 border-t lg:border-t-0"
             >
               <div>
-                <Meta className="text-plum mb-4">Engagement</Meta>
                 <h3
                   className="font-serif font-normal text-ink leading-tight mb-6"
                   style={{ fontSize: "clamp(1.5rem, 2vw, 2rem)" }}
