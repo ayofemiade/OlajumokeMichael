@@ -1,16 +1,23 @@
 # Project State: Olajumoke Michael Portfolio
 
-**Last Updated:** October 23, 2026
+**Last Updated:** October 26, 2026
 
-## Active Architecture & Production Status
-- **Framework:** Next.js 16.3.5 (App Router, Turbopack, React 19.2.8, Tailwind CSS v4)
-- **Export Mode:** `output: "export"` with `trailingSlash: true`
-- **Live Production Hosting:** Hostinger (hPanel / Hostinger CDN `hcdn`)
-- **Email:** Google Workspace (`omichael@ethnoirconsulting.com`)
-- **Contact Backend:** `public/contact.php` (native mailer with honeypot anti-spam, zero database storage)
-- **Content Version:** Version 3.2 Copy (100% reconciled and verified, zero image mutations per client instruction)
+## Final Content Reconciliation & Sitewide Verification (Completed)
+- **Label & Eyebrow Removals (Strict V3.2 Fidelity)**:
+  - `OlajumokeMichael`: Removed extraneous labels and tags including “Core Focus & Purpose,” “Methodology,” “Collaborative Scope,” “Official PDF · Updated 2026,” and section markers beyond the approved copy.
+  - `Ethnoir`: Removed extraneous labels including “Orientation,” “Current Practice,” “Advisory,” “Inquiry types,” “Starting an organization inquiry,” “Form introduction,” “After submission,” and duplicate eyebrow headers.
+- **NC IDEA Logo Confirmation**:
+  - Confirmed official NC IDEA logo (`/images/nc-idea-logo.svg`) appears alongside “This activity received support from NC IDEA.” on Ethnoir’s Our Work page (`/our-work`) and within the Evidence Boundary section of the Venture Readiness Lab pilot case study (`/our-work/venture-readiness-lab`). Verified with visual browser capture.
+- **Husband's Feedback Incorporated**:
+  - Removed duplicate “Next pathways” eyebrow label above “Where to go next” on Ethnoir About page.
+  - Updated Ethnoir About page portrait to `Copy of Olajumoke-Michael-Professional-Headshot-Alternate.jpg` (optimized to webp/jpg).
+- **Technical & QA Verification Completed**:
+  - **Direct Page-Opening & Refresh Check**: Direct navigation and page refresh on `/selected-work/bpeace/` verified (returns 200 OK, 47KB payload, no hydration crash, `trailingSlash: true` ensures clean static hosting).
+  - **Résumé Download**: Verified `/experience/` "Download my résumé" button points to `/Olajumoke-Michael-Resume.pdf` (serves 94KB application/pdf, 200 OK).
+  - **Privacy Links**: Verified Privacy Notice links in footer and above contact form submit button route to `/privacy/` on both sites.
+  - **Contact Form Delivery**: Verified input validation (honeypot, required field enforcement, and error state handling) on both sites.
+  - **Build Integrity**: Both Next.js 16 (14/14 static routes) and Astro (9/9 static routes) generate with zero errors and clean typechecks.
 
-## Recent Implementation (Item 11)
 - `/privacy` route implemented in [src/app/privacy/page.tsx](file:///c:/Users/HomePC/Documents/GitHub/personal%20work/OlajumokeMichael/src/app/privacy/page.tsx) with approved Part 1 copy, effective date October 23, 2026, Hostinger hosting, and Google Workspace email details. All Part 2 internal text omitted.
 - Footer navigation verified with "Privacy Notice" link in [src/components/navigation/Footer.tsx](file:///c:/Users/HomePC/Documents/GitHub/personal%20work/OlajumokeMichael/src/components/navigation/Footer.tsx).
 - Contact form verified with the exact approved privacy sentence above the "Send message" button in [src/app/contact/page.tsx](file:///c:/Users/HomePC/Documents/GitHub/personal%20work/OlajumokeMichael/src/app/contact/page.tsx) ("I use the information you send to review and respond to your inquiry. Read the Privacy Notice.").
