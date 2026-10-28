@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "/my-ventures",
+      "destination": "/about/",
+      "permanent": true
+    },
+    {
+      "source": "/my-ventures/:path*",
+      "destination": "/about/",
+      "permanent": true
+    }
+  ]
+}

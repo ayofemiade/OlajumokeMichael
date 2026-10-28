@@ -5,6 +5,9 @@ ErrorDocument 404 /404.html
   RewriteEngine On
   RewriteBase /
 
+  # 301 Permanent Redirect: Legacy /my-ventures/ to current About page
+  RewriteRule ^my-ventures(?:/.*)?$ /about/ [R=301,L,NC]
+
   # Serve existing directories and files directly
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
